@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TestResultDetails</class>
+ <widget class="QWidget" name="TestResultDetails">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>1130</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>720</width>
+     <height>1130</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QLabel" name="labelInstruction">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>900</y>
+       <width>720</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>Test Results</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonDone">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>1010</y>
+       <width>351</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 70%;
+background-color: rgb(22,61,86);
+color: rgb(208,225,241)</string>
+     </property>
+     <property name="text">
+      <string>Done</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>170</width>
+       <height>86</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonBack">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>1010</y>
+       <width>351</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 6px;
+background-color: rgb(22,61,86);
+color: rgb(208,225,241)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/Images/XatekUI_BackArrow.png</normaloff>:/Images/XatekUI_BackArrow.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>73</width>
+       <height>62</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelUserID">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>User ID:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelPatientID">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>200</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>Patient ID:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelTestStripID">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>260</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>Test Strip ID:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelDate">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>320</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>Date:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelTime">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>380</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>Time:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelTPeak">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>440</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>Tpeak:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelEmax">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>500</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>Emax:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelUserIDValue">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>140</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>721983344</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelPatientIDValue">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>200</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>8476523F</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelTestStripIDValue">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>260</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>878-15739</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelDateValue">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>320</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>4/1/2018</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelTPeakValue">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>440</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>435 Seconds</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelEmaxValue">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>500</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>0.05</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelTimeValue">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>380</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string>12:30</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

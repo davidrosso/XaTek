@@ -1,0 +1,4023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Keyboard</class>
+ <widget class="QWidget" name="Keyboard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>1130</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>50</y>
+     <width>720</width>
+     <height>950</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>3</number>
+   </property>
+   <widget class="QWidget" name="pageAlphaUpperCase">
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+     </font>
+    </property>
+    <widget class="QPushButton" name="buttonUpperK">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>K</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperX">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>X</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperI">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>I</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperE">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>E</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperV">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>V</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperG">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>G</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperNumeric">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>123</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperB">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>B</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperS">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>S</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperC">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>C</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperH">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>H</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperO">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>O</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperP">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>P</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperR">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>R</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperZ">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Z</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperDeleteLastChar">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Del</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperSymbols">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>@!#</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperU">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>U</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperT">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>T</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperM">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>M</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperAlt">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Alt</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperF">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>F</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperA">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>A</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperW">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>W</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperD">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>D</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperQ">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Q</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperJ">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>J</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperY">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Y</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperL">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>L</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUpperN">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>N</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageAlphaLowerCase">
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+     </font>
+    </property>
+    <widget class="QPushButton" name="buttonLowerG">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>g</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerY">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>y</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerQ">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>q</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerS">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>s</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerX">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>x</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerL">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>l</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerDeleteLastChar">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Del</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerJ">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>j</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerV">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>v</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerU">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>u</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerAlt">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Alt</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerNumeric">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>123</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerZ">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>z</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerN">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>n</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerD">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>d</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerI">
+     <property name="geometry">
+      <rect>
+       <x>437</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>i</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerM">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>m</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerE">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>e</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerO">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>o</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerSymbols">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>@!#</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerR">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>r</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerT">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>t</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerK">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>k</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerB">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>b</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerC">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>c</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerH">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>h</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerF">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>f</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerP">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>p</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerA">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>a</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLowerW">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>80</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>w</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageSymbols">
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+     </font>
+    </property>
+    <widget class="QPushButton" name="buttonDeleteLastChar">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Del</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonPeriod">
+     <property name="geometry">
+      <rect>
+       <x>438</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>.</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonAndSign">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>&amp;&amp;</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLeftSquareBracket">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>[</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonComma">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>,</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonPipe">
+     <property name="geometry">
+      <rect>
+       <x>438</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>|</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonAsterix">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>*</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonRightParenBracket">
+     <property name="geometry">
+      <rect>
+       <x>438</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>)</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonExclamationMark">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>!</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonUnderscore">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>_</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonQuestionMark">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonApostrophe">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>'</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonTide">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>~</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonColon">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>:</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonEqual">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>=</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLeftParenBracket">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>510</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>(</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonLessThan">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>&lt;</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonDoubleQuote">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>&quot;</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonForwardSlash">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>/</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonGreaterThan">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>&gt;</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonHyphen">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonRightSquareBracket">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>]</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonCaret">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>^</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonPlus">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>660</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonAtSign">
+     <property name="geometry">
+      <rect>
+       <x>152</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid rgb(255, 255, 255);
+border-radius: 50%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>@</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonPercentageSign">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonBackSlash">
+     <property name="geometry">
+      <rect>
+       <x>438</x>
+       <y>60</y>
+       <width>130</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>\</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonAlpha">
+     <property name="geometry">
+      <rect>
+       <x>438</x>
+       <y>810</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>abc</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonDollarSign">
+     <property name="geometry">
+      <rect>
+       <x>438</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>$</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonHash">
+     <property name="geometry">
+      <rect>
+       <x>295</x>
+       <y>360</y>
+       <width>125</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 60%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>#</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageNumeric">
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+     </font>
+    </property>
+    <widget class="QPushButton" name="button0">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>780</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button3">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>150</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button2">
+     <property name="geometry">
+      <rect>
+       <x>288</x>
+       <y>150</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button4">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>360</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>4</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button1">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>150</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button9">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>570</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>9</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button1_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>60</y>
+       <width>45</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(255,255,255);
+border-radius: 20%;
+background-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button7">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>570</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>7</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button1_7">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>60</y>
+       <width>45</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(255,255,255);
+border-radius: 20%;
+background-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button8">
+     <property name="geometry">
+      <rect>
+       <x>288</x>
+       <y>570</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>8</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button1_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>60</y>
+       <width>45</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(255,255,255);
+border-radius: 20%;
+background-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button1_5">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>60</y>
+       <width>45</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(255,255,255);
+border-radius: 20%;
+background-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button5">
+     <property name="geometry">
+      <rect>
+       <x>288</x>
+       <y>360</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button1_4">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>60</y>
+       <width>45</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(255,255,255);
+border-radius: 20%;
+background-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button6">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>360</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>6</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button1_6">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>60</y>
+       <width>45</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(255,255,255);
+border-radius: 20%;
+background-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonNumericAlpha">
+     <property name="geometry">
+      <rect>
+       <x>288</x>
+       <y>780</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>abc</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonNumericDeleteLastChar">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>780</y>
+       <width>145</width>
+       <height>145</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 70%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Del</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="buttonEnter">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>1010</y>
+     <width>351</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Roboto</family>
+     <pointsize>50</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(87, 138, 198);
+border-radius: 70%;
+background-color: rgb(22,61,86);
+color: rgb(208,225,241)</string>
+   </property>
+   <property name="text">
+    <string>Enter</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>170</width>
+     <height>86</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buttonBack">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>1010</y>
+     <width>351</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Roboto</family>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(87, 138, 198);
+border-radius: 70%;
+background-color: rgb(22,61,86);
+color: rgb(208,225,241)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Images/XatekUI_BackArrow.png</normaloff>:/Images/XatekUI_BackArrow.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>73</width>
+     <height>62</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditValueEntered">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>720</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Roboto</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 50%;
+background-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

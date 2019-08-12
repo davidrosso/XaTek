@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/scripts.js</file>
+        <file>Resources/dateTimeModule.qml</file>
+        <file>Images/XatekUI_ViewTestResults.png</file>
+        <file>Images/XatekUI_VerifyingClotChip.png</file>
+        <file>Images/XatekUI_Unlock.png</file>
+        <file>Images/XatekUI_TimeExpired.png</file>
+        <file>Images/XatekUI_TestInProgress.png</file>
+        <file>Images/XatekUI_TestComplete.png</file>
+        <file>Images/XatekUI_StartNewTest.png</file>
+        <file>Images/XatekUI_RemoveClotChip.png</file>
+        <file>Images/XatekUI_PreparePatient.png</file>
+        <file>Images/XatekUI_OptionsMenu.png</file>
+        <file>Images/XatekUI_OpenScanClotChip.gif</file>
+        <file>Images/XatekUI_InsertClotChipRCR.gif</file>
+        <file>Images/XatekUI_EnterUserID.png</file>
+        <file>Images/XatekUI_EnterPatientID.png</file>
+        <file>Images/XatekUI_EnterKey.png</file>
+        <file>Images/XatekUI_CancelTestInProgress.png</file>
+        <file>Images/XatekUI_BatteryCharge.png</file>
+        <file>Images/XatekUI_Battery100.png</file>
+        <file>Images/XatekUI_Battery75.png</file>
+        <file>Images/XatekUI_Battery50.png</file>
+        <file>Images/XatekUI_Battery25.png</file>
+        <file>Images/XatekUI_Battery00.png</file>
+        <file>Images/XatekUI_Backdrop.png</file>
+        <file>Images/XatekUI_BackArrow.png</file>
+        <file>Images/XatekUI_WiFi.png</file>
+        <file>Images/XatekUI_Bluetooth.png</file>
+        <file>Images/XatekUI_Brightness.png</file>
+        <file>Resources/doseDateTime.qml</file>
+        <file>Images/XatekUI_CollectSample.png</file>
+        <file>Images/XatekUI_PreHeatClotChip.png</file>
+    </qresource>
+</RCC>
