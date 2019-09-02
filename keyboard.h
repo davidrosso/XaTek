@@ -2,6 +2,7 @@
 #define KEYBOARD_H
 
 #include <QWidget>
+#include <timelastdose.h>
 
 namespace Ui {
 class Keyboard;
@@ -13,10 +14,13 @@ class Keyboard : public QWidget
 
 public:
     explicit Keyboard(QWidget *parent = 0);
-    explicit Keyboard(int, QWidget *parent = 0);
     ~Keyboard();
 
-private slots:    
+private:
+    Ui::Keyboard *ui;       
+    TimeLastDose _timeLastDose;
+
+private slots:
     void on_button0_clicked();
     void on_button1_clicked();
     void on_button2_clicked();
@@ -28,7 +32,6 @@ private slots:
     void on_button8_clicked();
     void on_button9_clicked();
     void on_buttonNumericAlpha_clicked();
-    void on_buttonNumericDeleteLastChar_clicked();
 
     void on_buttonUpperA_clicked();
     void on_buttonUpperB_clicked();
@@ -59,7 +62,6 @@ private slots:
     void on_buttonUpperAlt_clicked();
     void on_buttonUpperSymbols_clicked();
     void on_buttonUpperNumeric_clicked();
-    void on_buttonUpperDeleteLastChar_clicked();
 
     void on_buttonLowerA_clicked();
     void on_buttonLowerB_clicked();
@@ -90,7 +92,6 @@ private slots:
     void on_buttonLowerAlt_clicked();
     void on_buttonLowerSymbols_clicked();
     void on_buttonLowerNumeric_clicked();
-    void on_buttonLowerDeleteLastChar_clicked();
 
     void on_buttonQuestionMark_clicked();
     void on_buttonAtSign_clicked();
@@ -121,14 +122,24 @@ private slots:
     void on_buttonLessThan_clicked();
     void on_buttonGreaterThan_clicked();
     void on_buttonAlpha_clicked();
-    void on_buttonDeleteLastChar_clicked();
 
-    void on_buttonEnter_clicked();
-    void on_buttonBack_clicked();
+    void on_buttonUpperDeleteLastChar_clicked();
+    void on_buttonLowerDeleteLastChar_clicked();
+    void on_buttonNumericDeleteLastChar_clicked();
+    void on_buttonSymbolsDeleteLastChar_clicked();
+    void RemoveLastCharacter();
 
-private:
-    Ui::Keyboard *ui;
-    int screenID;
+    void on_buttonAlphaLowerEnter_clicked();
+    void on_buttonAlphaUpperEnter_clicked();
+    void on_buttonNumericEnter_clicked();
+    void on_buttonSymbolsEnter_clicked();
+    void SaveValueProceedToNextScreen();
+
+    void on_buttonAlphaUpperBack_clicked();
+    void on_buttonAlphaLowerBack_clicked();
+    void on_buttonNumericBack_clicked();
+    void on_buttonSymbolsBack_clicked();
+    void ReturnPreviousScreen();
 
 signals:
     void SetUserID();

@@ -18,7 +18,7 @@ public:
 
 private:
     Ui::ViewTestResultsForm *ui;
-    TestResultDetails *_testResultDetails;
+    TestResultDetails _testResultDetails;
 
 private slots:            
     void on_buttonConfirm_clicked();

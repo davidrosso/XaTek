@@ -1,5 +1,8 @@
 #include "collectsample.h"
 #include "ui_collectsample.h"
+#include <QDebug>
+
+extern QString PreviousScreen;
 
 CollectSample::CollectSample(QWidget *parent) :
     QWidget(parent),
@@ -30,7 +33,14 @@ void CollectSample::CollectSample_click()
 
 void CollectSample::on_buttonNext_clicked()
 {
-    //TODO: confirm that the sample is collected and ready for next screen
+    // set PreviousScreen variable
+    PreviousScreen = "CollectSample";
+    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
+
+    //TODO: check that a sample was collected before proceeding to the next screen
+    //bool okToProceed = CheckStatus(current screen ID);
+
+    // proceed to the next screen
     ui->stackedWidget->setCurrentIndex(1);
 }
 

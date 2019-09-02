@@ -181,6 +181,10 @@ color: white;</string>
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>buttonStartNewTest</tabstop>
+  <tabstop>buttonViewTestResults</tabstop>
+ </tabstops>
  <resources>
   <include location="resources.qrc"/>
  </resources>

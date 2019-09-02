@@ -3,6 +3,14 @@
 
 #include <QWidget>
 #include <keyboard.h>
+#include <QTimer>
+#include <QList>
+#include <QInputDialog>
+#include <QStandardItem>
+#include <QStandardItemModel>
+#include <QNetworkConfiguration>
+#include <QNetworkConfigurationManager>
+#include <QNetworkSession>
 
 namespace Ui {
 class SelectNetwork;
@@ -16,13 +24,22 @@ public:
     explicit SelectNetwork(QWidget *parent = 0);
     ~SelectNetwork();
 
+    int foundCount;
+    QNetworkConfiguration netcfg;
+    QStringList WiFisList;
+    QList<QNetworkConfiguration> netcfgList;
+
 private:
     Ui::SelectNetwork *ui;
     Keyboard _keyboard;
+    QTimer *findTimer;
+    QStandardItemModel* listModel;
+    QNetworkSession *session;
 
 private slots:
     void on_buttonBack_clicked();
     void on_buttonEnter_clicked();
+    void FindActiveWirelessNetworks();
 
 signals:
     void SettingsOptionsClicked();

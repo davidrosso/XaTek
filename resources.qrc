@@ -18,7 +18,6 @@
         <file>Images/XatekUI_EnterPatientID.png</file>
         <file>Images/XatekUI_EnterKey.png</file>
         <file>Images/XatekUI_CancelTestInProgress.png</file>
-        <file>Images/XatekUI_BatteryCharge.png</file>
         <file>Images/XatekUI_Battery100.png</file>
         <file>Images/XatekUI_Battery75.png</file>
         <file>Images/XatekUI_Battery50.png</file>
@@ -32,5 +31,8 @@
         <file>Resources/doseDateTime.qml</file>
         <file>Images/XatekUI_CollectSample.png</file>
         <file>Images/XatekUI_PreHeatClotChip.png</file>
+        <file>Images/XatekUI_BatteryCharging.png</file>
+        <file>Images/XatekUI_BatteryNeedsCharge.png</file>
+        <file>Resources/wirelessNetworks.qml</file>
     </qresource>
 </RCC>

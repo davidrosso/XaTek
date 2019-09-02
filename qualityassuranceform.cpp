@@ -8,8 +8,8 @@ QualityAssuranceForm::QualityAssuranceForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // TODO: get the Quality Asurrence setting from the firmware and hightlight the setting    
-    //integer GetQualityAssurance();
+    //TODO: get the Quality Asurrence setting from the firmware and hightlight the setting
+    //int qaSetting = GetQualityAssurance();
 
     // set the Quality Assurance value from firmware, for now set to 1 (Bi-weekly).
     UpdateQualityAssurance(1);
@@ -87,7 +87,10 @@ void QualityAssuranceForm::on_buttonBack_clicked()
 }
 
 void QualityAssuranceForm::on_buttonEnter_clicked()
-{
+{    
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // Software will require QA Checks no less frequently than once every TBD months.
+
    QMessageBox::information (this, "Quality Assurance",
         QString("Quality Assurance Set to:  %1").arg(QString(QualityAssuranceSettingStr)));
 
@@ -96,7 +99,7 @@ void QualityAssuranceForm::on_buttonEnter_clicked()
 //           QMessageBox::information (0, "The Age",
 //                                     QString("The age is %1").arg(QString::number(age)));
 
-    // TODO: set the quality assurance
+    //TODO: set the quality assurance
     // 0 = Weekly
     // 1 = Bi-Weekly
     // 2 = Monthly

@@ -2,6 +2,12 @@
 #include "ui_openscanclotchip.h"
 #include <QMovie>
 #include <QMessageBox>
+#include <QDebug>
+
+extern QString PreviousScreen;
+extern QString TestData_ClotChip_ID;
+extern QString TestData_Organization_ID;
+extern QString TestData_RCR_ID;
 
 OpenScanClotChip::OpenScanClotChip(QWidget *parent) :
     QWidget(parent),
@@ -35,15 +41,26 @@ OpenScanClotChip::~OpenScanClotChip()
 }
 
 void OpenScanClotChip::on_buttonScan_clicked()
-{
-    //TODO: believe the data will be sent to the UI by the same mechanize keyboard keys are received.
-    //TODO: will need to test on hardware to verify.
-    //ScanClotChipBarcode()
+{   
+    // set PreviousScreen variable
+    PreviousScreen = "OpenScanClotChip";
+    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
-    //TODO: Needed if the data is sent to the UI
-    //SetClotChipID (string)
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // The software will only permit the device to scan (not manually enter) ClotChips and QA ClotChips for their IDs.
+    //TODO: Scan ClotChip
+    //ScanClotChipBarcode();
+    TestData_ClotChip_ID = QString ("Scanned ClotChip ID");
 
-    //TODO: add condition test to check the scan was valid before proceeding to the next screen
+    //TODO: Get Organization ID set by Admin to identify all devices
+    //OrganizationID();
+    TestData_Organization_ID = QString ("Organization ID set by Admin");
+
+
+    //TODO: check that scan was sucessful before proceeding to the next screen
+    //bool okToProceed = CheckStatus(current screen ID);
+
+    // proceed to the next screen
     ui->stackedWidget->setCurrentIndex(1);
 }
 
@@ -54,6 +71,6 @@ void OpenScanClotChip::OpenScanClotChip_Click()
 
 void OpenScanClotChip::on_buttonBack_clicked()
 {
-    // return to previous screen (MainWindow)
+    // return to previous screen (HomeScreen)
     emit HomeClicked();
 }

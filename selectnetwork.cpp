@@ -1,6 +1,14 @@
 #include "selectnetwork.h"
 #include "ui_selectnetwork.h"
 #include <QMessageBox>
+#include <QNetworkInterface>
+#include <QDebug>
+#include <QNetworkConfiguration>
+#include <QNetworkConfigurationManager>
+#include <QNetworkSession>
+#include <QTimer>
+#include <QTreeWidgetItem>
+
 
 SelectNetwork::SelectNetwork(QWidget *parent) :
     QWidget(parent),
@@ -8,33 +16,89 @@ SelectNetwork::SelectNetwork(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //TODO: get a list of networks
-    //GetNetworks();
+    findTimer = new QTimer();
+    findTimer->setInterval(20000); // update list every 20 seconds
 
-    // for now, just populate some generic networks
-    QListWidgetItem *item1 = new QListWidgetItem("Hospital Network");
-    item1 ->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-    ui->listWidgetNetworks->addItem(item1);
+    connect(findTimer,&QTimer::timeout,this,&SelectNetwork::FindActiveWirelessNetworks);
+    findTimer->start();
+    foundCount = 0;
+    //ui->treeWidgetWiFis->setColumnWidth(0,250);
+    //ui->treeWidgetWiFis->setColumnWidth(1,200);
 
-    QListWidgetItem *item2 = new QListWidgetItem("Guest Network");
-    item2 ->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-    ui->listWidgetNetworks->addItem(item2);
-
-    QListWidgetItem *item3 = new QListWidgetItem("Network 3");
-    item3 ->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-    ui->listWidgetNetworks->addItem(item3);
-
+    FindActiveWirelessNetworks();
 
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &_keyboard);
 
-
 }
+
 
 SelectNetwork::~SelectNetwork()
 {
     delete ui;
+}
+
+
+void SelectNetwork::FindActiveWirelessNetworks()
+{
+    //TODO: confirm this works on the board and displays available networks
+
+    ui->listWidgetNetworks->clear();
+
+    QNetworkConfigurationManager ncm;
+    netcfgList = ncm.allConfigurations();
+    WiFisList.clear();
+    ui->treeWidgetWiFis->clear();
+
+    for (auto &x : netcfgList)
+    {
+        //ui->listWidgetNetworks->addItem(x.name() + ": " + QString(x.bearerType()) );
+        //qDebug() << x.type() + ": " + x.name();
+
+        if(x.name() == "")
+        {
+            WiFisList << "Unknown(Other Network)";
+        }
+        else
+        {
+            WiFisList << x.name();
+        }
+
+        //if (x.bearerType() == QNetworkConfiguration::BearerWLAN)
+        //{
+            //if (x.name() == "YouDesiredNetwork")
+            //{
+            //    cfg = x;
+            //}
+        //}
+    }
+
+    for(int i=0; i<WiFisList.size(); i++)
+    {
+        bool exist = false;
+        QTreeWidgetItem * item = new QTreeWidgetItem();
+
+        for(int j=0; j<ui->treeWidgetWiFis->topLevelItemCount(); j++)
+        {
+            QTreeWidgetItem *index = ui->treeWidgetWiFis->topLevelItem(j);
+            QString str = index->text(1);
+            //qDebug() << "item: " + str;
+            if(str == WiFisList[i])
+            {
+                exist = true;
+                break;
+            }
+        }
+        if(!exist)
+        {
+            item->setTextAlignment(0,Qt::AlignLeft);
+            //item->setTextAlignment(1,Qt::AlignLeft);
+            //item->setText(0,QString::number(++foundCount));
+            item->setText  (0,WiFisList[i]);
+            ui->treeWidgetWiFis->addTopLevelItem(item);
+        }
+    }
 }
 
 void SelectNetwork::on_buttonBack_clicked()
@@ -47,8 +111,13 @@ void SelectNetwork::on_buttonEnter_clicked()
 {    
     const QString& s = ui->listWidgetNetworks->currentItem()->text();
 
+    // display/confirm the selected network
     QMessageBox::information(this, "Network Connection",
         QString("Selected Network is:        %1").arg(s));
+
+    // connect to the selected network
+    //auto session = new QNetworkSession(cfg, this);
+    //session->open();
 
     // go to keyboard class to enter password
     ui->stackedWidget->setCurrentIndex(1);

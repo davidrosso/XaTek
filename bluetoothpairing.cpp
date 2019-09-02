@@ -8,8 +8,11 @@ BluetoothPairing::BluetoothPairing(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //TODO: get a list of networks
-    //GetBluetoothDevices();
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // Software in device will only show XaTek docking stations when scanning for docking stations.
+
+    //TODO: get a list of bluetooth devices
+    //ArrayList btDevices = GetBluetoothDevices();
 
     // for now, just populate some generic networks
     QListWidgetItem *item1 = new QListWidgetItem("Docking Station 03");
@@ -35,16 +38,26 @@ BluetoothPairing::~BluetoothPairing()
     delete ui;
 }
 
+
 void BluetoothPairing::on_buttonEnter_clicked()
 {
-    const QString& s = ui->listWidgetBluetoothDevices->currentItem()->text();
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // Software will require GUI interaction by the user to initiate pairing the device with a docking station.
 
-    QMessageBox::information(this, "Begin Pairing",
-        QString("Selected Device for pairing is:        %1").arg(s));
+    const QString& s = ui->listWidgetBluetoothDevices->currentItem()->text();
+    QMessageBox::information(this, "Begin Pairing", QString("Selected Device for pairing is:        %1").arg(s));
 
     //TODO: begin pairing with the selected docking station
     //TODO: Show pairing status?
     //TODO: what if pasword entered is incorrect
+
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // The software will store the pairing too allow the handheld to reconnect with the docking without further operator intervention.
+    // Software will connect with previously paired Docks in range of the Device.
+    //TODO: save paired device for further use.
+
+
+    emit BackToConnectivity();
 }
 
 void BluetoothPairing::on_buttonBack_clicked()

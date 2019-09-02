@@ -22,6 +22,7 @@ private:
     Ui::OpenScanClotChip *ui;
     InsertClotChip _insertClotChip;
 
+
 private slots:
     void on_buttonScan_clicked();
     void on_buttonBack_clicked();

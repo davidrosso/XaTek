@@ -1,5 +1,10 @@
 #include "setpatientid.h"
 #include "ui_setpatientid.h"
+#include <QDebug>
+
+extern QString PreviousScreen;
+extern QString TestData_Patient_ID_Source;
+extern QString TestData_Patient_ID;
 
 SetPatientID::SetPatientID(QWidget *parent) :
     QWidget(parent),
@@ -10,6 +15,8 @@ SetPatientID::SetPatientID(QWidget *parent) :
     // setup the image from resource file
     QPixmap pix("://Images/XatekUI_EnterPatientID.png");
     ui->labelPatientID->setPixmap(pix);
+
+    //_keyboard = new Keyboard(parent, 1);
 
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);
@@ -32,19 +39,34 @@ void SetPatientID::SetPatientID_click()
 
 void SetPatientID::on_buttonManual_clicked()
 {
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // The software will permit users to scan or manually enter information such as Patient ID, User ID.
+
+    // set PreviousScreen variable
+    PreviousScreen = "SetPatientID";
+    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
+
+    // go to the keyboard class to manual enter the Patient ID
     ui->stackedWidget->setCurrentIndex(1);
+
 }
 
 void SetPatientID::on_buttonScan_clicked()
 {
-    //TODO: set the patient ID if manually entered
-    //SetUserID (string);
+    // set PreviousScreen variable
+    PreviousScreen = "SetPatientID";
+    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
-    //TODO: else scan button was pressed
-    //ScanUserIDBarcode()
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // The software will permit users to scan or manually enter information such as Patient ID, User ID.
 
-    //TODO: add condition test to confirm patient ID was set before proceeding to the next screen
-    //bool CheckStatus (current screen ID);
+    TestData_Patient_ID_Source = QString ("Scanned");
+
+    //TODO: set the scanned patient ID
+    //TestData_Patient_ID = getPatientID();
+    TestData_Patient_ID = QString ("Patient ID");
+
+    // proceed to the next screen
     ui->stackedWidget->setCurrentIndex(2);
 }
 

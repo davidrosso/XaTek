@@ -62,7 +62,7 @@ private slots:
 
 signals:
     void SettingsOptionsClicked();
-    void HomeClicked();
+    //void HomeClicked();
 };
 
 #endif // DISPLAYFORMS_H

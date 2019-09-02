@@ -424,6 +424,10 @@ color: rgb(208,225,241)</string>
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>buttonBack</tabstop>
+  <tabstop>buttonDone</tabstop>
+ </tabstops>
  <resources>
   <include location="resources.qrc"/>
  </resources>

@@ -7,6 +7,10 @@ SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // GUI will provide menus to affect power management, connectivity to WIFI and BT, user instruction options such as option to bypass non-critical instructions, time management settings, brightness settings, and QA Check frequency.
+
+    ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &_setAdminPasscode);
     ui->stackedWidget->insertWidget(2, &_setUserPasscode);
     ui->stackedWidget->insertWidget(3, &_displayForms);
@@ -29,6 +33,11 @@ SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
 SettingOptionsForm::~SettingOptionsForm()
 {
     delete ui;
+}
+
+void SettingOptionsForm::moveToSettingsOptions()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 void SettingOptionsForm::on_buttonAdminPasscode_clicked()
@@ -68,16 +77,5 @@ void SettingOptionsForm::on_buttonService_clicked()
 
 void SettingOptionsForm::on_buttonBack_clicked()
 {
-    //TODO: return to previous screen, but that depends.
-}
-
-void SettingOptionsForm::moveToSettingsOptions()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-void SettingOptionsForm::on_buttonConfirm_clicked()
-{
-    //TODO: Not sure what this button does yet.
-    //TODO: Maybe take to MainWindow? Maybe not needed.
+    emit HomeClicked();
 }

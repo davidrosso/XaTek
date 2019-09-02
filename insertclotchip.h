@@ -28,7 +28,6 @@ private slots:
     void InsertClotChip_click();
 
 signals:
-    void HomeClicked();
     void SettingsOptionsClicked();
     void OpenScanClotChip();
 

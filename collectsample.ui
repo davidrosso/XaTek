@@ -133,6 +133,10 @@ Remove and Collect Sample</string>
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>buttonBack</tabstop>
+  <tabstop>buttonNext</tabstop>
+ </tabstops>
  <resources>
   <include location="resources.qrc"/>
  </resources>

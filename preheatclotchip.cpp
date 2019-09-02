@@ -1,5 +1,8 @@
 #include "preheatclotchip.h"
 #include "ui_preheatclotchip.h"
+#include <QDebug>
+
+extern QString PreviousScreen;
 
 PreheatClotchip::PreheatClotchip(QWidget *parent) :
     QWidget(parent),
@@ -30,8 +33,14 @@ void PreheatClotchip::PreheatClotChip_click()
 
 void PreheatClotchip::on_buttonNext_clicked()
 {
-    //TODO: how to confirm clotchip is preheated before moving to the next screen
+    // set PreviousScreen variable
+    PreviousScreen = "PreheatClotchip";
+    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
+    //TODO: check that preheat complete before proceeding to the next screen
+    //bool okToProceed = CheckStatus(current screen ID);
+
+    // proceed to the next screen
     ui->stackedWidget->setCurrentIndex(1);
 }
 

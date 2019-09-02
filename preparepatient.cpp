@@ -1,5 +1,8 @@
 #include "preparepatient.h"
 #include "ui_preparepatient.h"
+#include <QDebug>
+
+extern QString PreviousScreen;
 
 PreparePatient::PreparePatient(QWidget *parent) :
     QWidget(parent),
@@ -30,9 +33,14 @@ void PreparePatient::PreparePatient_click()
 
 void PreparePatient::on_buttonNext_clicked()
 {
-    //TODO: add condition test to confirm blood collectoin was completed before proceeding to the next screen
-    //bool CheckStatus (current screen ID);
+    // set PreviousScreen variable
+    PreviousScreen = "PreparePatient";
+    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
+    //TODO: check prepare patient is complete before proceeding to the next screen
+    //bool okToProceed = CheckStatus(current screen ID);
+
+    // proceed to the next screen
     ui->stackedWidget->setCurrentIndex(1);
 }
 

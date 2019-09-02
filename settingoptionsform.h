@@ -45,12 +45,10 @@ private slots:
     void on_buttonQuality_clicked();
     void on_buttonService_clicked();
     void on_buttonBack_clicked();
-    void on_buttonConfirm_clicked();
     void moveToSettingsOptions();
 
 signals:
-    void HomeClicked();    
-    void SettingsOptionsClicked();
+    void HomeClicked();
 };
 
 #endif // SETTINGOPTIONSFORM_H

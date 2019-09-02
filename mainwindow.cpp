@@ -5,6 +5,8 @@
 #include <QMessageBox>
 #include <QPlainTextEdit>
 
+extern QString my_global_string;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -29,13 +31,12 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(timer, SIGNAL(timeout()), this,SLOT(setTimer()));
     timer->start(100);
 
-    // TODO: get the battery level from hardware
-    // returns the battery level
-    //setBatteryImage(GetBatteryLevel())
+    // TODO: get the Battery Level from the harware and display the appropriate image
+    //setBatteryImage(GetBatteryLevel());
 
     // for now set the battery level to zero
     BatteryLevel = 0;
-    setBatteryImage(BatteryLevel);
+    SetBatteryImage(BatteryLevel);
 
     // TODO: get test in progress status from firmware
     //bool TestInProgress = GetStatus();
@@ -44,15 +45,13 @@ MainWindow::MainWindow(QWidget *parent) :
     TestInProgress = true;
 
     // set the image based on the results of the GetBatteryLevel() and GetStatus() results
-    setButtonActionImage();
+    SetButtonActionImage();
 
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);    
     ui->stackedWidget->insertWidget(1, &_settingOptionsForm);
     ui->stackedWidget->insertWidget(2, &_passcodeUnlock);
     ui->stackedWidget->insertWidget(3, &_openScanClotChip);
-
-    //connect(&_openScanClotChip, SIGNAL(BackToMainWindow()), this, SLOT(BackToMainWindowClick()));
 
 }
 
@@ -72,22 +71,26 @@ void MainWindow::setTimer()
         currentTimeStr[0] = ' ';
     }
 
-    // TODO get the Battery Level from the harware.
+    // TODO: get the Battery Level from the harware and display the appropriate image
     //setBatteryImage(GetBatteryLevel())
 
-    // have the colon blink
+    //TODO: determine if device is charging, if so then display the battery charging icon
+    // TODO: set the battery changing icon
+    // bool isCharging = IsDeviceCharging();
+
+    // for now, display the battery charging icon have the colon blink
     if((currentTime.second() % 2) == 0)
     {
         currentTimeStr[2] = ' ';
 
-        ui->labelBatteryLevelImage->show();
+        ui->labelBatteryCharge->show();
     }
     else
     {
         // battery icon to blink is level 'to low'
-        if(BatteryLevel < 250)
+        if(BatteryLevel < 900)
         {
-            ui->labelBatteryLevelImage->hide();
+            ui->labelBatteryCharge->hide();
         }
     }
 
@@ -98,54 +101,71 @@ void MainWindow::setTimer()
     ui->labelDate->setText(currentDateStr);
 
     BatteryLevel = BatteryLevel+2;
-    setBatteryImage(BatteryLevel);
+    SetBatteryImage(BatteryLevel);
 
     if(BatteryLevel >= 450)
     {
         TestInProgress = false;
     }
-    setButtonActionImage();
+    SetButtonActionImage();
 }
 
-void MainWindow::setBatteryImage(int batteryLevel)
+
+void MainWindow::GetBatteryLevel()
 {
+
+}
+void MainWindow::SetBatteryImage(int batteryLevel)
+{
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // GUI will display battery level in margin at all times.
+
     // setup the appropriate battery image from resource file
     // there are 5 battery level images (0%, 25%, 50%, 75%, 100%)
 
     if(batteryLevel < 250)
     {
-        QPixmap pix("://Images/XatekUI_Battery00.png");
-        ui->labelBatteryLevelImage->setPixmap(pix);
+        // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+        // Software shall notify the user via the GUI when the battery is low.
+
+        QPixmap pixBattery("://Images/XatekUI_Battery00.png");
+        ui->labelBatteryLevelImage->setPixmap(pixBattery);
 
         //TODO: what to do if battery level is below minimum value while working in the setup of a new test.
     }
     else if(batteryLevel > 250 && batteryLevel <= 500)
     {
-        QPixmap pix("://Images/XatekUI_Battery25.png");
-        ui->labelBatteryLevelImage->setPixmap(pix);
+        QPixmap pixBattery("://Images/XatekUI_Battery25.png");
+        ui->labelBatteryLevelImage->setPixmap(pixBattery);
+
     }
     else if(batteryLevel > 500 && batteryLevel <= 750)
     {
-        QPixmap pix("://Images/XatekUI_Battery50.png");
-        ui->labelBatteryLevelImage->setPixmap(pix);
+        QPixmap pixBattery("://Images/XatekUI_Battery50.png");
+        ui->labelBatteryLevelImage->setPixmap(pixBattery);
+
     }    
     else if(batteryLevel > 750 && batteryLevel <= 900)
     {
-        QPixmap pix("://Images/XatekUI_Battery75.png");
-        ui->labelBatteryLevelImage->setPixmap(pix);
+        QPixmap pixBattery("://Images/XatekUI_Battery75.png");
+        ui->labelBatteryLevelImage->setPixmap(pixBattery);
+
     }
     else if(batteryLevel > 900)
     {
-        QPixmap pix("://Images/XatekUI_Battery100.png");
-        ui->labelBatteryLevelImage->setPixmap(pix);
+        QPixmap pixBattery("://Images/XatekUI_Battery100.png");
+        ui->labelBatteryLevelImage->setPixmap(pixBattery);
+
+        // for now, hide the battery charging icon since we are fully charged.
+        ui->labelBatteryCharge->hide();
     }
 }
 
-void MainWindow::setButtonActionImage()
+void MainWindow::SetButtonActionImage()
 {
     if(BatteryLevel < 250)
     {
-        QPixmap pixmap("://Images/XatekUI_BatteryCharge.png");
+        QPixmap pixmap("://Images/XatekUI_BatteryNeedsCharge.png");
         QIcon buttonIcon(pixmap);
         ui->buttonAction->setIcon(buttonIcon);
         ui->buttonAction->show();

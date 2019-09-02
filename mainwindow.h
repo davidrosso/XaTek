@@ -34,11 +34,12 @@ public slots:
 
 private slots:
     void on_pushButtonOptionsMenu_clicked();
-    void on_buttonAction_clicked();
-    void setBatteryImage(int);
-    void setButtonActionImage();    
+    void on_buttonAction_clicked();    
     void on_buttonTestInProgress_clicked();
     void on_buttonUnlockKeypad_clicked();
+    void GetBatteryLevel();
+    void SetBatteryImage(int);
+    void SetButtonActionImage();
     void BackToMainWindowClick();
 
 signals:

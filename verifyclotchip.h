@@ -18,11 +18,13 @@ public:
 private:
     Ui::VerifyClotChip *ui;
     TestInProgress _testInProgress;
+    //QString format;
 
 private slots:
     void on_buttonBack_clicked();
     void on_buttonNext_clicked();
     void VerifyClotChip_click();
+    //void CreateTestDataXML();
 
 signals:
     void CollectSample();

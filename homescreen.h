@@ -3,8 +3,9 @@
 
 #include <QWidget>
 #include <openscanclotchip.h>
-#include <viewtestresultsform.h>
 #include <settingoptionsform.h>
+#include <viewtestresultsform.h>
+#include <testresultdetails.h>
 
 namespace Ui {
 class HomeScreen;
@@ -16,13 +17,14 @@ class HomeScreen : public QDialog
 
 public:
     explicit HomeScreen(QDialog *parent = nullptr);
-    ~HomeScreen();
+    ~HomeScreen();    
 
 private:
     Ui::HomeScreen *ui;
     SettingOptionsForm _settingOptionsForm;
     OpenScanClotChip _openScanClotChip;
     ViewTestResultsForm _viewTestResultsForm;
+    TestResultDetails _testResultDetails;
 
 private slots:
     void on_buttonStartNewTest_clicked();

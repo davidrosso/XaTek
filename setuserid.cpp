@@ -1,5 +1,10 @@
 #include "setuserid.h"
 #include "ui_setuserid.h"
+#include <QDebug>
+
+extern QString PreviousScreen;
+extern QString TestData_User_ID_Source;
+extern QString TestData_User_ID;
 
 SetUserID::SetUserID(QWidget *parent) :
     QWidget(parent),
@@ -32,20 +37,32 @@ void SetUserID::SetUserID_click()
 
 void SetUserID::on_buttonManual_clicked()
 {
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // The software will permit users to scan or manually enter information such as Patient ID, User ID.
+
+    // set PreviousScreen variable
+    PreviousScreen = "SetUserID";
+    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
+
+    // go to the keyboard class to manual enter the User ID
     ui->stackedWidget->setCurrentIndex(1);
 }
 
 void SetUserID::on_buttonScan_clicked()
 {        
-    //TODO: set the user ID if manually entered
-    //SetUserID (string);
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // The software will permit users to scan or manually enter information such as Patient ID, User ID.
 
-    //TODO: else scan button was pressed
-    //ScanUserIDBarcode()
+    // set PreviousScreen variable
+    PreviousScreen = "SetUserID";
+    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
-    //TODO: add condition test to confirm user ID was set before proceeding to the next screen
-    //bool CheckStatus (current screen ID);
+    TestData_User_ID_Source = QString ("Scanned");
+    //TODO: set the scanned user ID
+    //TestData_User_ID = getUserID();
+    TestData_User_ID = QString ("User ID");
 
+    // proceed to the next screen
     ui->stackedWidget->setCurrentIndex(2);
 }
 

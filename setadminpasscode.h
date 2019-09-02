@@ -35,7 +35,7 @@ private slots:
     void on_buttonEnter_clicked();
 
 signals:
-    void HomeClicked();
+    //void HomeClicked();
     void SettingsOptionsClicked();
 };
 

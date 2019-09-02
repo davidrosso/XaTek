@@ -1,5 +1,9 @@
 #include "insertclotchip.h"
 #include "ui_insertclotchip.h"
+#include <QDebug>
+
+extern QString PreviousScreen;
+extern QString TestData_RCR_ID;
 
 InsertClotChip::InsertClotChip(QWidget *parent) :
     QWidget(parent),
@@ -30,9 +34,17 @@ InsertClotChip::~InsertClotChip()
 
 void InsertClotChip::on_buttonNext_clicked()
 {        
-    //TODO: add check to check the status before proceeding
-    //bool CheckStatus (current screen ID);
+    // set PreviousScreen variable
+    PreviousScreen = "InsertClotChip";
 
+    //TODO: get the RCR ID
+    //TestData_RCR_ID = getRcrID();
+    TestData_RCR_ID = QString ("RCR ID Retrieved from EEPROM");
+
+    //TODO: check clotchip was inserted sucessful before proceeding to the next screen
+    //bool okToProceed = CheckStatus(current screen ID);
+
+    // proceed to the next screen
     ui->stackedWidget->setCurrentIndex(1);
 }
 

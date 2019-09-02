@@ -1,43 +1,49 @@
-#ifndef DATETIMEFORM_H
-#define DATETIMEFORM_H
+#ifndef TIMELASTDOSE_H
+#define TIMELASTDOSE_H
 
 #include <QWidget>
 #include <QModelIndexList>
+#include <preparepatient.h>
+#include <QDateTime>
 #include <ctime>
 
 namespace Ui {
-class DateTimeForm;
+class TimeLastDose;
 }
 
-class DateTimeForm : public QWidget
+class TimeLastDose : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(QString saveMonth MEMBER month)
     Q_PROPERTY(QString saveDay MEMBER day)
 
 public:
-    explicit DateTimeForm(QWidget *parent = 0);
-    ~DateTimeForm();
+    explicit TimeLastDose(QWidget *parent = 0);
+    ~TimeLastDose();
     QString month, day, hour, minute;
-    QString timezone;
+    QDateTime DateTimeOfLastDose;
+    QDate dt1;
+    int monthInt;
 
 private:
-    Ui::DateTimeForm *ui;
+    Ui::TimeLastDose *ui;
     QModelIndexList *indexes;
-    //std::string timezone;
+    PreparePatient _preparePatient;
 
-private slots:
-    void updateSettings();
+private slots:   
     void updateMonth(QString in);
     void updateDay(QString in);
     void updateHour(QString in);
-    void updateMinute(QString in);
-    void updateTimezone(QString in);
+    void updateMinute(QString in);    
     void on_buttonBack_clicked();
     void on_buttonEnter_clicked();
+    void TimeLastDose_click();
+    QString secondsToString(qint64);
 
 signals:
     void SettingsOptionsClicked();    
+    void SetPatientID();
+
 };
 
 #endif // DATETIMEFORM_H

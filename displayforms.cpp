@@ -12,11 +12,11 @@ DisplayForms::DisplayForms(QWidget *parent) :
     QPixmap pix("://Images/XatekUI_Brightness.png");
     ui->labelBrightnessIcon->setPixmap(pix.scaled(ui->labelBrightnessIcon->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
-    // TODO: get the Brightness level from firmware
+    //TODO: get the Brightness level from firmware
     //integer GetBrightnessLevel();
     updateBrightnessSetting(8); // for now, set to 8
 
-    // TODO: get the screen power saver from firmware
+    //TODO: get the screen power saver from firmware
     //int GetScreenPowerSaver();
     updatePowerSavingSetting(3); // for now, set to 3
 }
@@ -677,12 +677,12 @@ void DisplayForms::on_buttonBack_clicked()
 void DisplayForms::on_buttonEnter_clicked()
 {
     QMessageBox::information(this, "Display Settings",
-                             QString("Brightness set to:        %1\nPower Saving set to:   %2min %3sec").arg(QString::number(brightnessLevel), powerSavingMin, powerSavingSec));
+        QString("Brightness set to:        %1\nPower Saving set to:   %2min %3sec").arg(QString::number(brightnessLevel), powerSavingMin, powerSavingSec));
 
-    // TODO set the Brightness level
+    //TODO set the Brightness level
     //SetBrightnessLevel(int);
 
-    // TODO: set the screen power saver
+    //TODO: set the screen power saver
     //SetScreenPowerSaver(int);
 
     // return to the Settings Menu

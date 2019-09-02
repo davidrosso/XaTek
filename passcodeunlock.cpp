@@ -116,6 +116,9 @@ void PasscodeUnlock::on_buttonBack_clicked()
 
 void PasscodeUnlock::on_buttonUnlock_clicked()
 {
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // Software will require users to enter a passcode to unlock the home screen.
+
     moveHomeScreen();
 
 //    if(enteredPasscode == adminPasscode || enteredPasscode == userPasscode)

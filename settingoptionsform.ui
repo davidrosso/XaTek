@@ -285,41 +285,19 @@ color: rgb(208,225,241)</string>
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="buttonConfirm">
-     <property name="geometry">
-      <rect>
-       <x>370</x>
-       <y>1030</y>
-       <width>351</width>
-       <height>100</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Roboto</family>
-       <pointsize>40</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 70%;
-background-color: rgb(22,61,86);
-color: rgb(208,225,241)</string>
-     </property>
-     <property name="text">
-      <string>Confirm</string>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>170</width>
-       <height>86</height>
-      </size>
-     </property>
-    </widget>
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>buttonAdminPasscode</tabstop>
+  <tabstop>buttonUserPasscode</tabstop>
+  <tabstop>buttonDisplaySettings</tabstop>
+  <tabstop>buttonDateTime</tabstop>
+  <tabstop>buttonConnectivity</tabstop>
+  <tabstop>buttonQuality</tabstop>
+  <tabstop>buttonService</tabstop>
+  <tabstop>buttonBack</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

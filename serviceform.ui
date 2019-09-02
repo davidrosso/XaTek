@@ -159,6 +159,12 @@ color: rgb(208,225,241)</string>
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>buttonServiceRcr</tabstop>
+  <tabstop>buttonServiceDockingStation</tabstop>
+  <tabstop>buttonBack</tabstop>
+  <tabstop>buttonEnter</tabstop>
+ </tabstops>
  <resources>
   <include location="resources.qrc"/>
  </resources>

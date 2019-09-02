@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "homescreen.h"
+#include <settingoptionsform.h>
 
 namespace Ui {
 class PasscodeUnlock;

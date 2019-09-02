@@ -74,4 +74,5 @@ void ConnectivityForm::on_buttonEnter_clicked()
 {    
     //TODO: Not sure what this button is used for
     //TODO: Do we need this button?
+    emit SettingsOptionsClicked();
 }

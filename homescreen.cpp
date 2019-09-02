@@ -1,6 +1,8 @@
 #include "homescreen.h"
 #include "ui_homescreen.h"
 #include <QDateTime>
+#include <QDebug>
+extern QString PreviousScreen;
 
 HomeScreen::HomeScreen(QDialog *parent) :
     QDialog(parent),
@@ -19,10 +21,14 @@ HomeScreen::HomeScreen(QDialog *parent) :
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &_openScanClotChip);
     ui->stackedWidget->insertWidget(2, &_viewTestResultsForm);
+    ui->stackedWidget->insertWidget(3, &_settingOptionsForm);
+    ui->stackedWidget->insertWidget(4, &_testResultDetails);
+
 
     connect(&_openScanClotChip, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     connect(&_viewTestResultsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
-
+    connect(&_settingOptionsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
+    connect(&_testResultDetails, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
 }
 
 HomeScreen::~HomeScreen()
@@ -36,7 +42,26 @@ void HomeScreen::moveHome()
 }
 
 void HomeScreen::on_buttonStartNewTest_clicked()
-{
+{  
+    // set PreviousScreen variable
+    PreviousScreen = "HomeScreen";
+
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // Prior to a test commencing, the user will be informed if there is not sufficient battery charge to complete a test.
+    //TODO: do not start a test until the device is paired with at least 1 docking station.
+    //int batteryLevel = GetBatteryLevel();
+
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // Prior to a test commencing, the user will be informed if there is not sufficient memory to complete a test
+    //TODO: check for sufficient memory
+    //int memoryLevel = GetMemoryLevel();
+
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // The software will not allow the user to start a test until at least one docking station pairing has been completed.
+    //TODO: get list of paired docking station
+    //ArrayList dockStations = GetPairedDevices();
+
+    // proceed to next screen
     ui->stackedWidget->setCurrentIndex(1);
 }
 

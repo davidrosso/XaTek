@@ -23,12 +23,12 @@ private:
 private slots:
     void on_buttonServiceRcr_clicked();
     void on_buttonServiceDockingStation_clicked();
-    void ServiceNeeded(int);
     void on_buttonBack_clicked();
     void on_buttonEnter_clicked();
+    void ServiceNeeded(int);
 
 signals:
-    void HomeClicked();
+    //void HomeClicked();
     void SettingsOptionsClicked();
 };
 

@@ -184,6 +184,11 @@ alignment: center;
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>listWidgetBluetoothDevices</tabstop>
+  <tabstop>buttonBack</tabstop>
+  <tabstop>buttonEnter</tabstop>
+ </tabstops>
  <resources>
   <include location="resources.qrc"/>
  </resources>

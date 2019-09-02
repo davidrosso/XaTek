@@ -8,10 +8,10 @@ SetAdminPasscode::SetAdminPasscode(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // TODO: get the admin passcode from the firmware
-    //string GetAdminPasscode();
+    //TODO: get the admin passcode from the firmware
+    //string adminPasscode = GetAdminPasscode();
 
-    // TODO: get the current admin passcode from the firmware
+    //TODO: get the current admin passcode from the firmware
     passcodeFirstAttempt = "";
     passcodeConfirmation = "";
     ui->lineEditPasscode->setText("");
@@ -87,8 +87,14 @@ void SetAdminPasscode::on_buttonBack_clicked()
 
 void SetAdminPasscode::on_buttonEnter_clicked()
 {
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // The software shall require the user to change the passcode during setup.
+
     if(ui->lineEditPasscode->text().length() < 4)
     {
+        // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+        // Software will display error codes and appropriate messages to the user when errors occur.
+
         QMessageBox::information(
           this,
           tr("Invalid Admin Passcode"),
@@ -114,8 +120,7 @@ void SetAdminPasscode::on_buttonEnter_clicked()
                   tr("Admin Passcode Created"),
                   tr("The Admin passcode was successfully created.") );
 
-                // TODO: same this new admin passcode to the firmware
-                // set the new admin passcode
+                //TODO: set this new admin passcode
                 //SetAdminPasscode (string);
 
                 // return to the Setting Screen
@@ -123,6 +128,9 @@ void SetAdminPasscode::on_buttonEnter_clicked()
             }
             else
             {
+                // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+                // Software will display error codes and appropriate messages to the user when errors occur.
+
                 QMessageBox::information(
                   this,
                   tr("Passcodes do not match"),

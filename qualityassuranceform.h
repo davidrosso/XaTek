@@ -25,12 +25,12 @@ private slots:
     void on_buttonQualityBiweekly_clicked();
     void on_buttonQualityMonthly_clicked();
     void on_buttonQualityQuarterly_clicked();
-    void UpdateQualityAssurance(int);
     void on_buttonBack_clicked();
     void on_buttonEnter_clicked();
+    void UpdateQualityAssurance(int);
 
 signals:
-    void HomeClicked();
+    //void HomeClicked();
     void SettingsOptionsClicked();
 };
 
