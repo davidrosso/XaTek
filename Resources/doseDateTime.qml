@@ -22,7 +22,45 @@ Item{
     signal updateMonth(string text)
     signal updateDay(string text)
     signal updateHour(string text)
-    signal updateMinute(string text)   
+    signal updateMinute(string text)
+
+    function setMonth(month){
+       saveMonth = month;
+       monthTumbler.currentIndex = month;
+       //console.log(saveMonth)
+       return month;
+    }
+    function setDay(day){
+        saveDay = day;
+        dayTumbler.currentIndex = day -1;
+        return day -1;
+    }
+    function setHour(hour){
+        saveHour = hour;
+        hourTumbler.currentIndex = hour;
+        return hour;
+    }
+    function setMinute(minute){
+        saveMin = minute;
+        if(minute < 15)
+        {
+            minuteTumbler.currentIndex = 0;
+        }
+        else if(minute >= 15 && minute < 30 )
+        {
+            minuteTumbler.currentIndex = 1;
+        }
+        else if(minute >= 30 && minute < 45 )
+        {
+            minuteTumbler.currentIndex = 2;
+        }
+        else if(minute >= 45)
+        {
+            minuteTumbler.currentIndex = 3;
+        }
+        //minuteTumbler.currentIndex = minute;
+        return minute;
+    }
 
     //Main Window
     Rectangle {
@@ -78,10 +116,10 @@ Item{
                 Tumbler {
                     id: monthTumbler
                     height: tumblerSettings.tumblerHeight
-                    width: tumblerSettings.tumblerWidth + 60
+                    width: tumblerSettings.tumblerWidth + 80
                     font.pixelSize: tumblerSettings.tumblerFontSize
                     model: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-                    currentIndex: Scripts.getMonth() //get current month
+                    //currentIndex: parseInt(saveMonth, 10) //get current month
 
                     delegate: tumblerDelegate
 
@@ -97,7 +135,7 @@ Item{
                     height: tumblerSettings.tumblerHeight
                     width: tumblerSettings.tumblerWidth
                     model: Scripts.getDays() //get list of days [1,31]
-                    currentIndex: Scripts.getDay()-1 //get current day
+                    //currentIndex: parseInt(saveDay, 10) -1 //get current day
                     delegate: tumblerDelegate
 
                     onCurrentIndexChanged: {
@@ -113,7 +151,7 @@ Item{
                     width: tumblerSettings.tumblerWidth
                     font.pixelSize: tumblerSettings.tumblerFontSize
                     model: Scripts.padDigits(24) //get list of hours with padded digits [00,23]
-                    currentIndex: Scripts.getHour() //get current hour
+                    //currentIndex: parseInt(saveHour, 10) //get current hour
                     delegate: tumblerDelegate
 
                     onCurrentIndexChanged: {
@@ -125,6 +163,7 @@ Item{
 
                 Label {
                     text: ":"
+                    width: 25
                     anchors.verticalCenterOffset: -2
                     font.pixelSize: tumblerSettings.tumblerFontSize
                     anchors.verticalCenter: parent.verticalCenter
@@ -136,8 +175,9 @@ Item{
                     height: tumblerSettings.tumblerHeight
                     width: tumblerSettings.tumblerWidth
                     font.pixelSize: tumblerSettings.tumblerFontSize
-                    model: Scripts.padDigits(60) //get numbers [0,59]
-                    currentIndex: Scripts.getMinute() //get current minute
+                    //model: Scripts.padDigits(60) //get numbers [0,59]
+                    model: ["00","15","30","45"]
+                    //currentIndex: parseInt(saveMin, 10) //get current minute
                     delegate: tumblerDelegate
 
                     onCurrentIndexChanged: {

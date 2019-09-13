@@ -26,6 +26,33 @@ Item{
     signal updateMinute(string text)
     signal updateTimezone(string text)
 
+    function setMonth(month){
+       saveMonth = month;
+       monthTumbler.currentIndex = month;
+       //console.log(saveMonth)
+       return month;
+    }
+    function setDay(day){
+        saveDay = day;
+        dayTumbler.currentIndex = day -1;
+        return day -1;
+    }
+    function setHour(hour){
+        saveHour = hour;
+        hourTumbler.currentIndex = hour;
+        return hour;
+    }
+    function setMinute(minute){
+        saveMin = minute;
+        minuteTumbler.currentIndex = minute;
+        return minute;
+    }
+    function setTimezone(timezone){
+        saveTimeZone = timezone;
+        timezoneTumbler.currentIndex = timezone;
+        return timezone;
+    }
+
     //Main Window
     Rectangle {
         id: dateTimeWindow
@@ -83,7 +110,6 @@ Item{
                     width: tumblerSettings.tumblerWidth + 60
                     font.pixelSize: tumblerSettings.tumblerFontSize
                     model: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-                    currentIndex: Scripts.getMonth() //get current month
                     delegate: tumblerDelegate
 
                     onCurrentIndexChanged: {
@@ -98,7 +124,6 @@ Item{
                     height: tumblerSettings.tumblerHeight
                     width: tumblerSettings.tumblerWidth
                     model: Scripts.getDays() //get list of days [1,31]
-                    currentIndex: Scripts.getDay()-1 //get current day
                     delegate: tumblerDelegate
 
                     onCurrentIndexChanged: {
@@ -114,7 +139,6 @@ Item{
                     width: tumblerSettings.tumblerWidth
                     font.pixelSize: tumblerSettings.tumblerFontSize
                     model: Scripts.padDigits(24) //get list of hours with padded digits [00,23]
-                    currentIndex: Scripts.getHour() //get current hour
                     delegate: tumblerDelegate
 
                     onCurrentIndexChanged: {
@@ -138,7 +162,6 @@ Item{
                     width: tumblerSettings.tumblerWidth
                     font.pixelSize: tumblerSettings.tumblerFontSize
                     model: Scripts.padDigits(60) //get numbers [0,59]
-                    currentIndex: Scripts.getMinute() //get current minute
                     delegate: tumblerDelegate
 
                     onCurrentIndexChanged: {
