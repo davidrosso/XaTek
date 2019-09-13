@@ -1,6 +1,8 @@
 #include "setuserpasscode.h"
-#include "ui_setuserpasscode.h"
-#include <QMessageBox>
+
+extern QString DateTimeFormat;
+extern QString ConfigFilePath;
+extern QString UserPasscode;
 
 SetUserPasscode::SetUserPasscode(QWidget *parent) :
     QWidget(parent),
@@ -8,13 +10,10 @@ SetUserPasscode::SetUserPasscode(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //TODO: get the current admin passcode from the firmware    
-    //QString userPasscode = GetUserPasscode();
-
-    passcodeFirstAttempt = "";
-    passcodeConfirmation = "";
+    passcodeFirstEntry = "";
+    passcodeSecondEntry = "";
     ui->lineEditPasscode->setText("");
-    ui->labelTitle->setText("Enter Admin Passcode");
+    ui->labelTitle->setText("Enter User Passcode");
 }
 
 SetUserPasscode::~SetUserPasscode()
@@ -74,8 +73,8 @@ void SetUserPasscode::on_button0_clicked()
 
 void SetUserPasscode::on_buttonBack_clicked()
 {
-    passcodeFirstAttempt = "";
-    passcodeConfirmation = "";
+    passcodeFirstEntry = "";
+    passcodeSecondEntry = "";
     ui->lineEditPasscode->setText("");
     ui->labelTitle->setText("Enter Admin Passcode");
 
@@ -100,26 +99,28 @@ void SetUserPasscode::on_buttonEnter_clicked()
     }
     else
     {
-        if (passcodeFirstAttempt == "")
+        if (passcodeFirstEntry == "")
         {
-            passcodeFirstAttempt = ui->lineEditPasscode->text();
+            passcodeFirstEntry = ui->lineEditPasscode->text();
             ui->lineEditPasscode->setText("");
             ui->labelTitle->setText("Reenter Admin Passcode");
         }
         else
         {
-            passcodeConfirmation = ui->lineEditPasscode->text();
-            ui->lineEditPasscode->setText("");
+            passcodeSecondEntry = ui->lineEditPasscode->text();
 
-            if(passcodeFirstAttempt == passcodeConfirmation)
+            if(passcodeFirstEntry == passcodeSecondEntry)
             {
                 QMessageBox::information(
                   this,
                   tr("Admin Passcode Created"),
                   tr("The Admin passcode was successfully created.") );
 
-                //TODO: set the new user passcode to the firmware
-                //SetUserPasscode(passcodeConfirmation);
+                // set the new user passcode
+                UserPasscode = ui->lineEditPasscode->text();
+                UpdateUserPasscode();
+
+                ui->lineEditPasscode->setText("");
 
                 // return to the Setting Screen
                 emit SettingsOptionsClicked();
@@ -134,8 +135,8 @@ void SetUserPasscode::on_buttonEnter_clicked()
                   tr("Passcodes do not match"),
                   tr("The passcodes entered do not match. Please start again.") );
 
-                passcodeFirstAttempt = "";
-                passcodeConfirmation = "";
+                passcodeFirstEntry = "";
+                passcodeSecondEntry = "";
                 ui->lineEditPasscode->setText("");
                 ui->labelTitle->setText("Enter Admin Passcode");
 
@@ -144,3 +145,34 @@ void SetUserPasscode::on_buttonEnter_clicked()
     }
 }
 
+void SetUserPasscode::UpdateUserPasscode()
+{
+    // update XaTekConfig.xml file
+    QFile xmlFile (ConfigFilePath);
+    xmlFile.open(QIODevice::ReadWrite);
+
+    QByteArray xmlData(xmlFile.readAll());
+    QDomDocument doc;
+    doc.setContent(xmlData);
+
+    // Get element in question
+    QDomElement root = doc.documentElement();
+    QDomElement nodeTag = root.firstChildElement("User_Passcode");
+
+    // create a new node with a QDomText child
+    QDomElement newNodeTag = doc.createElement(QString("User_Passcode"));
+    QDomText newNodeText = doc.createTextNode(QString(UserPasscode));
+    newNodeTag.setAttribute("modified", QDateTime::currentDateTime().toString(DateTimeFormat));
+    newNodeTag.appendChild(newNodeText);
+
+    // replace existing node with new node
+    root.replaceChild(newNodeTag, nodeTag);
+
+    // Write changes to same file
+    xmlFile.resize(0);
+    QTextStream stream;
+    stream.setDevice(&xmlFile);
+    doc.save(stream, 4);
+
+    xmlFile.close();
+}

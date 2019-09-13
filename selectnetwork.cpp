@@ -1,14 +1,4 @@
 #include "selectnetwork.h"
-#include "ui_selectnetwork.h"
-#include <QMessageBox>
-#include <QNetworkInterface>
-#include <QDebug>
-#include <QNetworkConfiguration>
-#include <QNetworkConfigurationManager>
-#include <QNetworkSession>
-#include <QTimer>
-#include <QTreeWidgetItem>
-
 
 SelectNetwork::SelectNetwork(QWidget *parent) :
     QWidget(parent),
@@ -22,8 +12,6 @@ SelectNetwork::SelectNetwork(QWidget *parent) :
     connect(findTimer,&QTimer::timeout,this,&SelectNetwork::FindActiveWirelessNetworks);
     findTimer->start();
     foundCount = 0;
-    //ui->treeWidgetWiFis->setColumnWidth(0,250);
-    //ui->treeWidgetWiFis->setColumnWidth(1,200);
 
     FindActiveWirelessNetworks();
 

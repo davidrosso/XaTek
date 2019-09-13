@@ -1,20 +1,13 @@
 #include "passcodeunlock.h"
-#include "ui_passcodeunlock.h"
-#include <qmessagebox.h>
+
+extern QString AdminPasscode;
+extern QString UserPasscode;
 
 PasscodeUnlock::PasscodeUnlock(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::PasscodeUnlock)
 {
     ui->setupUi(this);
-
-    //TODO: get the admin passcode value from firmware, for now just set to "0000"
-    //GetAdminPasscode();
-    adminPasscode = 0000;
-
-    //TODO: get the user passcode value from firmware, for now just set to "1111"
-    //GetUserPasscode();
-    userPasscode = 1111;
 
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);
@@ -29,79 +22,66 @@ PasscodeUnlock::~PasscodeUnlock()
 
 void PasscodeUnlock::on_button1_clicked()
 {
-    checkPasscode("1");
+    updateEnteredPasscode("1");
 }
 
 void PasscodeUnlock::on_button2_clicked()
 {
-    checkPasscode("2");
+    updateEnteredPasscode("2");
 }
 
 void PasscodeUnlock::on_button3_clicked()
 {
-    checkPasscode("3");
+    updateEnteredPasscode("3");
 }
 
 void PasscodeUnlock::on_button4_clicked()
 {
-    checkPasscode("4");
+    updateEnteredPasscode("4");
 }
 
 void PasscodeUnlock::on_button5_clicked()
 {
-    checkPasscode("5");
+    updateEnteredPasscode("5");
 }
 
 void PasscodeUnlock::on_button6_clicked()
 {
-    checkPasscode("6");
+    updateEnteredPasscode("6");
 }
 
 void PasscodeUnlock::on_button7_clicked()
 {
-    checkPasscode("7");
+    updateEnteredPasscode("7");
 }
 
 void PasscodeUnlock::on_button8_clicked()
 {
-    checkPasscode("8");
+    updateEnteredPasscode("8");
 }
 
 void PasscodeUnlock::on_button9_clicked()
 {
-    checkPasscode("9");
+    updateEnteredPasscode("9");
 }
 
 void PasscodeUnlock::on_button0_clicked()
 {
-    checkPasscode("0");
+    updateEnteredPasscode("0");
 }
 
-void PasscodeUnlock::checkPasscode(QString valueEntered)
+void PasscodeUnlock::updateEnteredPasscode(QString valueEntered)
 {
-      QString enteredPasscodeStr = QString::number(enteredPasscode);
-      int len = enteredPasscodeStr.length();
+    // passcode cannot be greater that 8 digits,
+    int len = enteredPasscode.length();
+    if(len == 8)
+    {
+        // remove the first digit
+        enteredPasscode.remove(0,1);
+    }
 
-      if(len == 8)
-      {
-          // remove the first value
-          enteredPasscodeStr.remove(0,1);
-      }
-
-      enteredPasscodeStr.append(valueEntered);
-      enteredPasscode = enteredPasscodeStr.toInt();
-
-//      if(enteredPasscode == adminPasscode || enteredPasscode == userPasscode)
-//      {
-//          QMessageBox::information( this, tr("Matched"), "Success");
-
-//          moveHomeScreen();
-//      }
-//      else
-//      {
-//          //QString mm = QString("sss: %d"), enteredPasscode;
-//          //QMessageBox::information( this, tr("No Match"), mm);
-//      }
+    // append entered value to the end of the string
+    enteredPasscode.append(valueEntered);
 }
 
 void PasscodeUnlock::moveHomeScreen()
@@ -109,24 +89,24 @@ void PasscodeUnlock::moveHomeScreen()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void PasscodeUnlock::on_buttonBack_clicked()
-{    
-    //TODO: return to previous screen
-}
-
 void PasscodeUnlock::on_buttonUnlock_clicked()
 {
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // Software will require users to enter a passcode to unlock the home screen.
 
-    moveHomeScreen();
+    //qDebug() << "Admin_Passcode: " + AdminPasscode;
+    //qDebug() << "User_Passcode: " + UserPasscode;
 
-//    if(enteredPasscode == adminPasscode || enteredPasscode == userPasscode)
-//    {
-//        moveHomeScreen();
-//    }
-//    else
-//    {
-//        QMessageBox::information( this, tr("Invalid Pascode"), "Cannot Unlock");
-//    }
+    // check that the entered passcode is either the admin passcode or the user passcode
+    if(enteredPasscode == AdminPasscode || enteredPasscode == UserPasscode)
+    {
+        moveHomeScreen();
+    }
+    else
+    {
+        QMessageBox::information( this, tr("Invalid Pascode"), "The passcode that was entered is not valid.\n\nPlease enter passcode to unlock the device or contact administrator.");
+
+        // reset the entered passcode
+        enteredPasscode = "";
+    }
 }

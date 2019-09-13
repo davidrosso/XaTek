@@ -2,15 +2,17 @@
 #define SETTINGOPTIONSFORM_H
 
 #include <QWidget>
-#include <setadminpasscode.h>
-#include <setuserpasscode.h>
-#include <displayforms.h>
-#include <datetimeform.h>
-#include <connectivityform.h>
-#include <qualityassuranceform.h>
-#include <serviceform.h>
-#include <selectnetwork.h>
-#include <bluetoothpairing.h>
+#include <QDebug>
+#include "setadminpasscode.h"
+#include "setuserpasscode.h"
+#include "displayforms.h"
+#include "datetimeform.h"
+#include "connectivityform.h"
+#include "qualityassuranceform.h"
+#include "serviceform.h"
+#include "selectnetwork.h"
+#include "bluetoothpairing.h"
+#include "ui_settingoptionsform.h"
 
 namespace Ui {
 class SettingOptionsForm;

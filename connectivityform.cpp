@@ -1,6 +1,4 @@
 #include "connectivityform.h"
-#include "ui_connectivityform.h"
-#include <QMessageBox>
 
 ConnectivityForm::ConnectivityForm(QWidget *parent) :
     QWidget(parent),

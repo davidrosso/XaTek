@@ -2,10 +2,13 @@
 #define HOMESCREEN_H
 
 #include <QWidget>
-#include <openscanclotchip.h>
-#include <settingoptionsform.h>
-#include <viewtestresultsform.h>
-#include <testresultdetails.h>
+#include <QDateTime>
+#include <QDebug>
+#include "openscanclotchip.h"
+#include "settingoptionsform.h"
+#include "viewtestresultsform.h"
+#include "testresultdetails.h"
+#include "ui_homescreen.h"
 
 namespace Ui {
 class HomeScreen;

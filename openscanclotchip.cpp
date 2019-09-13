@@ -1,8 +1,4 @@
 #include "openscanclotchip.h"
-#include "ui_openscanclotchip.h"
-#include <QMovie>
-#include <QMessageBox>
-#include <QDebug>
 
 extern QString PreviousScreen;
 extern QString TestData_ClotChip_ID;
@@ -23,9 +19,6 @@ OpenScanClotChip::OpenScanClotChip(QWidget *parent) :
     _movie->setSpeed(300); // 3x speed
     _movie->start();
     ui->labelScanClotChip->show();
-
-    //TODO: get status
-    //bool CheckStatus (current screen ID);
 
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);

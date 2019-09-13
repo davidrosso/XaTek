@@ -1,12 +1,8 @@
 #include "testcomplete.h"
-#include "ui_testcomplete.h"
-#include <QMessageBox>
-#include <QtXml>
-#include <QDebug>
-#include <QDate>
-#include <QDateTime>
+#include "passcodeunlock.h"
 
 extern QString PreviousScreen;
+extern QString TestRecordFilePath;
 extern QString TestData_ClotChip_ID;
 extern QString TestData_RCR_ID;
 extern QString TestData_Device_ID;
@@ -19,10 +15,10 @@ extern QString TestData_DateTimeTestStart;
 extern QString TestData_DateTimeLastDose;
 extern QString TestData_HoursSinceLastDose;
 extern QString TestData_PeakTimeUnits;
-extern QString TestData_PeakTimeInSeconds;
+extern QString TestData_PeakTime;
 extern QString TestData_DeltaEpsilon;
 extern QString TestData_Capacitance;
-extern QString TestData_TestDurationInSeconds;
+extern QString TestData_TestDuration;
 extern QString TestData_TestDurationUnits;
 extern QString TestData_Errors;
 extern QString TestData_CRC;
@@ -33,6 +29,12 @@ TestComplete::TestComplete(QWidget *parent) :
     ui(new Ui::TestComplete)
 {
     ui->setupUi(this);
+
+    // setup signals and slots for navigation
+    ui->stackedWidget->setCurrentIndex(0);
+    //ui->stackedWidget->insertWidget(1, &_passcodeunlock);
+
+    //connect(&_passcodeunlock, SIGNAL(SetUserID()), this, SLOT(SetUserID_click()));
 }
 
 TestComplete::~TestComplete()
@@ -46,14 +48,18 @@ void TestComplete::on_buttonUnlock_clicked()
     CreateTestDataXML();
 
     // go to home screen
+    ui->stackedWidget->setCurrentIndex(1); //Go to passcode unlock screen
+    qDebug("Should change pages by now");
 
 }
-
 
 void TestComplete::CreateTestDataXML()
 {
     // write XML
     QDomDocument xmlDoc;
+
+    //QDomElement encoding = xmlDoc.createElement("?xml version="1.0" encoding="UTF-8"?");
+    //xmlDoc.appendChild(encoding);
 
     // create root element and add to the XML file
     QDomElement root = xmlDoc.createElement("TestDate");
@@ -100,8 +106,8 @@ void TestComplete::CreateTestDataXML()
     root.appendChild(Hours_Since_Last_Dose_Node);
 
     QDomElement Peak_Time_In_Seconds_Node = xmlDoc.createElement("Time_To_Peak");
-    Peak_Time_In_Seconds_Node.setAttribute("Units", TestData_PeakTimeUnits);
-    Peak_Time_In_Seconds_Node.setAttribute("value", TestData_PeakTimeInSeconds);
+    Peak_Time_In_Seconds_Node.setAttribute("units", TestData_PeakTimeUnits);
+    Peak_Time_In_Seconds_Node.setAttribute("value", TestData_PeakTime);
     root.appendChild(Peak_Time_In_Seconds_Node);
 
     QDomElement Delta_Epsilon_Node = xmlDoc.createElement("Delta_Epsilon");
@@ -113,8 +119,8 @@ void TestComplete::CreateTestDataXML()
     root.appendChild(Capacitance_Node);
 
     QDomElement Test_Duration_In_Seconds_Node = xmlDoc.createElement("Test_Duration");
-    Test_Duration_In_Seconds_Node.setAttribute("Units", TestData_TestDurationUnits);
-    Test_Duration_In_Seconds_Node.setAttribute("value", TestData_TestDurationInSeconds);
+    Test_Duration_In_Seconds_Node.setAttribute("units", TestData_TestDurationUnits);
+    Test_Duration_In_Seconds_Node.setAttribute("value", TestData_TestDuration);
 
     root.appendChild(Test_Duration_In_Seconds_Node);
 
@@ -126,8 +132,8 @@ void TestComplete::CreateTestDataXML()
     CRC_Node.setAttribute("value", TestData_CRC);
     root.appendChild(CRC_Node);
 
-    //write the XML file
-    QFile file("/home/david/Desktop/TestRecordData.xml");
+    //write the XML file    
+    QFile file(TestRecordFilePath + TestData_Patient_ID + ".xml");
 
     if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {

@@ -2,6 +2,11 @@
 #define SETUSERPASSCODE_H
 
 #include <QWidget>
+#include <QMessageBox>
+#include "ui_setuserpasscode.h"
+#include <QtXml>
+#include <QFile>
+#include <QDebug>
 
 namespace Ui {
 class SetUserPasscode;
@@ -17,8 +22,9 @@ public:
 
 private:
     Ui::SetUserPasscode *ui;
-    QString passcodeFirstAttempt = "";
-    QString passcodeConfirmation = "";
+    QString passcodeFirstEntry = "";
+    QString passcodeSecondEntry = "";
+    QXmlStreamReader xmlReader;
 
 private slots:
     void on_button1_clicked();
@@ -33,9 +39,9 @@ private slots:
     void on_button0_clicked();
     void on_buttonBack_clicked();
     void on_buttonEnter_clicked();
+    void UpdateUserPasscode();
 
 signals:
-    //void HomeClicked();
     void SettingsOptionsClicked();
 
 };

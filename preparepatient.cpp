@@ -1,6 +1,4 @@
 #include "preparepatient.h"
-#include "ui_preparepatient.h"
-#include <QDebug>
 
 extern QString PreviousScreen;
 

@@ -2,6 +2,7 @@
 #define TESTRESULTDETAILS_H
 
 #include <QWidget>
+#include "ui_testresultdetails.h"
 
 namespace Ui {
 class TestResultDetails;

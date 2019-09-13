@@ -2,6 +2,8 @@
 #define SERVICEFORM_H
 
 #include <QWidget>
+#include <QMessageBox>
+#include "ui_serviceform.h"
 
 namespace Ui {
 class ServiceForm;
@@ -28,7 +30,6 @@ private slots:
     void ServiceNeeded(int);
 
 signals:
-    //void HomeClicked();
     void SettingsOptionsClicked();
 };
 

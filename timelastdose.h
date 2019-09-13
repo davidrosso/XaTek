@@ -3,9 +3,25 @@
 
 #include <QWidget>
 #include <QModelIndexList>
-#include <preparepatient.h>
 #include <QDateTime>
 #include <ctime>
+#include <QAbstractItemView>
+#include <QDateTime>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QQmlApplicationEngine>
+#include <QScopedPointer>
+#include <qabstractitemview.h>
+#include <QQmlContext>
+#include <QQmlComponent>
+#include <QQmlProperty>
+#include <QtQuick>
+#include <QMessageBox>
+#include <QDate>
+#include <QDateEdit>
+#include <QDebug>
+#include "preparepatient.h"
+#include "ui_timelastdose.h"
 
 namespace Ui {
 class TimeLastDose;
@@ -23,7 +39,7 @@ public:
     QString month, day, hour, minute;
     QDateTime DateTimeOfLastDose;
     QDate dt1;
-    int monthInt;
+    int monthInt = 0;
 
 private:
     Ui::TimeLastDose *ui;

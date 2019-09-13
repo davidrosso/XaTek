@@ -2,6 +2,12 @@
 #define TESTCOMPLETE_H
 
 #include <QWidget>
+#include "ui_testcomplete.h"
+#include <QMessageBox>
+#include <QtXml>
+#include <QDebug>
+#include <QDate>
+#include <QDateTime>
 
 namespace Ui {
 class TestComplete;

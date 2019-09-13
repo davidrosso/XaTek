@@ -1,22 +1,7 @@
 #include "timelastdose.h"
-#include "ui_timelastdose.h"
-#include "mainwindow.h"
-#include <QAbstractItemView>
-#include <QDateTime>
-#include <QPushButton>
-#include <QVBoxLayout>
-#include <QQmlApplicationEngine>
-#include <QScopedPointer>
-#include <qabstractitemview.h>
-#include <QQmlContext>
-#include <QQmlComponent>
-#include <QQmlProperty>
-#include <QtQuick>
-#include <QMessageBox>
-#include <QDate>
-#include <QDebug>
 
 extern QString PreviousScreen;
+extern QString DateTimeFormat;
 extern QString TestData_DateTimeLastDose;
 extern QString TestData_HoursSinceLastDose;
 
@@ -48,16 +33,15 @@ TimeLastDose::TimeLastDose(QWidget *parent) :
     QObject::connect(tumblerItem,SIGNAL(updateHour(QString)),this,SLOT(updateHour(QString)));
     QObject::connect(tumblerItem,SIGNAL(updateMinute(QString)),this,SLOT(updateMinute(QString)));
 
-    //TODO: set month, day, hour, minute variable
-    //TODO: month =
-    //TODO: day =
-    //TODO: hour =`
-    //TODO: minute =
+    month = QString::number(ltm->tm_mon +1);
+    day = QString::number(ltm->tm_mday);
+    hour = QString::number(ltm->tm_hour);
+    minute = QString::number(ltm->tm_min);
 
-    month = ltm->tm_mon;
-    day = ltm->tm_mday;
-    hour = ltm->tm_hour;
-    minute = ltm->tm_min;
+    updateMonth(month);
+    updateDay(day);
+    updateHour(hour);
+    updateMinute(minute);
 
 
     // setup signals and slots for navigation
@@ -74,55 +58,48 @@ TimeLastDose::~TimeLastDose()
 
 void TimeLastDose::updateMonth(QString in)
 {
-    //qDebug() << "Month: " << in.toUtf8();
-    //TODO Save the data here
-    month = in.toUtf8();
-
-    if(month == "January")
-        monthInt = 1;
-    else if(month == "February")
-        monthInt = 2;
-    else if(month == "March")
-        monthInt = 3;
-    else if(month == "April")
-        monthInt = 4;
-    else if(month == "May")
-        monthInt = 5;
-    else if(month == "June")
-        monthInt = 6;
-    else if(month == "July")
-        monthInt = 7;
-    else if(month == "August")
-        monthInt = 8;
-    else if(month == "September")
-        monthInt = 9;
-    else if(month == "October")
-        monthInt = 10;
-    else if(month == "November")
-        monthInt = 11;
-    else if(month == "December")
-        monthInt = 12;
+    if(in == "January")
+        month = "1";
+    else if(in == "February")
+        month = "2";
+    else if(in == "March")
+        month = "3";
+    else if(in == "April")
+        month = "4";
+    else if(in == "May")
+        month = "5";
+    else if(in == "June")
+        month = "6";
+    else if(in == "July")
+        month = "7";
+    else if(in == "August")
+        month = "8";
+    else if(in == "September")
+        month = "9";
+    else if(in == "October")
+        month = "10";
+    else if(in == "November")
+        month = "11";
+    else if(in == "December")
+        month = "12";
 
 }
 
 void TimeLastDose::updateDay(QString in)
 {
-    //qDebug() << "Day: " << in.toUtf8();
-    //TODO Save the data here
+    //qDebug() << "Day: " << in;
     day = in;
 }
 
 void TimeLastDose::updateHour(QString in)
 {
     //qDebug() << "Hour: " << in.toUtf8();
-    //TODO Save the data here
     hour = in;
 }
 
 void TimeLastDose::updateMinute(QString in)
 {
     //qDebug() << "Minute: " << in.toUtf8();
-    //TODO Save the data here
     minute = in;
 }
 
@@ -141,20 +118,24 @@ void TimeLastDose::on_buttonEnter_clicked()
 {
     // set PreviousScreen variable
     PreviousScreen = "TimeLastDose";
-    qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // The software will permit users to enter the time of last dose.
 
+    qDebug() << "month: " + month;
+    qDebug() << "day: " + day;
+    qDebug() << "hour: " + hour;
+    qDebug() << "minute: " + minute;
     // check that date and time are set on the tumblers
     if(month != "" && day != "" && hour!= "" && minute != "")
     {
         // set the DateTimeOfLastDose variable to the entered values on the tumblers
-        QDate d1(2019, monthInt, day.toInt());
+        QDate d1(2019, month.toInt(), day.toInt());
         DateTimeOfLastDose.setDate(d1);
 
         QTime t1(hour.toInt(), minute.toInt(), 0);
         DateTimeOfLastDose.setTime(t1);
+        qDebug() << "DateTimeOfLastDose: " + DateTimeOfLastDose.toString(DateTimeFormat);
 
         // check that the last dose date/time is not after the current date/time
         if(DateTimeOfLastDose > QDateTime::currentDateTime())
@@ -165,17 +146,11 @@ void TimeLastDose::on_buttonEnter_clicked()
         }
         else
         {
-            QString format = "yyyy-MM-dd HH:mm:ss";
-            QDateTime lastDose = QDateTime::fromString(DateTimeOfLastDose.toString(format), format);
-            QDateTime current = QDateTime::fromString(QDateTime::currentDateTime().toString(format), format);
+            QDateTime lastDose = QDateTime::fromString(DateTimeOfLastDose.toString(DateTimeFormat), DateTimeFormat);
+            QDateTime current = QDateTime::fromString(QDateTime::currentDateTime().toString(DateTimeFormat), DateTimeFormat);
 
-            TestData_DateTimeLastDose = lastDose.toString(format);
+            TestData_DateTimeLastDose = lastDose.toString(DateTimeFormat);
             TestData_HoursSinceLastDose = secondsToString(lastDose.secsTo(current));;
-
-            //qDebug() << "last dose: " + lastDose.toString(format);
-            //qDebug() << "current: " + current.toString(format);
-            //qDebug() << "diff: " + secondsToString(lastDose.secsTo(current));
-            //qDebug() << "TestData_HoursSinceLastDose: " + TestData_HoursSinceLastDose;
 
             ui->stackedWidget->setCurrentIndex(1);
         }

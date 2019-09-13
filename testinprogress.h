@@ -1,11 +1,13 @@
 #ifndef TESTINPROGRESS_H
 #define TESTINPROGRESS_H
-#include <testcomplete.h>
 #include <QWidget>
 #include <QTimer>
+#include <QThread>
+#include "testcomplete.h"
+#include "ui_testinprogress.h"
 
 namespace Ui {
-class TestInProgress;
+    class TestInProgress;
 }
 
 class TestInProgress : public QWidget
@@ -25,10 +27,12 @@ private:
 public slots:
     void TestTimer();
 
+private slots:
+    void TestComputations();
+
 signals:
     void VerifyClotChip();
     void HomeClicked();
-
 
 };
 

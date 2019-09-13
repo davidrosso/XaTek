@@ -2,8 +2,10 @@
 #define SETPATIENTID_H
 
 #include <QWidget>
-#include <keyboard.h>
-#include <timelastdose.h>
+#include <QDebug>
+#include "keyboard.h"
+#include "timelastdose.h"
+#include "ui_setpatientid.h"
 
 namespace Ui {
 class SetPatientID;

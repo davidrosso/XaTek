@@ -1,6 +1,4 @@
 #include "setuserid.h"
-#include "ui_setuserid.h"
-#include <QDebug>
 
 extern QString PreviousScreen;
 extern QString TestData_User_ID_Source;
@@ -57,7 +55,7 @@ void SetUserID::on_buttonScan_clicked()
     PreviousScreen = "SetUserID";
     //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
-    TestData_User_ID_Source = QString ("Scanned");
+    TestData_User_ID_Source = QString ("scanned");
     //TODO: set the scanned user ID
     //TestData_User_ID = getUserID();
     TestData_User_ID = QString ("User ID");

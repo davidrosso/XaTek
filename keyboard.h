@@ -2,7 +2,10 @@
 #define KEYBOARD_H
 
 #include <QWidget>
-#include <timelastdose.h>
+#include <QMessageBox>
+#include <QDebug>
+#include "timelastdose.h"
+#include "ui_keyboard.h"
 
 namespace Ui {
 class Keyboard;

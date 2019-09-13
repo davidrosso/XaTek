@@ -1,6 +1,4 @@
 #include "displayforms.h"
-#include "ui_displayforms.h"
-#include <QMessageBox>
 
 DisplayForms::DisplayForms(QWidget *parent) :
     QWidget(parent),

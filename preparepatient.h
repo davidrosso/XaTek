@@ -2,7 +2,9 @@
 #define PREPAREPATIENT_H
 
 #include <QWidget>
-#include <preheatclotchip.h>
+#include <QDebug>
+#include "preheatclotchip.h"
+#include "ui_preparepatient.h"
 
 namespace Ui {
 class PreparePatient;

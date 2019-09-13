@@ -1,6 +1,4 @@
 #include "qualityassuranceform.h"
-#include "ui_qualityassuranceform.h"
-#include <QMessageBox>
 
 QualityAssuranceForm::QualityAssuranceForm(QWidget *parent) :
     QWidget(parent),
@@ -93,11 +91,6 @@ void QualityAssuranceForm::on_buttonEnter_clicked()
 
    QMessageBox::information (this, "Quality Assurance",
         QString("Quality Assurance Set to:  %1").arg(QString(QualityAssuranceSettingStr)));
-
-//   QDate date = QDate::fromString(text);
-//           int age = computeAge(date);
-//           QMessageBox::information (0, "The Age",
-//                                     QString("The age is %1").arg(QString::number(age)));
 
     //TODO: set the quality assurance
     // 0 = Weekly

@@ -1,6 +1,8 @@
 #include "setadminpasscode.h"
-#include "ui_setadminpasscode.h"
-#include <QMessageBox>
+
+extern QString ConfigFilePath;
+extern QString DateTimeFormat;
+extern QString AdminPasscode;
 
 SetAdminPasscode::SetAdminPasscode(QWidget *parent) :
     QWidget(parent),
@@ -8,15 +10,10 @@ SetAdminPasscode::SetAdminPasscode(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //TODO: get the admin passcode from the firmware
-    //string adminPasscode = GetAdminPasscode();
-
-    //TODO: get the current admin passcode from the firmware
-    passcodeFirstAttempt = "";
-    passcodeConfirmation = "";
+    passcodeFirstEntry = "";
+    passcodeSecondEntry = "";
     ui->lineEditPasscode->setText("");
     ui->labelAdminPasscode->setText("Enter Admin Passcode");
-
 }
 
 SetAdminPasscode::~SetAdminPasscode()
@@ -76,12 +73,11 @@ void SetAdminPasscode::on_button0_clicked()
 
 void SetAdminPasscode::on_buttonBack_clicked()
 {
-    passcodeFirstAttempt = "";
-    passcodeConfirmation = "";
+    passcodeFirstEntry = "";
+    passcodeSecondEntry = "";
     ui->lineEditPasscode->setText("");
     ui->labelAdminPasscode->setText("Enter Admin Passcode");
 
-    //emit HomeClicked();
     emit SettingsOptionsClicked();
 }
 
@@ -99,29 +95,38 @@ void SetAdminPasscode::on_buttonEnter_clicked()
           this,
           tr("Invalid Admin Passcode"),
           tr("Passcodes must be a minumum or 4 digits.") );
+
+        // reset variables
+        passcodeFirstEntry = "";
+        passcodeSecondEntry = "";
+        ui->lineEditPasscode->setText("");
+        ui->labelAdminPasscode->setText("Enter Admin Passcode");
+
     }
     else
     {
-        if (passcodeFirstAttempt == "")
+        if (passcodeFirstEntry == "")
         {
-            passcodeFirstAttempt = ui->lineEditPasscode->text();
+            passcodeFirstEntry = ui->lineEditPasscode->text();
             ui->lineEditPasscode->setText("");
             ui->labelAdminPasscode->setText("Reenter Admin Passcode");
         }
         else
         {
-            passcodeConfirmation = ui->lineEditPasscode->text();
-            ui->lineEditPasscode->setText("");
+            passcodeSecondEntry = ui->lineEditPasscode->text();
 
-            if(passcodeFirstAttempt == passcodeConfirmation)
+            if(passcodeFirstEntry == passcodeSecondEntry)
             {
                 QMessageBox::information(
                   this,
                   tr("Admin Passcode Created"),
                   tr("The Admin passcode was successfully created.") );
 
-                //TODO: set this new admin passcode
-                //SetAdminPasscode (string);
+                // set the new user passcode
+                AdminPasscode = ui->lineEditPasscode->text();
+                UpdateAdminPasscode();
+
+                ui->lineEditPasscode->setText("");
 
                 // return to the Setting Screen
                 emit SettingsOptionsClicked();
@@ -136,12 +141,44 @@ void SetAdminPasscode::on_buttonEnter_clicked()
                   tr("Passcodes do not match"),
                   tr("The passcodes entered do not match. Please start again.") );
 
-                passcodeFirstAttempt = "";
-                passcodeConfirmation = "";
+                passcodeFirstEntry = "";
+                passcodeSecondEntry = "";
                 ui->lineEditPasscode->setText("");
                 ui->labelAdminPasscode->setText("Enter Admin Passcode");
 
             }
         }
     }
+}
+
+void SetAdminPasscode::UpdateAdminPasscode()
+{
+    // update XaTekConfig.xml file
+    QFile xmlFile (ConfigFilePath);
+    xmlFile.open(QIODevice::ReadWrite);
+
+    QByteArray xmlData(xmlFile.readAll());
+    QDomDocument doc;
+    doc.setContent(xmlData);
+
+    // Get element in question
+    QDomElement root = doc.documentElement();
+    QDomElement nodeTag = root.firstChildElement("Admin_Passcode");
+
+    // create a new node with a QDomText child
+    QDomElement newNodeTag = doc.createElement(QString("Admin_Passcode"));
+    QDomText newNodeText = doc.createTextNode(QString(AdminPasscode));
+    newNodeTag.setAttribute("modified", QDateTime::currentDateTime().toString(DateTimeFormat));
+    newNodeTag.appendChild(newNodeText);
+
+    // replace existing node with new node
+    root.replaceChild(newNodeTag, nodeTag);
+
+    // Write changes to same file
+    xmlFile.resize(0);
+    QTextStream stream;
+    stream.setDevice(&xmlFile);
+    doc.save(stream, 4);
+
+    xmlFile.close();
 }

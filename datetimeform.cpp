@@ -1,18 +1,4 @@
 #include "datetimeform.h"
-#include "ui_datetimeform.h"
-#include "mainwindow.h"
-#include <QAbstractItemView>
-#include <QDateTime>
-#include <QPushButton>
-#include <QVBoxLayout>
-#include <QQmlApplicationEngine>
-#include <QScopedPointer>
-#include <qabstractitemview.h>
-#include <QQmlContext>
-#include <QQmlComponent>
-#include <QQmlProperty>
-#include <QtQuick>
-#include <QMessageBox>
 
 DateTimeForm::DateTimeForm(QWidget *parent) :
     QWidget(parent),
@@ -107,7 +93,7 @@ void DateTimeForm::on_buttonEnter_clicked()
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // GUI will permit user to set time, date, and time-zone.
 
-    // TODO: set date/time on device
+    //TODO: set date/time on device using the tumbler settings
 }
 
 

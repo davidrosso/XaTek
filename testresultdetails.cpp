@@ -1,5 +1,4 @@
 #include "testresultdetails.h"
-#include "ui_testresultdetails.h"
 
 TestResultDetails::TestResultDetails(QWidget *parent) :
     QWidget(parent),

@@ -2,6 +2,11 @@
 #define SETADMINPASSCODE_H
 
 #include <QWidget>
+#include <QMessageBox>
+#include "ui_setadminpasscode.h"
+#include <QtXml>
+#include <QFile>
+#include <QDebug>
 
 namespace Ui {
 class SetAdminPasscode;
@@ -17,8 +22,8 @@ public:
 
 private:
     Ui::SetAdminPasscode *ui;
-    QString passcodeFirstAttempt = "";
-    QString passcodeConfirmation = "";
+    QString passcodeFirstEntry = "";
+    QString passcodeSecondEntry = "";
 
 private slots:
     void on_button1_clicked();
@@ -33,9 +38,9 @@ private slots:
     void on_button0_clicked();
     void on_buttonBack_clicked();
     void on_buttonEnter_clicked();
+    void UpdateAdminPasscode();
 
 signals:
-    //void HomeClicked();
     void SettingsOptionsClicked();
 };
 

@@ -1,7 +1,5 @@
 #include "homescreen.h"
-#include "ui_homescreen.h"
-#include <QDateTime>
-#include <QDebug>
+
 extern QString PreviousScreen;
 
 HomeScreen::HomeScreen(QDialog *parent) :
@@ -27,7 +25,14 @@ HomeScreen::HomeScreen(QDialog *parent) :
 
     connect(&_openScanClotChip, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     connect(&_viewTestResultsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
-    connect(&_settingOptionsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
+    const bool didConnect = connect(&_settingOptionsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
+
+    qDebug() << "\n\n\n\n\n\n";
+    qDebug() << "Connection established?" << didConnect;
+    qDebug() << "\n\n\n\n\n\n";
+
+    Q_ASSERT(didConnect);
+    Q_UNUSED(didConnect);
     connect(&_testResultDetails, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
 }
 
@@ -38,6 +43,7 @@ HomeScreen::~HomeScreen()
 
 void HomeScreen::moveHome()
 {
+    qDebug() << "Should be home...";
     ui->stackedWidget->setCurrentIndex(0);
 }
 

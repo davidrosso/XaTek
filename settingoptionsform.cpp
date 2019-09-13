@@ -1,5 +1,4 @@
 #include "settingoptionsform.h"
-#include "ui_settingoptionsform.h"
 
 SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
     QWidget(parent),
@@ -20,6 +19,7 @@ SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
     ui->stackedWidget->insertWidget(7, &_serviceForms);
     ui->stackedWidget->insertWidget(8, &_selectNetwork);
     ui->stackedWidget->insertWidget(9, &_bluetoothPairing);
+    //ui->stackedWidget->insertWidget(10,&_homeScreen);
 
     connect(&_setAdminPasscode, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
     connect(&_setUserPasscode, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
@@ -28,6 +28,7 @@ SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
     connect(&_connectivityForm, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
     connect(&_qualityAssuranceForm, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
     connect(&_serviceForms, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
+
 }
 
 SettingOptionsForm::~SettingOptionsForm()
@@ -77,5 +78,6 @@ void SettingOptionsForm::on_buttonService_clicked()
 
 void SettingOptionsForm::on_buttonBack_clicked()
 {
+    qDebug() << "Back button was pressed.";
     emit HomeClicked();
 }

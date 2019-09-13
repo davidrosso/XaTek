@@ -2,7 +2,6 @@
 #define SELECTNETWORK_H
 
 #include <QWidget>
-#include <keyboard.h>
 #include <QTimer>
 #include <QList>
 #include <QInputDialog>
@@ -11,6 +10,12 @@
 #include <QNetworkConfiguration>
 #include <QNetworkConfigurationManager>
 #include <QNetworkSession>
+#include <QMessageBox>
+#include <QNetworkInterface>
+#include <QDebug>
+#include <QTreeWidgetItem>
+#include "keyboard.h"
+#include "ui_selectnetwork.h"
 
 namespace Ui {
 class SelectNetwork;
@@ -23,7 +28,6 @@ class SelectNetwork : public QWidget
 public:
     explicit SelectNetwork(QWidget *parent = 0);
     ~SelectNetwork();
-
     int foundCount;
     QNetworkConfiguration netcfg;
     QStringList WiFisList;

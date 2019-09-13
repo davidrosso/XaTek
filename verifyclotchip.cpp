@@ -1,35 +1,8 @@
 #include "verifyclotchip.h"
-#include "ui_verifyclotchip.h"
-#include <QMessageBox>
-#include <QtXml>
-#include <QDebug>
-#include <QDate>
-#include <QDateTime>
 
 extern QString PreviousScreen;
-//extern QString TestData_ClotChip_ID;
-//extern QString TestData_RCR_ID;
-//extern QString TestData_Device_ID;
-//extern QString TestData_Organization_ID;
-//extern QString TestData_User_ID_Source;
-//extern QString TestData_User_ID;
-//extern QString TestData_Patient_ID_Source;
-//extern QString TestData_Patient_ID;
 extern QString TestData_DateTimeTestStart;
-//extern QString TestData_DateTimeLastDose;
-//extern QString TestData_HoursSinceLastDose;
-//extern QString TestData_PeakTimeUnits;
-//extern QString TestData_PeakTimeInSeconds;
-//extern QString TestData_DeltaEpsilon;
-//extern QString TestData_Capacitance;
-//extern QString TestData_TestDurationInSeconds;
-//extern QString TestData_TestDurationUnits;
-//extern QString TestData_Errors;
-//extern QString TestData_CRC;
 extern QString DateTimeFormat;
-
-//QString dateTimeFormat = "yyyy-MM-dd HH:mm:ss"; //
-//QString dateTimeFormat2 = "yyyy-MM-ddThh:mm:ss.nnnnnn+|-hh:mm"; //
 
 VerifyClotChip::VerifyClotChip(QWidget *parent) :
     QWidget(parent),
@@ -76,7 +49,7 @@ void VerifyClotChip::on_buttonNext_clicked()
 
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     //If the RCR door is opened after the start of readings, the user is warned and the workflow is stopped.
-    //TODO: Check if Door is open
+    //TODO: Check if door is open
 
     // all checks are ok, set the Test Start Date/Time
     TestData_DateTimeTestStart = QDateTime::currentDateTime().toString(DateTimeFormat);

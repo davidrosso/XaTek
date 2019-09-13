@@ -2,7 +2,9 @@
 #define VIEWTESTRESULTSFORM_H
 
 #include <QWidget>
-#include <testresultdetails.h>
+#include <QMessageBox>
+#include "testresultdetails.h"
+#include "ui_viewtestresultsform.h"
 
 namespace Ui {
 class ViewTestResultsForm;

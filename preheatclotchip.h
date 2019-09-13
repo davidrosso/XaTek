@@ -2,7 +2,9 @@
 #define PREHEATCLOTCHIP_H
 
 #include <QWidget>
-#include <collectsample.h>
+#include <QDebug>
+#include "collectsample.h"
+#include "ui_preheatclotchip.h"
 
 namespace Ui {
 class PreheatClotchip;

@@ -2,6 +2,8 @@
 #define DISPLAYFORMS_H
 
 #include <QWidget>
+#include <QMessageBox>
+#include "ui_displayforms.h"
 
 namespace Ui {
 class DisplayForms;
@@ -62,7 +64,6 @@ private slots:
 
 signals:
     void SettingsOptionsClicked();
-    //void HomeClicked();
 };
 
 #endif // DISPLAYFORMS_H

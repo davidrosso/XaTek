@@ -4,7 +4,10 @@
 #include <QWidget>
 #include <QDialog>
 #include <QMovie>
-#include <insertclotchip.h>
+#include <QMessageBox>
+#include <QDebug>
+#include "insertclotchip.h"
+#include "ui_openscanclotchip.h"
 
 namespace Ui {
 class OpenScanClotChip;

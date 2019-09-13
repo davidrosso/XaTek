@@ -1,8 +1,14 @@
 #include "testinprogress.h"
-#include "ui_testinprogress.h"
-#include <QThread>
 
 extern QString TestData_Capacitance;
+extern QString TestData_PeakTime;
+extern QString TestData_PeakTimeUnits;
+extern QString TestData_DeltaEpsilon;
+extern QString TestData_Capacitance;
+extern QString TestData_TestDuration;
+extern QString TestData_TestDurationUnits;
+extern QString TestData_Errors;
+extern QString TestData_CRC;
 
 TestInProgress::TestInProgress(QWidget *parent) :
     QWidget(parent),
@@ -22,13 +28,6 @@ TestInProgress::TestInProgress(QWidget *parent) :
     //ui->stackedWidget->setCurrentIndex(0);
     //ui->stackedWidget->insertWidget(1, &_testInProgress);
 
-    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
-    // The software shall allow calibration of the capacitance values.
-    // The calibration will be performed at 5 frequencies and with an average of 100 data points per frequency.
-    //TODO: get the capacitance values (one each second)
-    //ArrayList TestCapacitanceValues =  GetTestCapacitanceValues();
-    TestData_Capacitance = "capacitance values (one each second of test)";
-
     //TODO: get any errors detected during the test
     //ArrayList TestCapacitanceValues =  GetTestCapacitanceValues();
 
@@ -43,9 +42,8 @@ TestInProgress::~TestInProgress()
 }
 
 void TestInProgress::TestTimer()
-{    
-    // check for clotchip filled corrected
-    //TODO: get the 5 Capacitance Values (floats)
+{       
+    //TODO: implement the following requirements
 
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     //If the initial capacitance readings of the ClotChip are out of range, then the user is warned and the workflow is stopped.
@@ -55,8 +53,6 @@ void TestInProgress::TestTimer()
         // 1 MHz signal frequency - 130 pF to 250 pF
         // 2 MHz signal frequency - 70 pF to 120 pF
         // 5 MHz signal frequency - 30 pF to 45 pF
-    //TODO: get initial capacitance readings
-
 
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // If the rate of change of the capacitance values for the first 30 seconds are not between 0.2 pF/sec and 0.8 pF/sec, then the user is warned and the workflow is stopped.
@@ -79,9 +75,31 @@ void TestInProgress::TestTimer()
 
     TestDuration = TestDuration + 1;
 
-    // for now, display the test in progress scrren for 15 seconds and then automatically transition to the "TestComplete" screen
+    // for now, display the test in progress screen for 15 seconds and then automatically transition to the "TestComplete" screen
     if(TestDuration >= 1500000)
     {
+        TestComputations();
+
         ui->stackedWidget->setCurrentIndex(1);
     }
+}
+
+void TestInProgress::TestComputations()
+{
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // The software shall allow calibration of the capacitance values.
+    // The calibration will be performed at 5 frequencies and with an average of 100 data points per frequency.
+
+    //TODO: get the capacitance values (one each second)
+    //ArrayList TestCapacitanceValues =  GetTestCapacitanceValues();
+
+    // for now, just create a generic test data record
+    TestData_Capacitance        = "capacitance values (one each second of test)";
+    TestData_PeakTime           = "calculated from capacitance";
+    TestData_PeakTimeUnits      = "seconds";
+    TestData_DeltaEpsilon       = "calculated from capacitance";
+    TestData_TestDuration       = "15";
+    TestData_TestDurationUnits  = "seconds";
+    TestData_Errors             = "error codes from test";
+    TestData_CRC                = "SHA-256 hash";
 }

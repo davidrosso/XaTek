@@ -1,6 +1,4 @@
 #include "insertclotchip.h"
-#include "ui_insertclotchip.h"
-#include <QDebug>
 
 extern QString PreviousScreen;
 extern QString TestData_RCR_ID;

@@ -2,8 +2,10 @@
 #define CONNECTIVITYFORM_H
 
 #include <QWidget>
-#include <selectnetwork.h>
-#include <bluetoothpairing.h>
+#include <QMessageBox>
+#include "selectnetwork.h"
+#include "bluetoothpairing.h"
+#include "ui_connectivityform.h"
 
 namespace Ui {
 class ConnectivityForm;

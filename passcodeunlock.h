@@ -2,8 +2,10 @@
 #define PASSCODEUNLOCK_H
 
 #include <QWidget>
+#include <qmessagebox.h>
 #include "homescreen.h"
-#include <settingoptionsform.h>
+#include "settingoptionsform.h"
+#include "ui_passcodeunlock.h"
 
 namespace Ui {
 class PasscodeUnlock;
@@ -15,11 +17,10 @@ class PasscodeUnlock : public QWidget
 
 public:
     explicit PasscodeUnlock(QWidget *parent = nullptr);
-    ~PasscodeUnlock();    QTimer *timer;
-    int batteryLevel;
-    int adminPasscode;
-    int userPasscode;
-    int enteredPasscode;
+    ~PasscodeUnlock();
+    QTimer *timer;
+    QString enteredPasscode;
+
 
 private:
     Ui::PasscodeUnlock *ui;
@@ -37,9 +38,8 @@ private slots:
     void on_button8_clicked();
     void on_button9_clicked();
     void on_button0_clicked();
-    void moveHomeScreen();
-    void on_buttonBack_clicked();   
-    void checkPasscode(QString);
+    void moveHomeScreen();   
+    void updateEnteredPasscode(QString);
     void on_buttonUnlock_clicked();
 
 signals:

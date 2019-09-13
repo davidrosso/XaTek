@@ -2,7 +2,9 @@
 #define COLLECTSAMPLE_H
 
 #include <QWidget>
-#include <verifyclotchip.h>
+#include <QDebug>
+#include "verifyclotchip.h"
+#include "ui_collectsample.h"
 
 namespace Ui {
 class CollectSample;

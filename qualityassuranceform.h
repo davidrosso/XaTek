@@ -2,6 +2,8 @@
 #define QUALITYASSURANCEFORM_H
 
 #include <QWidget>
+#include <QMessageBox>
+#include "ui_qualityassuranceform.h"
 
 namespace Ui {
 class QualityAssuranceForm;
@@ -30,7 +32,6 @@ private slots:
     void UpdateQualityAssurance(int);
 
 signals:
-    //void HomeClicked();
     void SettingsOptionsClicked();
 };
 

@@ -2,8 +2,10 @@
 #define SETUSERID_H
 
 #include <QWidget>
-#include <setpatientid.h>
-#include <keyboard.h>
+#include <QDebug>
+#include "setpatientid.h"
+#include "keyboard.h"
+#include "ui_setuserid.h"
 
 namespace Ui {
 class SetUserID;

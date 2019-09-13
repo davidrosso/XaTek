@@ -1,6 +1,4 @@
 #include "viewtestresultsform.h"
-#include "ui_viewtestresultsform.h"
-#include <QMessageBox>
 
 ViewTestResultsForm::ViewTestResultsForm(QWidget *parent) :
     QWidget(parent),
@@ -58,8 +56,8 @@ void ViewTestResultsForm::on_buttonConfirm_clicked()
     {
         const QString& s = ui->listWidgetTestsToReview->currentItem()->text();
 
-//        QMessageBox::information(this, "Review Test",
-//            QString("Selected test to review is:\n        %1").arg(s));
+        //QMessageBox::information(this, "Review Test",
+        //    QString("Selected test to review is:\n        %1").arg(s));
 
          //TODO: pass the selected test (patient ID) to the TestResultDetail page
          // for now, results are hard-coded on the TestResultDetail page

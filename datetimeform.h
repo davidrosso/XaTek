@@ -4,6 +4,20 @@
 #include <QWidget>
 #include <QModelIndexList>
 #include <ctime>
+#include <QQmlContext>
+#include <QQmlComponent>
+#include <QQmlProperty>
+#include <QtQuick>
+#include <QMessageBox>
+#include <QAbstractItemView>
+#include <QDateTime>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QQmlApplicationEngine>
+#include <QScopedPointer>
+#include <qabstractitemview.h>
+
+#include "ui_datetimeform.h"
 
 namespace Ui {
 class DateTimeForm;
@@ -24,7 +38,6 @@ public:
 private:
     Ui::DateTimeForm *ui;
     QModelIndexList *indexes;
-    //std::string timezone;
 
 private slots:
     void updateSettings();

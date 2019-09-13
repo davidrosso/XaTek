@@ -4,7 +4,9 @@
 #include <QWidget>
 #include <QDialog>
 #include <QMovie>
-#include <setuserid.h>
+#include <QDebug>
+#include "setuserid.h"
+#include "ui_insertclotchip.h"
 
 namespace Ui {
 class InsertClotChip;

@@ -1,7 +1,4 @@
 #include "keyboard.h"
-#include "ui_keyboard.h"
-#include <QMessageBox>
-#include <QDebug>
 
 extern QString PreviousScreen;
 extern QString TestData_User_ID_Source;
@@ -902,7 +899,7 @@ void Keyboard::SaveValueProceedToNextScreen()
     else if(PreviousScreen == "SetPatientID")
     {
         // set Patient ID
-        TestData_Patient_ID_Source = QString ("Manual");
+        TestData_Patient_ID_Source = QString ("manual");
         TestData_Patient_ID = QString (ui->aLineEditUpperCaseValueEntered->text());
 
         // proceed to the next screen (TimeLastDose)

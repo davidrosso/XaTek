@@ -1,6 +1,4 @@
 #include "preheatclotchip.h"
-#include "ui_preheatclotchip.h"
-#include <QDebug>
 
 extern QString PreviousScreen;
 

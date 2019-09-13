@@ -512,42 +512,6 @@ color: rgb(255, 255, 255)</string>
       <string>5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="buttonBack">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>1010</y>
-       <width>351</width>
-       <height>121</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Roboto</family>
-       <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 70%;
-background-color: rgb(22,61,86);
-color: rgb(208,225,241)</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="resources.qrc">
-       <normaloff>:/Images/XatekUI_BackArrow.png</normaloff>:/Images/XatekUI_BackArrow.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>73</width>
-       <height>62</height>
-      </size>
-     </property>
-    </widget>
     <widget class="QPushButton" name="buttonUnlock">
      <property name="geometry">
       <rect>
@@ -594,7 +558,6 @@ color: rgb(208,225,241)</string>
   <tabstop>button8</tabstop>
   <tabstop>button9</tabstop>
   <tabstop>button0</tabstop>
-  <tabstop>buttonBack</tabstop>
   <tabstop>buttonUnlock</tabstop>
   <tabstop>button1_2</tabstop>
   <tabstop>button1_3</tabstop>
@@ -603,8 +566,6 @@ color: rgb(208,225,241)</string>
   <tabstop>button1_6</tabstop>
   <tabstop>button1_7</tabstop>
  </tabstops>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

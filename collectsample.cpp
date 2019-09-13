@@ -1,6 +1,4 @@
 #include "collectsample.h"
-#include "ui_collectsample.h"
-#include <QDebug>
 
 extern QString PreviousScreen;
 

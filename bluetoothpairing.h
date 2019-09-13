@@ -2,6 +2,8 @@
 #define BLUETOOTHPAIRING_H
 
 #include <QWidget>
+#include <QMessageBox>
+#include "ui_bluetoothpairing.h"
 
 namespace Ui {
 class BluetoothPairing;

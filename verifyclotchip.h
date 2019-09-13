@@ -1,7 +1,13 @@
 #ifndef VERIFYCLOTCHIP_H
 #define VERIFYCLOTCHIP_H
 #include <QWidget>
-#include <testinprogress.h>
+#include <QMessageBox>
+#include <QtXml>
+#include <QDebug>
+#include <QDate>
+#include <QDateTime>
+#include "testinprogress.h"
+#include "ui_verifyclotchip.h"
 
 namespace Ui {
 class VerifyClotChip;
@@ -18,13 +24,11 @@ public:
 private:
     Ui::VerifyClotChip *ui;
     TestInProgress _testInProgress;
-    //QString format;
 
 private slots:
     void on_buttonBack_clicked();
     void on_buttonNext_clicked();
     void VerifyClotChip_click();
-    //void CreateTestDataXML();
 
 signals:
     void CollectSample();

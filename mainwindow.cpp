@@ -1,11 +1,12 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <QDateTime>
-#include <QThread>
-#include <QMessageBox>
-#include <QPlainTextEdit>
+#include <QFile>
+#include <QFileInfo>
+#include <QDir>
 
-extern QString my_global_string;
+extern QString DateTimeFormat;
+extern QString ConfigFilePath;
+extern QString AdminPasscode;
+extern QString UserPasscode;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,19 +27,31 @@ MainWindow::MainWindow(QWidget *parent) :
     // set the menu options image from resource file
     ui->pushButtonOptionsMenu->setIcon(QIcon("://Images/XatekUI_OptionsMenu.png"));
 
+    // create xml file to store passcodes and connectivity settings
+    QFile file(ConfigFilePath);
+    if(file.exists())
+    {
+        // open and read settings from the XaTek config file and get key/value pairs
+        ReadConfigXML();
+    }
+    else
+    {
+        InitializeConfigXML();
+    }
+
     // setup the timer to display current time
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this,SLOT(setTimer()));
     timer->start(100);
 
-    // TODO: get the Battery Level from the harware and display the appropriate image
+    //TODO: get the Battery Level from the harware and display the appropriate image
     //setBatteryImage(GetBatteryLevel());
 
     // for now set the battery level to zero
     BatteryLevel = 0;
     SetBatteryImage(BatteryLevel);
 
-    // TODO: get test in progress status from firmware
+    //TODO: get test in progress status from firmware
     //bool TestInProgress = GetStatus();
 
     // for now set the progress status to true
@@ -60,6 +73,113 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::InitializeConfigXML()
+{
+    // write XML
+    QDomDocument xmlConfigDoc;
+
+    // create root element and add to the XML file    
+    QDomElement root = xmlConfigDoc.createElement("XaTek_Config");
+    root.setAttribute("created", QDateTime::currentDateTime().toString(DateTimeFormat));    
+    xmlConfigDoc.appendChild(root);
+
+    // add the elements under the root element    
+    QDomElement AdminNode = xmlConfigDoc.createElement("Admin_Passcode");
+    AdminNode.setAttribute("modified", QDateTime::currentDateTime().toString(DateTimeFormat));
+    QDomText AdminPasscode = xmlConfigDoc.createTextNode(QString(""));
+    AdminNode.appendChild(AdminPasscode);
+    root.appendChild(AdminNode);
+
+    // add the elements under the root element
+    QDomElement UserNode = xmlConfigDoc.createElement("User_Passcode");
+    UserNode.setAttribute("modified", QDateTime::currentDateTime().toString(DateTimeFormat));
+    QDomText UserPasscode = xmlConfigDoc.createTextNode(QString(""));
+    UserNode.appendChild(UserPasscode);
+    root.appendChild(UserNode);
+
+    // add the elements under the root element
+    QDomElement WifiNode = xmlConfigDoc.createElement("WiFi");
+    WifiNode.setAttribute("value", "");
+    root.appendChild(WifiNode);
+
+    QDomElement BluetoothNode = xmlConfigDoc.createElement("Bluetooth");
+    BluetoothNode.setAttribute("value", "");
+    root.appendChild(BluetoothNode);
+
+    //write the XML file
+    QFile file(ConfigFilePath);
+
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        qDebug() << "Failed to open file for writing";
+    }
+    else
+    {
+        QTextStream stream(&file);
+        stream << xmlConfigDoc.toString();
+        file.close();
+    }
+}
+
+
+void MainWindow::ReadConfigXML()
+{
+    QFile xmlFile (ConfigFilePath);
+
+    if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QMessageBox::critical(this,"Load XML File Problem", "Couldn't open xmlfile.xml to load settings for download", QMessageBox::Ok);
+        return;
+    }
+
+    xmlReader.setDevice(&xmlFile);
+
+    //Parse the XML until we reach end of it
+    while(!xmlReader.atEnd() && !xmlReader.hasError())
+    {
+        // Read next element
+        QXmlStreamReader::TokenType token = xmlReader.readNext();
+
+        //If token is just StartDocument - go to next
+        if(token == QXmlStreamReader::StartDocument)
+        {
+            continue;
+        }
+
+        //If token is StartElement - read it
+        if(token == QXmlStreamReader::StartElement)
+        {
+            if(xmlReader.name() == "Admin_Passcode")
+            {
+                QString passcodeValue = xmlReader.readElementText();
+
+                AdminPasscode = QString (passcodeValue);
+                //qDebug() << "User_Passcode: " + passcodeValue;
+            }
+
+            if(xmlReader.name() == "User_Passcode")
+            {
+                QString passcodeValue = xmlReader.readElementText();
+
+                UserPasscode = QString (passcodeValue);
+                //qDebug() << "User_Passcode: " + passcodeValue;
+            }
+
+            if(xmlReader.name() == "WiFi")
+            {
+                //qDebug() << "WiFi: " + xmlReader.readElementText();
+            }
+
+            if(xmlReader.name() == "Bluetooth")
+            {
+                //qDebug() << "Bluetooth: " + xmlReader.readElementText();
+            }
+        }
+    }
+}
+
+
 void MainWindow::setTimer()
 {
     QTime currentTime = QTime::currentTime();
@@ -71,12 +191,11 @@ void MainWindow::setTimer()
         currentTimeStr[0] = ' ';
     }
 
-    // TODO: get the Battery Level from the harware and display the appropriate image
+    //TODO: get the Battery Level from the harware and display the appropriate image
     //setBatteryImage(GetBatteryLevel())
 
-    //TODO: determine if device is charging, if so then display the battery charging icon
-    // TODO: set the battery changing icon
-    // bool isCharging = IsDeviceCharging();
+    //TODO: set the battery changing icon if device is charging
+    //bool isCharging = IsDeviceCharging();
 
     // for now, display the battery charging icon have the colon blink
     if((currentTime.second() % 2) == 0)
@@ -107,14 +226,16 @@ void MainWindow::setTimer()
     {
         TestInProgress = false;
     }
+
     SetButtonActionImage();
 }
 
 
 void MainWindow::GetBatteryLevel()
 {
-
+    //TODO: get the battery level
 }
+
 void MainWindow::SetBatteryImage(int batteryLevel)
 {
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
@@ -137,19 +258,16 @@ void MainWindow::SetBatteryImage(int batteryLevel)
     {
         QPixmap pixBattery("://Images/XatekUI_Battery25.png");
         ui->labelBatteryLevelImage->setPixmap(pixBattery);
-
     }
     else if(batteryLevel > 500 && batteryLevel <= 750)
     {
         QPixmap pixBattery("://Images/XatekUI_Battery50.png");
         ui->labelBatteryLevelImage->setPixmap(pixBattery);
-
     }    
     else if(batteryLevel > 750 && batteryLevel <= 900)
     {
         QPixmap pixBattery("://Images/XatekUI_Battery75.png");
         ui->labelBatteryLevelImage->setPixmap(pixBattery);
-
     }
     else if(batteryLevel > 900)
     {
@@ -191,14 +309,18 @@ void MainWindow::SetButtonActionImage()
 
 void MainWindow::on_buttonAction_clicked()
 {
-    switch(ActionTaken)
+    //TODO: check if settings are complete before
+    if( SettingOptionsComplete() == true )
     {
-        case 0:
-        case 1:
-        case 2:
-        default:
-            ui->stackedWidget-> setCurrentIndex(2);
-            break;
+        switch(ActionTaken)
+        {
+            case 0:
+            case 1:
+            case 2:
+            default:
+                ui->stackedWidget-> setCurrentIndex(2);
+                break;
+        }
     }
 }
 
@@ -223,3 +345,57 @@ void MainWindow::on_pushButtonOptionsMenu_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
+
+bool MainWindow::SettingOptionsComplete()
+{
+    bool okToContinue = true;
+
+    //qDebug() << "Admin_Passcode: " + AdminPasscode;
+    //qDebug() << "User_Passcode: " + UserPasscode;
+
+    // check admin passcode is set
+    if(AdminPasscode == "")
+    {
+        QMessageBox::information(this,
+            tr("Setup not Complete"),
+            tr("The Admin Passcode must be set before the device can be used. Please access the Option Menu and setup the Admin Passcode.") );
+
+        okToContinue = false;
+    }
+
+    // check user passcode is set
+    else if(UserPasscode == "")
+    {
+        QMessageBox::information(this,
+            tr("Setup not Complete"),
+            tr("The User Passcode must be set before the device can be used.\n\nPlease access the Option Menu and setup the User Passcode.") );
+
+        okToContinue = false;
+    }
+
+    // check connectivity is setup (Wifi/Bluetooth)
+    //TODO: Check the connectivity setup
+
+    return okToContinue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

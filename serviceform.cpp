@@ -1,6 +1,4 @@
 #include "serviceform.h"
-#include "ui_serviceform.h"
-#include <QMessageBox>
 
 ServiceForm::ServiceForm(QWidget *parent) :
     QWidget(parent),
