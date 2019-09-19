@@ -1,4 +1,5 @@
 #include "bluetoothpairing.h"
+//Test comment for GIT
 
 BluetoothPairing::BluetoothPairing(QWidget *parent) :
     QWidget(parent),
