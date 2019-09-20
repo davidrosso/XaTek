@@ -12,7 +12,7 @@ PasscodeUnlock::PasscodeUnlock(QWidget *parent) :
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &_homeScreen);
-    ui->stackedWidget->insertWidget(2, &_settingOptionsForm);
+    //ui->stackedWidget->insertWidget(2, &_settingOptionsForm);
 }
 
 PasscodeUnlock::~PasscodeUnlock()

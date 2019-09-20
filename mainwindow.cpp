@@ -69,6 +69,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->insertWidget(3, &_openScanClotChip);
 
     connect(&_settingOptionsForm, SIGNAL(sendUpdatedDateTime()), this, SLOT(updateDateTime()));
+    connect(&_settingOptionsForm, SIGNAL(goHome()), this, SLOT(backToHome_clicked()));
 
 }
 
@@ -390,4 +391,9 @@ void MainWindow::updateDateTime()
     qDebug() << "System Time: " << SystemTime;
     ui->labelDate->setText(SystemDate);
     ui->labelTime->setText(SystemTime);
+}
+
+void MainWindow::backToHome_clicked()
+{
+
 }

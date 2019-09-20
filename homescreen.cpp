@@ -19,24 +19,24 @@ HomeScreen::HomeScreen(QDialog *parent) :
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &_openScanClotChip);
     ui->stackedWidget->insertWidget(2, &_viewTestResultsForm);
-    ui->stackedWidget->insertWidget(3, &_settingOptionsForm);
+    //ui->stackedWidget->insertWidget(3, &_settingOptionsForm);
     ui->stackedWidget->insertWidget(4, &_testResultDetails);
 
 
     connect(&_openScanClotChip, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     connect(&_viewTestResultsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
-    const bool didConnect = connect(&_settingOptionsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
+    //const bool didConnect = connect(&_settingOptionsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     //qDebug() << "\n\n";
     //qDebug() << "Does this get printed?";
-    qDebug() << "Connection established?" << didConnect;
-    qDebug() << "\n";
-    Q_ASSERT(didConnect);
-    Q_UNUSED(didConnect);
+    //qDebug() << "Connection established?" << didConnect;
+    //qDebug() << "\n";
+    //Q_ASSERT(didConnect);
+    //Q_UNUSED(didConnect);
 
-    connect(&_settingOptionsForm, &QObject::destroyed,
-            [] { qDebug() << "Sender got deleted!"; });
-    connect(this, &QObject::destroyed,
-            [] { qDebug() << "Receiver got deleted!"; });
+    //connect(&_settingOptionsForm, &QObject::destroyed,
+//            [] { qDebug() << "Sender got deleted!"; });
+//    connect(this, &QObject::destroyed,
+//            [] { qDebug() << "Receiver got deleted!"; });
 
     connect(&_testResultDetails, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
 

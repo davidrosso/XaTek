@@ -24,7 +24,7 @@ public:
 
 private:
     Ui::HomeScreen *ui;
-    SettingOptionsForm _settingOptionsForm;
+    //SettingOptionsForm _settingOptionsForm;
     OpenScanClotChip _openScanClotChip;
     ViewTestResultsForm _viewTestResultsForm;
     TestResultDetails _testResultDetails;

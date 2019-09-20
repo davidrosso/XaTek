@@ -53,6 +53,7 @@ private slots:
     void InitializeConfigXML();
     void ReadConfigXML();
     void updateDateTime();
+    void backToHome_clicked();
 
 signals:
     void SettingsOptionsClicked();

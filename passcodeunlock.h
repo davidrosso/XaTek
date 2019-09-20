@@ -25,7 +25,7 @@ public:
 private:
     Ui::PasscodeUnlock *ui;
     HomeScreen _homeScreen;
-    SettingOptionsForm _settingOptionsForm;
+    //SettingOptionsForm _settingOptionsForm;
 
 private slots:
     void on_button1_clicked();
