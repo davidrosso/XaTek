@@ -24,9 +24,6 @@ OpenScanClotChip::OpenScanClotChip(QWidget *parent) :
     _movie->start();
     ui->labelScanClotChip->show();
 
-    //TODO: get status
-    //bool CheckStatus (current screen ID);
-
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &_insertClotChip);

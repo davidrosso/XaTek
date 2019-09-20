@@ -7,6 +7,8 @@ extern QString DateTimeFormat;
 extern QString ConfigFilePath;
 extern QString AdminPasscode;
 extern QString UserPasscode;
+extern QString SystemDate;
+extern QString SystemTime;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -65,6 +67,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &_settingOptionsForm);
     ui->stackedWidget->insertWidget(2, &_passcodeUnlock);
     ui->stackedWidget->insertWidget(3, &_openScanClotChip);
+
+    connect(&_settingOptionsForm, SIGNAL(sendUpdatedDateTime()), this, SLOT(updateDateTime()));
 
 }
 
@@ -379,23 +383,11 @@ bool MainWindow::SettingOptionsComplete()
     return okToContinue;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void MainWindow::updateDateTime()
+{
+    qDebug() << "Slot received, updating date time.";
+    qDebug() << "System Date: " << SystemDate;
+    qDebug() << "System Time: " << SystemTime;
+    ui->labelDate->setText(SystemDate);
+    ui->labelTime->setText(SystemTime);
+}

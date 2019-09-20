@@ -26,7 +26,6 @@ TimeLastDose::TimeLastDose(QWidget *parent) :
     QMetaObject::invokeMethod(tumblerItem, "setDay", Q_ARG(QVariant, ltm->tm_mday));
     QMetaObject::invokeMethod(tumblerItem, "setHour", Q_ARG(QVariant, ltm->tm_hour));
     QMetaObject::invokeMethod(tumblerItem, "setMinute", Q_ARG(QVariant, ltm->tm_min));
-    QMetaObject::invokeMethod(tumblerItem, "setTimezone", Q_ARG(QVariant, ltm->tm_mon));
 
     QObject::connect(tumblerItem,SIGNAL(updateMonth(QString)),this,SLOT(updateMonth(QString)));
     QObject::connect(tumblerItem,SIGNAL(updateDay(QString)),this,SLOT(updateDay(QString)));
@@ -42,7 +41,6 @@ TimeLastDose::TimeLastDose(QWidget *parent) :
     updateDay(day);
     updateHour(hour);
     updateMinute(minute);
-
 
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);
@@ -118,6 +116,8 @@ void TimeLastDose::on_buttonEnter_clicked()
 {
     // set PreviousScreen variable
     PreviousScreen = "TimeLastDose";
+    qDebug() << "previous screen: " + PreviousScreen.toUtf8();
+
 
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // The software will permit users to enter the time of last dose.

@@ -52,6 +52,7 @@ private slots:
     bool SettingOptionsComplete();
     void InitializeConfigXML();
     void ReadConfigXML();
+    void updateDateTime();
 
 signals:
     void SettingsOptionsClicked();
