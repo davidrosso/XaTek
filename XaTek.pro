@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui quick qml quickwidgets quickcontrols2 network xml
+QT       += core gui quick qml quickwidgets quickcontrols2 network xml multimedia
 QMAKE_CXXFLAGS += -std=c++11
 CONFIG += c++11
 

@@ -1,5 +1,8 @@
 #include "datetimeform.h"
 
+extern QString SystemDate;
+extern QString SystemTime;
+
 DateTimeForm::DateTimeForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DateTimeForm)
@@ -21,7 +24,7 @@ DateTimeForm::DateTimeForm(QWidget *parent) :
     QMetaObject::invokeMethod(tumblerItem, "setDay", Q_ARG(QVariant, ltm->tm_mday));
     QMetaObject::invokeMethod(tumblerItem, "setHour", Q_ARG(QVariant, ltm->tm_hour));
     QMetaObject::invokeMethod(tumblerItem, "setMinute", Q_ARG(QVariant, ltm->tm_min));
-    QMetaObject::invokeMethod(tumblerItem, "setTimezone", Q_ARG(QVariant, ltm->tm_mon));
+    //QMetaObject::invokeMethod(tumblerItem, "setTimezone", Q_ARG(QVariant, ltm->tm_mon));
 
     QObject::connect(tumblerItem,SIGNAL(updateMonth(QString)),this,SLOT(updateMonth(QString)));
     QObject::connect(tumblerItem,SIGNAL(updateDay(QString)),this,SLOT(updateDay(QString)));
@@ -29,11 +32,17 @@ DateTimeForm::DateTimeForm(QWidget *parent) :
     QObject::connect(tumblerItem,SIGNAL(updateMinute(QString)),this,SLOT(updateMinute(QString)));
     QObject::connect(tumblerItem,SIGNAL(updateTimezone(QString)),this,SLOT(updateTimezone(QString)));
 
-    month = ltm->tm_mon;
-    day = ltm->tm_mday;
-    hour = ltm->tm_hour;
-    minute = ltm->tm_min;
+    month = QString::number(ltm->tm_mon);
+    day = QString::number(ltm->tm_mday);
+    hour = QString::number(ltm->tm_hour);
+    minute = QString::number(ltm->tm_min);
     timezone = "";
+
+    updateMonth(month);
+    updateDay(day);
+    updateHour(hour);
+    updateMinute(minute);
+    updateTimezone(timezone);
 }
 
 DateTimeForm::~DateTimeForm()
@@ -50,35 +59,35 @@ void DateTimeForm::updateSettings()
 void DateTimeForm::updateMonth(QString in)
 {
     month = in.toUtf8();
-    qDebug() << "Month: " << in.toUtf8();
+    //qDebug() << "Month: " << in.toUtf8();
     //TODO Save the data here
 }
 
 void DateTimeForm::updateDay(QString in)
 {
     day = in.toUtf8();
-    qDebug() << "Day: " << in.toUtf8();
+    //qDebug() << "Day: " << in.toUtf8();
     //TODO Save the data here
 }
 
 void DateTimeForm::updateHour(QString in)
 {
     hour = in.toUtf8();
-    qDebug() << "Hour: " << in.toUtf8();
+    //qDebug() << "Hour: " << in.toUtf8();
     //TODO Save the data here
 }
 
 void DateTimeForm::updateMinute(QString in)
 {
     minute = in.toUtf8();
-    qDebug() << "Minute: " << in.toUtf8();
+    //qDebug() << "Minute: " << in.toUtf8();
     //TODO Save the data here
 }
 
 void DateTimeForm::updateTimezone(QString in)
 {
     timezone = in.toUtf8();
-    qDebug() << "Timezone: " << in.toUtf8();
+    //qDebug() << "Timezone: " << in.toUtf8();
     //TODO Save the data here
 }
 
@@ -92,31 +101,15 @@ void DateTimeForm::on_buttonEnter_clicked()
 {
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // GUI will permit user to set time, date, and time-zone.
+    qDebug() << "Enter button pressed from datetime.";
+    // TODO: set date/time on device
 
-    //TODO: set date/time on device using the tumbler settings
+    if(month != "" && day != "" && hour!= "" && minute != "")
+    {
+        SystemDate = month + day;
+        SystemTime = hour + minute;
+
+        emit timeDateUpdated();
+        emit SettingsOptionsClicked();
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

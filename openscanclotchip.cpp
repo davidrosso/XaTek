@@ -13,12 +13,19 @@ OpenScanClotChip::OpenScanClotChip(QWidget *parent) :
 
     // Load animated GIF
     QMovie* _movie = new QMovie("://Images/XatekUI_OpenScanClotChip.gif");
+    if (!_movie->isValid())
+    {
+        qDebug() << "GIF Failed to load.";
+    }
     ui->labelScanClotChip->setMovie(_movie);   
     _movie->setScaledSize(QSize().scaled(575, 785, Qt::KeepAspectRatio));
     _movie->setScaledSize(QSize().transposed());
     _movie->setSpeed(300); // 3x speed
     _movie->start();
     ui->labelScanClotChip->show();
+
+    //TODO: get status
+    //bool CheckStatus (current screen ID);
 
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);

@@ -1,6 +1,4 @@
 #include "bluetoothpairing.h"
-//Test comment for GIT
-//Test2
 
 BluetoothPairing::BluetoothPairing(QWidget *parent) :
     QWidget(parent),
@@ -55,6 +53,7 @@ void BluetoothPairing::on_buttonEnter_clicked()
     // The software will store the pairing too allow the handheld to reconnect with the docking without further operator intervention.
     // Software will connect with previously paired Docks in range of the Device.
     //TODO: save paired device for further use.
+
 
     emit BackToConnectivity();
 }

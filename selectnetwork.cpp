@@ -12,6 +12,8 @@ SelectNetwork::SelectNetwork(QWidget *parent) :
     connect(findTimer,&QTimer::timeout,this,&SelectNetwork::FindActiveWirelessNetworks);
     findTimer->start();
     foundCount = 0;
+    //ui->treeWidgetWiFis->setColumnWidth(0,250);
+    //ui->treeWidgetWiFis->setColumnWidth(1,200);
 
     FindActiveWirelessNetworks();
 
@@ -35,32 +37,40 @@ void SelectNetwork::FindActiveWirelessNetworks()
     ui->listWidgetNetworks->clear();
 
     QNetworkConfigurationManager ncm;
-    netcfgList = ncm.allConfigurations();
+    netcfgList.clear();
     WiFisList.clear();
     ui->treeWidgetWiFis->clear();
+    auto netcfgList = ncm.allConfigurations();
+    ncm.updateConfigurations();
+
+    //qDebug() << netcfgList;
 
     for (auto &x : netcfgList)
     {
         //ui->listWidgetNetworks->addItem(x.name() + ": " + QString(x.bearerType()) );
-        //qDebug() << x.type() + ": " + x.name();
+        //qDebug() << x.type() + x.name();
 
         if(x.name() == "")
         {
             WiFisList << "Unknown(Other Network)";
         }
-        else
+//        else if(x.bearerType() == QNetworkConfiguration::BearerWLAN)
+//        {
+//            qDebug() << x.name();
+//            WiFisList << x.name();
+//        }
+        //qDebug() << x.bearerType();
+        //qDebug() << x.name();
+        if (x.bearerType() == QNetworkConfiguration::BearerWLAN)
         {
-            WiFisList << x.name();
+            //qDebug() << x.name();
+            if (x.name() == "YouDesiredNetwork")
+            {
+                //cfg = x;
+            }
         }
-
-        //if (x.bearerType() == QNetworkConfiguration::BearerWLAN)
-        //{
-            //if (x.name() == "YouDesiredNetwork")
-            //{
-            //    cfg = x;
-            //}
-        //}
     }
+    //qDebug() << WiFisList;
 
     for(int i=0; i<WiFisList.size(); i++)
     {

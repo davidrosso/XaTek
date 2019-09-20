@@ -18,6 +18,7 @@
 #include <qabstractitemview.h>
 
 #include "ui_datetimeform.h"
+//#include "mainwindow.h"
 
 namespace Ui {
 class DateTimeForm;
@@ -38,6 +39,7 @@ public:
 private:
     Ui::DateTimeForm *ui;
     QModelIndexList *indexes;
+    //std::string timezone;
 
 private slots:
     void updateSettings();
@@ -51,6 +53,7 @@ private slots:
 
 signals:
     void SettingsOptionsClicked();    
+    void timeDateUpdated();
 };
 
 #endif // DATETIMEFORM_H
