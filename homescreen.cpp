@@ -74,7 +74,7 @@ void HomeScreen::on_buttonViewTestResults_clicked()
 
 void HomeScreen::goingToPasscode()
 {
-    qDebug() << "Slot from HomeScreen Called";
+    //qDebug() << "Slot from HomeScreen Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

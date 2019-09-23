@@ -112,17 +112,12 @@ void PasscodeUnlock::on_buttonUnlock_clicked()
         qDebug() << "AdminPasscode: " << AdminPasscode;
         qDebug() << "UserPasscode: " << UserPasscode;
         qDebug() << "Passcode Verified. Moving to Home Screen";
-        //moveHomeScreen();
-        //ui->setupUi(this);
-        // setup signals and slots for navigation
-        ui->stackedWidget->setCurrentIndex(0);
-        ui->stackedWidget->insertWidget(1, &_homeScreen);
-        ui->stackedWidget->setCurrentIndex(1);
 
-//        this->ui->stackedWidget->raise();
-//        this->ui->stackedWidget->show();
-//        this->ui->stackedWidget->activateWindow();
-//        this->ui->stackedWidget->setCurrentIndex(1);
+        // reset the entered passcode
+        enteredPasscode = "";
+
+        //Move back to home screen.
+        ui->stackedWidget->setCurrentIndex(1);
     }
     else
     {
@@ -135,7 +130,7 @@ void PasscodeUnlock::on_buttonUnlock_clicked()
 
 void PasscodeUnlock::goingToPasscode()
 {
-    qDebug() << "Slot from PasscodeUnlock Called";
+    //qDebug() << "Slot from PasscodeUnlock Called";
     ui->stackedWidget->setCurrentIndex(0);
 
 }

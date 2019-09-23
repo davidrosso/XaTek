@@ -51,7 +51,7 @@ void TestComplete::on_buttonUnlock_clicked()
     //ui->stackedWidget->setCurrentIndex(0); //Go to passcode unlock screen
     ui->stackedWidget->lower();
     emit goToPasscode();
-    qDebug("TestComplete Signal 1");
+    //qDebug("TestComplete Signal 1");
 
 }
 

@@ -53,7 +53,7 @@ void CollectSample::on_buttonBack_clicked()
 
 void CollectSample::goingToPasscode()
 {
-    qDebug() << "Slot from CollectSample Called";
+    //qDebug() << "Slot from CollectSample Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

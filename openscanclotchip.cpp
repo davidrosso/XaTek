@@ -77,7 +77,7 @@ void OpenScanClotChip::on_buttonBack_clicked()
 
 void OpenScanClotChip::goingToPasscode()
 {
-    qDebug() << "Slot from OpenScanClotChip Called";
+    //qDebug() << "Slot from OpenScanClotChip Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

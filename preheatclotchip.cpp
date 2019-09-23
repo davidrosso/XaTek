@@ -53,7 +53,7 @@ void PreheatClotchip::on_buttonBack_clicked()
 
 void PreheatClotchip::goingToPasscode()
 {
-    qDebug() << "Slot from PreheatClotChip Called";
+    //qDebug() << "Slot from PreheatClotChip Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

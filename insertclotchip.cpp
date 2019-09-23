@@ -62,7 +62,7 @@ void InsertClotChip::on_buttonBack_clicked()
 
 void InsertClotChip::goingToPasscode()
 {
-    qDebug() << "Slot from InsertClotChip Called";
+    //qDebug() << "Slot from InsertClotChip Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

@@ -75,7 +75,7 @@ void SetUserID::on_buttonBack_clicked()
 
 void SetUserID::goingToPasscode()
 {
-    qDebug() << "Slot from SetUserID Called";
+    //qDebug() << "Slot from SetUserID Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

@@ -175,7 +175,7 @@ QString TimeLastDose::secondsToString(qint64 seconds)
 
 void TimeLastDose::goingToPasscode()
 {
-    qDebug() << "Slot from TimeLastDose Called";
+    //qDebug() << "Slot from TimeLastDose Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }
