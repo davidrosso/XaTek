@@ -27,6 +27,9 @@ private:
     HomeScreen _homeScreen;
     //SettingOptionsForm _settingOptionsForm;
 
+public slots:
+    void moveHomeScreen();
+
 private slots:
     void on_button1_clicked();
     void on_button2_clicked();
@@ -38,7 +41,7 @@ private slots:
     void on_button8_clicked();
     void on_button9_clicked();
     void on_button0_clicked();
-    void moveHomeScreen();   
+    //void moveHomeScreen();
     void updateEnteredPasscode(QString);
     void on_buttonUnlock_clicked();
 

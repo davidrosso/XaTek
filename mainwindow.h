@@ -57,6 +57,7 @@ private slots:
 
 signals:
     void SettingsOptionsClicked();
+    void sendToPasscodeUnlock();
 
 };
 

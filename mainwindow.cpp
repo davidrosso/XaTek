@@ -69,8 +69,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->insertWidget(3, &_openScanClotChip);
 
     connect(&_settingOptionsForm, SIGNAL(sendUpdatedDateTime()), this, SLOT(updateDateTime()));
-    connect(&_settingOptionsForm, SIGNAL(goHome()), this, SLOT(backToHome_clicked()));
+    //connect(&_settingOptionsForm, SIGNAL(goHome()), this, SLOT(backToHome_clicked()));
 
+    connect(&_settingOptionsForm, SIGNAL(goHome()),
+            this, SLOT(backToHome_clicked())
+            );
+
+    connect(this, SIGNAL(sendToPasscodeUnlock()),
+            &_passcodeUnlock, SLOT(moveHomeScreen())
+            );
 }
 
 MainWindow::~MainWindow()
@@ -395,5 +402,7 @@ void MainWindow::updateDateTime()
 
 void MainWindow::backToHome_clicked()
 {
-
+    qDebug() << "Back to Home slot called.";
+    ui->stackedWidget->setCurrentIndex(2);
+    emit sendToPasscodeUnlock();
 }

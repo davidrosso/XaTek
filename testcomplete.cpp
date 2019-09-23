@@ -48,8 +48,9 @@ void TestComplete::on_buttonUnlock_clicked()
     CreateTestDataXML();
 
     // go to home screen
-    ui->stackedWidget->setCurrentIndex(1); //Go to passcode unlock screen
-    qDebug("Should change pages by now");
+    //ui->stackedWidget->setCurrentIndex(1); //Go to passcode unlock screen
+    emit goToPasscode();
+    qDebug("TestComplete Signal 1");
 
 }
 

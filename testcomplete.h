@@ -25,6 +25,9 @@ private slots:
     void on_buttonUnlock_clicked();
     void CreateTestDataXML();
 
+signals:
+    void goToPasscode();
+
 private:
     Ui::TestComplete *ui;
 };

@@ -19,7 +19,6 @@ VerifyClotChip::VerifyClotChip(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &_testInProgress);
 
     connect(&_testInProgress, SIGNAL(VerifyClotChip()), this, SLOT(VerifyClotChip_click()));
-
 }
 
 VerifyClotChip::~VerifyClotChip()
