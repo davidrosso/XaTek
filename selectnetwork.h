@@ -14,6 +14,7 @@
 #include <QNetworkInterface>
 #include <QDebug>
 #include <QTreeWidgetItem>
+#include <QProcess>
 #include "keyboard.h"
 #include "ui_selectnetwork.h"
 

@@ -34,6 +34,31 @@ void SelectNetwork::FindActiveWirelessNetworks()
 {
     //TODO: confirm this works on the board and displays available networks
 
+    QProcess myProcess;
+    QStringList arguments;
+    QString stdout;
+
+    myProcess.start("ifconfig wlan0 up");
+    myProcess.waitForFinished(-1);
+    arguments << "-c" << "iw dev wlan0 scan | grep SSID";
+    myProcess.start("sh", arguments);
+    myProcess.waitForFinished(-1);
+    QString myOutput(myProcess.readAllStandardOutput());
+    myProcess.close();
+
+//    myProcess.start("iw dev wlan0 scan | grep SSID");
+//    myProcess.waitForFinished(-1);
+//    QString myOutput(myProcess.readAllStandardOutput());
+//    myProcess.close();
+    myOutput = myOutput.remove("\n\t").remove("\n").remove("\t").remove("SSID:").trimmed();
+    qDebug() << myOutput;
+
+    QStringList ssidList = myOutput.split(" ");
+    qDebug() << ssidList;
+
+    /******************************************************************
+
+
     ui->listWidgetNetworks->clear();
 
     QNetworkConfigurationManager ncm;
@@ -72,7 +97,9 @@ void SelectNetwork::FindActiveWirelessNetworks()
     }
     //qDebug() << WiFisList;
 
-    for(int i=0; i<WiFisList.size(); i++)
+***********************************************************************************/
+
+    for(int i=0; i<ssidList.size(); i++)
     {
         bool exist = false;
         QTreeWidgetItem * item = new QTreeWidgetItem();
@@ -82,7 +109,7 @@ void SelectNetwork::FindActiveWirelessNetworks()
             QTreeWidgetItem *index = ui->treeWidgetWiFis->topLevelItem(j);
             QString str = index->text(1);
             //qDebug() << "item: " + str;
-            if(str == WiFisList[i])
+            if(str == ssidList[i])
             {
                 exist = true;
                 break;
@@ -93,10 +120,11 @@ void SelectNetwork::FindActiveWirelessNetworks()
             item->setTextAlignment(0,Qt::AlignLeft);
             //item->setTextAlignment(1,Qt::AlignLeft);
             //item->setText(0,QString::number(++foundCount));
-            item->setText  (0,WiFisList[i]);
+            item->setText  (0,ssidList[i]);
             ui->treeWidgetWiFis->addTopLevelItem(item);
         }
     }
+
 }
 
 void SelectNetwork::on_buttonBack_clicked()
