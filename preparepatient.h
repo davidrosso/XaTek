@@ -26,9 +26,11 @@ private slots:
     void on_buttonNext_clicked();
     void on_buttonBack_clicked();
     void PreparePatient_click();
+    void goingToPasscode();
 
 signals:
     void TimeLastDose();
+    void goToPasscode();
 
 };
 

@@ -55,10 +55,12 @@ private slots:
     void on_buttonEnter_clicked();
     void TimeLastDose_click();
     QString secondsToString(qint64);
+    void goingToPasscode();
 
 signals:
     void SettingsOptionsClicked();    
     void SetPatientID();
+    void goToPasscode();
 
 };
 

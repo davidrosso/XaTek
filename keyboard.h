@@ -21,7 +21,7 @@ public:
 
 private:
     Ui::Keyboard *ui;       
-    TimeLastDose _timeLastDose;
+    //TimeLastDose _timeLastDose;
 
 private slots:
     void on_button0_clicked();

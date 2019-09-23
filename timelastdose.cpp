@@ -47,6 +47,9 @@ TimeLastDose::TimeLastDose(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &_preparePatient);
 
     connect(&_preparePatient, SIGNAL(TimeLastDose()), this, SLOT(TimeLastDose_click()));
+    connect(&_preparePatient, SIGNAL(goToPasscode()),
+                 this, SLOT(goingToPasscode())
+                );
 }
 
 TimeLastDose::~TimeLastDose()
@@ -168,5 +171,12 @@ QString TimeLastDose::secondsToString(qint64 seconds)
 
     return QString("%1").arg(TotalHours);
     //return QString("%1 days, %2 hours, %3 minutes, %4 seconds").arg(days).arg(t.hour()).arg(t.minute()).arg(t.second());
+}
+
+void TimeLastDose::goingToPasscode()
+{
+    qDebug() << "Slot from TimeLastDose Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
 }
 

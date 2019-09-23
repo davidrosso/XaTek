@@ -29,6 +29,9 @@ OpenScanClotChip::OpenScanClotChip(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &_insertClotChip);
 
     connect(&_insertClotChip, SIGNAL(OpenScanClotChip()), this, SLOT(OpenScanClotChip_Click()));
+    connect(&_insertClotChip, SIGNAL(goToPasscode()),
+                 this, SLOT(goingToPasscode())
+                );
 
 }
 
@@ -70,4 +73,11 @@ void OpenScanClotChip::on_buttonBack_clicked()
 {
     // return to previous screen (HomeScreen)
     emit HomeClicked();
+}
+
+void OpenScanClotChip::goingToPasscode()
+{
+    qDebug() << "Slot from OpenScanClotChip Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
 }

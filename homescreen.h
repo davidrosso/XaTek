@@ -33,9 +33,11 @@ private slots:
     void on_buttonStartNewTest_clicked();
     void on_buttonViewTestResults_clicked();
     void moveHome();
+    void goingToPasscode();
 
 signals:
     void SettingsOptionsClicked();
+    void goToPasscode();
 
 };
 

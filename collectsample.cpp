@@ -17,6 +17,9 @@ CollectSample::CollectSample(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &_verifyClotChip);
 
     connect(&_verifyClotChip, SIGNAL(CollectSample()), this, SLOT(CollectSample_click()));
+    connect(&_verifyClotChip, SIGNAL(goToPasscode()),
+                 this, SLOT(goingToPasscode())
+                );
 }
 
 CollectSample::~CollectSample()
@@ -46,4 +49,11 @@ void CollectSample::on_buttonBack_clicked()
 {
     // return to previous screen (PreheatClotChip)
     emit PreheatClotChip();
+}
+
+void CollectSample::goingToPasscode()
+{
+    qDebug() << "Slot from CollectSample Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
 }

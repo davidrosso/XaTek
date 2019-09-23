@@ -29,7 +29,7 @@ private slots:
     void on_buttonBack_clicked();
     void on_buttonNext_clicked();
     void VerifyClotChip_click();
-    //void sendToPasscode();
+    void goingToPasscode();
 
 signals:
     void CollectSample();

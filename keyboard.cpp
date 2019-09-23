@@ -14,7 +14,7 @@ Keyboard::Keyboard(QWidget *parent) :
 
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);
-    ui->stackedWidget->insertWidget(4, &_timeLastDose);
+    //ui->stackedWidget->insertWidget(4, &_timeLastDose);
 }
 
 

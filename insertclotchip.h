@@ -28,10 +28,12 @@ private slots:
     void on_buttonNext_clicked();
     void on_buttonBack_clicked();    
     void InsertClotChip_click();
+    void goingToPasscode();
 
 signals:
     void SettingsOptionsClicked();
     void OpenScanClotChip();
+    void goToPasscode();
 
 };
 

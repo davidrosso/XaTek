@@ -17,6 +17,9 @@ PreparePatient::PreparePatient(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &_preheatClotchip);
 
     connect(&_preheatClotchip, SIGNAL(PreparePatient()), this, SLOT(PreparePatient_click()));
+    connect(&_preheatClotchip, SIGNAL(goToPasscode()),
+                 this, SLOT(goingToPasscode())
+                );
 }
 
 PreparePatient::~PreparePatient()
@@ -46,4 +49,11 @@ void PreparePatient::on_buttonBack_clicked()
 {
     // return to previous screen (TimeLastDose)
     emit TimeLastDose();
+}
+
+void PreparePatient::goingToPasscode()
+{
+    qDebug() << "Slot from PreparePatient Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
 }

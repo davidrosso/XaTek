@@ -25,22 +25,11 @@ HomeScreen::HomeScreen(QDialog *parent) :
 
     connect(&_openScanClotChip, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     connect(&_viewTestResultsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
-    //const bool didConnect = connect(&_settingOptionsForm, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
-    //qDebug() << "\n\n";
-    //qDebug() << "Does this get printed?";
-    //qDebug() << "Connection established?" << didConnect;
-    //qDebug() << "\n";
-    //Q_ASSERT(didConnect);
-    //Q_UNUSED(didConnect);
-
-    //connect(&_settingOptionsForm, &QObject::destroyed,
-//            [] { qDebug() << "Sender got deleted!"; });
-//    connect(this, &QObject::destroyed,
-//            [] { qDebug() << "Receiver got deleted!"; });
-
     connect(&_testResultDetails, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
+    connect(&_openScanClotChip, SIGNAL(goToPasscode()),
+                 this, SLOT(goingToPasscode())
+                );
 
-    //QObject::dumpObjectInfo();
 }
 
 HomeScreen::~HomeScreen()
@@ -81,4 +70,11 @@ void HomeScreen::on_buttonStartNewTest_clicked()
 void HomeScreen::on_buttonViewTestResults_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+}
+
+void HomeScreen::goingToPasscode()
+{
+    qDebug() << "Slot from HomeScreen Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
 }

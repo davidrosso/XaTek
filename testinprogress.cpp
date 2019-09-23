@@ -34,6 +34,10 @@ TestInProgress::TestInProgress(QWidget *parent) :
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &_testComplete);
+
+    connect(&_testComplete, SIGNAL(goToPasscode()),
+             this, SLOT(goingToPasscode())
+            );
 }
 
 TestInProgress::~TestInProgress()
@@ -102,4 +106,11 @@ void TestInProgress::TestComputations()
     TestData_TestDurationUnits  = "seconds";
     TestData_Errors             = "error codes from test";
     TestData_CRC                = "SHA-256 hash";
+}
+
+void TestInProgress::goingToPasscode()
+{
+    qDebug() << "Slot from TestinProgress Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
 }

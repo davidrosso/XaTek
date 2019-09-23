@@ -30,9 +30,11 @@ private slots:
     void on_buttonScan_clicked();
     void on_buttonBack_clicked();
     void OpenScanClotChip_Click();
+    void goingToPasscode();
 
 signals:
     void HomeClicked();
+    void goToPasscode();
 
 };
 

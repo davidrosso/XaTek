@@ -44,6 +44,7 @@ private slots:
     //void moveHomeScreen();
     void updateEnteredPasscode(QString);
     void on_buttonUnlock_clicked();
+    void goingToPasscode();
 
 signals:
     void HomeClicked();

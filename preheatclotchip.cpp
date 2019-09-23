@@ -17,6 +17,9 @@ PreheatClotchip::PreheatClotchip(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &_collectSample);
 
     connect(&_collectSample, SIGNAL(PreheatClotChip()), this, SLOT(PreheatClotChip_click()));
+    connect(&_collectSample, SIGNAL(goToPasscode()),
+                 this, SLOT(goingToPasscode())
+                );
 }
 
 PreheatClotchip::~PreheatClotchip()
@@ -46,4 +49,11 @@ void PreheatClotchip::on_buttonBack_clicked()
 {
     // return to previous screen (PreparePatient)
     emit PreparePatient();
+}
+
+void PreheatClotchip::goingToPasscode()
+{
+    qDebug() << "Slot from PreheatClotChip Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
 }

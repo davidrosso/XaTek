@@ -19,6 +19,9 @@ VerifyClotChip::VerifyClotChip(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &_testInProgress);
 
     connect(&_testInProgress, SIGNAL(VerifyClotChip()), this, SLOT(VerifyClotChip_click()));
+    connect(&_testInProgress, SIGNAL(goToPasscode()),
+                 this, SLOT(goingToPasscode())
+                );
 }
 
 VerifyClotChip::~VerifyClotChip()
@@ -57,6 +60,12 @@ void VerifyClotChip::on_buttonNext_clicked()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+void VerifyClotChip::goingToPasscode()
+{
+    qDebug() << "Slot from VerifyClotChip Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
+}
 
 
 

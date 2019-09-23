@@ -21,6 +21,9 @@ SetUserID::SetUserID(QWidget *parent) :
 
     connect(&_keyboard, SIGNAL(SetUserID()), this, SLOT(SetUserID_click()));
     connect(&_setPatientID, SIGNAL(SetUserID()), this, SLOT(SetUserID_click()));
+    connect(&_setPatientID, SIGNAL(goToPasscode()),
+                 this, SLOT(goingToPasscode())
+                );
 }
 
 SetUserID::~SetUserID()
@@ -68,4 +71,11 @@ void SetUserID::on_buttonBack_clicked()
 {
     // return to previous screen (InsertClotChip)
     emit InsertClotChip();
+}
+
+void SetUserID::goingToPasscode()
+{
+    qDebug() << "Slot from SetUserID Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
 }

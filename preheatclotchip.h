@@ -26,9 +26,11 @@ private slots:
     void on_buttonNext_clicked();
     void on_buttonBack_clicked();
     void PreheatClotChip_click();
+    void goingToPasscode();
 
 signals:
     void PreparePatient();
+    void goToPasscode();
 
 };
 

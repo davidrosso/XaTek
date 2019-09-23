@@ -29,10 +29,12 @@ public slots:
 
 private slots:
     void TestComputations();
+    void goingToPasscode();
 
 signals:
     void VerifyClotChip();
     void HomeClicked();
+    void goToPasscode();
 
 };
 

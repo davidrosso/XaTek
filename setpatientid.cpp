@@ -21,6 +21,9 @@ SetPatientID::SetPatientID(QWidget *parent) :
 
     connect(&_keyboard, SIGNAL(SetPatientID()), this, SLOT(SetPatientID_click()));
     connect(&_timeLastDose, SIGNAL(SetPatientID()), this, SLOT(SetPatientID_click()));
+    connect(&_timeLastDose, SIGNAL(goToPasscode()),
+                 this, SLOT(goingToPasscode())
+                );
 }
 
 SetPatientID::~SetPatientID()
@@ -70,4 +73,11 @@ void SetPatientID::on_buttonBack_clicked()
 {
     // return to previous screen (SetUserID)
     emit SetUserID();
+}
+
+void SetPatientID::goingToPasscode()
+{
+    qDebug() << "Slot from SetPatientID Called";
+    ui->stackedWidget->setCurrentIndex(0);
+    emit goToPasscode();
 }

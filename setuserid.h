@@ -29,10 +29,12 @@ private slots:
     void on_buttonManual_clicked();
     void on_buttonBack_clicked();
     void SetUserID_click();
+    void goingToPasscode();
 
 signals:    
     void SettingsOptionsClicked();
     void InsertClotChip();
+    void goToPasscode();
 
 };
 
