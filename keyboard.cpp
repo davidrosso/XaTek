@@ -815,8 +815,6 @@ void Keyboard::on_buttonLowerNumeric_clicked()
 
 
 
-
-
 /*****************************************************************************/
 /********* Remove the last character that was entered ************************/
 /*****************************************************************************/
@@ -882,6 +880,9 @@ void Keyboard::SaveValueProceedToNextScreen()
     // got to this screen from 1) Enter User ID, 2) Enter Patient ID, 3) Select Network (Settings)
 
     // set to the appropriate value (User ID, Patient ID, Network setup) based on what screen we came from
+
+    //qDebug() << "Enter button was pressed (keyboard)";
+
     if(PreviousScreen == "SetUserID")
     {
         // set User ID
@@ -894,7 +895,9 @@ void Keyboard::SaveValueProceedToNextScreen()
         //TODO: Go to ConnectivityForm if entered from SelectNetwork
 
         // proceed to the next screen (SetPatientID)
-        ui->stackedWidget->setCurrentIndex(4);
+        //ui->stackedWidget->setCurrentIndex(4);
+        emit goToSetPatientID();
+
     }
     else if(PreviousScreen == "SetPatientID")
     {
@@ -903,7 +906,8 @@ void Keyboard::SaveValueProceedToNextScreen()
         TestData_Patient_ID = QString (ui->aLineEditUpperCaseValueEntered->text());
 
         // proceed to the next screen (TimeLastDose)
-        ui->stackedWidget->setCurrentIndex(4);
+        //ui->stackedWidget->setCurrentIndex(4);
+        emit goToTimeLastDose();
     }
 }
 
@@ -933,6 +937,24 @@ void Keyboard::on_buttonSymbolsBack_clicked()
 
 void Keyboard::ReturnPreviousScreen()
 {
+    //qDebug() << "Back button was pressed (keyboard)";
+
+    if(PreviousScreen == "SetUserID")
+    {
+        //go back to SetUserID screen
+        emit goToUserID();
+    }
+    else if(PreviousScreen == "SetPatientID")
+    {
+        //go back to SetPatientID screen
+        emit goToPatientID();
+    }
+
+    else if(PreviousScreen == "SelectNetwork")
+    {
+        //go back to SetPatientID screen
+        emit goToNetwork();
+    }
 
 }
 

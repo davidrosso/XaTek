@@ -7,7 +7,7 @@ SelectNetwork::SelectNetwork(QWidget *parent) :
     ui->setupUi(this);
 
     findTimer = new QTimer();
-    findTimer->setInterval(20000); // update list every 20 seconds
+    findTimer->setInterval(200000); // update list every 200 seconds
 
     connect(findTimer,&QTimer::timeout,this,&SelectNetwork::FindActiveWirelessNetworks);
     findTimer->start();
@@ -36,25 +36,21 @@ void SelectNetwork::FindActiveWirelessNetworks()
 
     QProcess myProcess;
     QStringList arguments;
-    QString stdout;
+    QString myOutput = "";
 
     myProcess.start("ifconfig wlan0 up");
     myProcess.waitForFinished(-1);
     arguments << "-c" << "iw dev wlan0 scan | grep SSID";
     myProcess.start("sh", arguments);
     myProcess.waitForFinished(-1);
-    QString myOutput(myProcess.readAllStandardOutput());
+    myOutput = myProcess.readAllStandardOutput();
     myProcess.close();
 
-//    myProcess.start("iw dev wlan0 scan | grep SSID");
-//    myProcess.waitForFinished(-1);
-//    QString myOutput(myProcess.readAllStandardOutput());
-//    myProcess.close();
     myOutput = myOutput.remove("\n\t").remove("\n").remove("\t").remove("SSID:").trimmed();
-    qDebug() << myOutput;
+    //qDebug() << myOutput;
 
     QStringList ssidList = myOutput.split(" ");
-    qDebug() << ssidList;
+    //qDebug() << ssidList;
 
     /******************************************************************
 

@@ -22,7 +22,7 @@ public:
 private:
     Ui::SetUserID *ui;
     SetPatientID _setPatientID;    
-    Keyboard _keyboard;
+    Keyboard _keyboardUser;
 
 private slots:
     void on_buttonScan_clicked();
@@ -30,12 +30,13 @@ private slots:
     void on_buttonBack_clicked();
     void SetUserID_click();
     void goingToPasscode();
+    void goingToUserID();
+    void goingToPatientID();
 
 signals:    
     void SettingsOptionsClicked();
     void InsertClotChip();
     void goToPasscode();
-
 };
 
 #endif // SETUSERID_H

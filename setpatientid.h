@@ -22,7 +22,7 @@ public:
 private:
     Ui::SetPatientID *ui;
     TimeLastDose _timeLastDose;
-    Keyboard _keyboard;
+    Keyboard _keyboardPatient;
 
 private slots:
     void on_buttonScan_clicked();
@@ -30,6 +30,8 @@ private slots:
     void on_buttonBack_clicked();
     void SetPatientID_click();
     void goingToPasscode();
+    void goingToPatientID();
+    void goToTimeLastDose();
 
 signals:
     void SettingsOptionsClicked();

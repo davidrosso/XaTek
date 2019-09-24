@@ -84,7 +84,7 @@ void SettingOptionsForm::on_buttonService_clicked()
 
 void SettingOptionsForm::on_buttonBack_clicked()
 {
-    qDebug() << "Back button was pressed.";
+    //qDebug() << "Back button was pressed.";
     //QObject::dumpObjectInfo();
     emit goHome();
     //emit HomeClicked();

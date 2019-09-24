@@ -90,7 +90,7 @@ void PasscodeUnlock::updateEnteredPasscode(QString valueEntered)
 
 void PasscodeUnlock::moveHomeScreen()
 {
-    qDebug() << "Moving to Home Screen";
+    //qDebug() << "Moving to Home Screen";
     ui->stackedWidget->raise();
     ui->stackedWidget->show();
     ui->stackedWidget->activateWindow();

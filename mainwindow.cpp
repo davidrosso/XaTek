@@ -402,7 +402,7 @@ void MainWindow::updateDateTime()
 
 void MainWindow::backToHome_clicked()
 {
-    qDebug() << "Back to Home slot called.";
+    //qDebug() << "Back to Home slot called.";
     ui->stackedWidget->setCurrentIndex(2);
     emit sendToPasscodeUnlock();
 }

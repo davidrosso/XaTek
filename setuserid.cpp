@@ -16,13 +16,19 @@ SetUserID::SetUserID(QWidget *parent) :
 
     // setup signals and slots for navigation
     ui->stackedWidget->setCurrentIndex(0);    
-    ui->stackedWidget->insertWidget(1, &_keyboard);
+    ui->stackedWidget->insertWidget(1, &_keyboardUser);
     ui->stackedWidget->insertWidget(2, &_setPatientID);
 
-    connect(&_keyboard, SIGNAL(SetUserID()), this, SLOT(SetUserID_click()));
+    connect(&_keyboardUser, SIGNAL(SetUserID()), this, SLOT(SetUserID_click()));
     connect(&_setPatientID, SIGNAL(SetUserID()), this, SLOT(SetUserID_click()));
     connect(&_setPatientID, SIGNAL(goToPasscode()),
                  this, SLOT(goingToPasscode())
+                );
+    connect(&_keyboardUser, SIGNAL(goToUserID()),
+                 this, SLOT(goingToUserID())
+                );
+    connect(&_keyboardUser, SIGNAL(goToSetPatientID()),
+                 this, SLOT(goingToPatientID())
                 );
 }
 
@@ -78,4 +84,14 @@ void SetUserID::goingToPasscode()
     //qDebug() << "Slot from SetUserID Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
+}
+
+void SetUserID::goingToUserID()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void SetUserID::goingToPatientID()
+{
+    ui->stackedWidget->setCurrentIndex(2);
 }

@@ -147,6 +147,11 @@ private slots:
 signals:
     void SetUserID();
     void SetPatientID();
+    void goToUserID();
+    void goToPatientID();
+    void goToNetwork();
+    void goToTimeLastDose();
+    void goToSetPatientID();
 
 };
 
