@@ -25,8 +25,8 @@
 
 QString PreviousScreen;
 QString DateTimeFormat      = "yyyy-MM-dd HH:mm:ss";
-QString ConfigFilePath      = "/home/david/Desktop/XaTekConfig.xml";
-QString TestRecordFilePath  = "/home/david/Desktop/TestRecordData_";
+QString ConfigFilePath      = QDir::currentPath() + "/XaTekConfig.xml";
+QString TestRecordFilePath  = QDir::currentPath() + "/TestRecordData_";
 
 //Test Record Data
 QString TestData_ClotChip_ID;               // set in OpenScanClotChip
@@ -57,6 +57,8 @@ QString UserPasscode;                       // set in SetUserPasscode
 
 int main(int argc, char *argv[])
 {
+    qDebug() << ConfigFilePath;
+    qDebug() << TestRecordFilePath;
     QApplication a(argc, argv);
 
     MainWindow w;

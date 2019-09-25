@@ -106,8 +106,9 @@ void DateTimeForm::on_buttonEnter_clicked()
 
     if(month != "" && day != "" && hour!= "" && minute != "")
     {
-        SystemDate = month + day;
-        SystemTime = hour + minute;
+        qDebug() << month.toInt();
+        SystemDate = month + " " + day;
+        SystemTime = hour + " " + minute;
 
         emit timeDateUpdated();
         emit SettingsOptionsClicked();

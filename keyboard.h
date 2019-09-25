@@ -152,6 +152,7 @@ signals:
     void goToNetwork();
     void goToTimeLastDose();
     void goToSetPatientID();
+    void checkWifiConnection(QString pw);
 
 };
 

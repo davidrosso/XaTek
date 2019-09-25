@@ -29,23 +29,23 @@ class SelectNetwork : public QWidget
 public:
     explicit SelectNetwork(QWidget *parent = 0);
     ~SelectNetwork();
-    int foundCount;
-    QNetworkConfiguration netcfg;
-    QStringList WiFisList;
-    QList<QNetworkConfiguration> netcfgList;
+    //int foundCount;
+    //QNetworkConfiguration netcfg;
+    //QStringList WiFisList;
+    //QList<QNetworkConfiguration> netcfgList;
 
 private:
     Ui::SelectNetwork *ui;
-    Keyboard _keyboard;
+    Keyboard _keyboardNetwork;
     QTimer *findTimer;
-    QStandardItemModel* listModel;
     QNetworkSession *session;
 
 private slots:
     void on_buttonBack_clicked();
     void on_buttonEnter_clicked();
     void FindActiveWirelessNetworks();
-
+    void goToSelectNetwork();
+    void isConnectionValid(QString pw);
 signals:
     void SettingsOptionsClicked();
     void BackToConnectivity();

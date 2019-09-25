@@ -396,8 +396,16 @@ void MainWindow::updateDateTime()
     qDebug() << "Slot received, updating date time.";
     qDebug() << "System Date: " << SystemDate;
     qDebug() << "System Time: " << SystemTime;
-    ui->labelDate->setText(SystemDate);
-    ui->labelTime->setText(SystemTime);
+    //ui->labelDate->setText(SystemDate);
+    //ui->labelTime->setText(SystemTime);
+    QStringList sysDate = SystemDate.split(" ");
+    QStringList sysTime = SystemTime.split(" ");
+
+    //QTime mySetTime;
+    //QDate mySetDate;
+    //mySetTime.setHMS(sysTime[0].toInt(),sysTime[1].toInt(),0);
+    //mySetDate.setDate();
+
 }
 
 void MainWindow::backToHome_clicked()
