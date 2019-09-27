@@ -640,6 +640,7 @@ void Keyboard::SaveValueProceedToNextScreen()
     else if(PreviousScreen == "SelectNetwork")
     {
         emit checkWifiConnection(QString (ui->ValueEntered->text()));
+        ui->ValueEntered->setText("");
     }
 }
 

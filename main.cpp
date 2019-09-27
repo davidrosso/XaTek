@@ -57,8 +57,8 @@ QString UserPasscode;                       // set in SetUserPasscode
 
 int main(int argc, char *argv[])
 {
-    qDebug() << ConfigFilePath;
-    qDebug() << TestRecordFilePath;
+    //qDebug() << ConfigFilePath;
+    //qDebug() << TestRecordFilePath;
     QApplication a(argc, argv);
 
     MainWindow w;

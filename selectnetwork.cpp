@@ -63,8 +63,6 @@ void SelectNetwork::FindActiveWirelessNetworks()
     //qDebug() << ssidList;
 
     ui->WifiList->addItems(ssidList);
-
-
 }
 
 void SelectNetwork::on_buttonBack_clicked()
@@ -85,6 +83,9 @@ void SelectNetwork::on_buttonEnter_clicked()
     //auto session = new QNetworkSession(cfg, this);
     //session->open();
 
+    ssid =ui->WifiList->currentItem()->text();
+    //qDebug() << "SSID is :" << ssid;
+
     // go to keyboard class to enter password
     PreviousScreen = "SelectNetwork";
     ui->stackedWidget->setCurrentIndex(1);
@@ -98,5 +99,35 @@ void SelectNetwork::goToSelectNetwork()
 
 void SelectNetwork::isConnectionValid(QString pw)
 {
-    qDebug() << pw;
+    //qDebug() << pw;
+
+    QProcess myProcess;
+    QString myOutput;
+    QString processString = "nmcli d wifi connect " + ssid + " password " + pw;
+    //qDebug() << processString;
+    myProcess.start(processString);
+    myProcess.waitForFinished(-1);
+
+    myProcess.start("iw wlan0 link");
+    myProcess.waitForFinished(-1);
+    myOutput = myProcess.readAllStandardOutput().trimmed();
+
+    //qDebug() << myOutput;
+
+    if(myOutput == "Not connected.")
+    {
+        QString errorOutput = "Incorrect password for network \"" + ssid + "\"";
+        QMessageBox::information(
+          this,
+          tr("Could not connect"),
+          tr(errorOutput.toUtf8()) );
+    }
+    else
+    {
+        qDebug() << "Successfully connected to Wifi";
+        ui->stackedWidget->setCurrentIndex(0);
+        emit BackToConnectivity();
+    }
+
+
 }

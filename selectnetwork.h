@@ -39,6 +39,7 @@ private:
     Keyboard _keyboardNetwork;
     QTimer *findTimer;
     QNetworkSession *session;
+    QString ssid;
 
 private slots:
     void on_buttonBack_clicked();
