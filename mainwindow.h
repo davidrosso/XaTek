@@ -39,6 +39,7 @@ private:
     PasscodeUnlock _passcodeUnlock;
     OpenScanClotChip _openScanClotChip;
     QXmlStreamReader xmlReader;
+    QTime currentTime;
 
 public slots:
     void setTimer();
@@ -55,7 +56,6 @@ private slots:
     bool SettingOptionsComplete();
     void InitializeConfigXML();
     void ReadConfigXML();
-    void updateDateTime();
     void backToHome_clicked();
 
 signals:

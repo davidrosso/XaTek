@@ -10,8 +10,6 @@ SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // GUI will provide menus to affect power management, connectivity to WIFI and BT, user instruction options such as option to bypass non-critical instructions, time management settings, brightness settings, and QA Check frequency.
 
-    //HomeScreen _homeScreen;
-
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &_setAdminPasscode);
     ui->stackedWidget->insertWidget(2, &_setUserPasscode);
@@ -22,7 +20,6 @@ SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
     ui->stackedWidget->insertWidget(7, &_serviceForms);
     ui->stackedWidget->insertWidget(8, &_selectNetwork);
     ui->stackedWidget->insertWidget(9, &_bluetoothPairing);
-    //ui->stackedWidget->insertWidget(10, &_homeScreen);
 
     connect(&_setAdminPasscode, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
     connect(&_setUserPasscode, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
@@ -31,10 +28,6 @@ SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
     connect(&_connectivityForm, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
     connect(&_qualityAssuranceForm, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
     connect(&_serviceForms, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
-    connect(&_dateTimeForms, SIGNAL(timeDateUpdated()),this, SLOT(timeDateUpdateReceived()));
-
-    //QObject::dumpObjectInfo();
-
 }
 
 SettingOptionsForm::~SettingOptionsForm()
@@ -84,15 +77,5 @@ void SettingOptionsForm::on_buttonService_clicked()
 
 void SettingOptionsForm::on_buttonBack_clicked()
 {
-    //qDebug() << "Back button was pressed.";
-    //QObject::dumpObjectInfo();
     emit goHome();
-    //emit HomeClicked();
-    //ui->stackedWidget->setCurrentIndex(10);
-}
-
-void SettingOptionsForm::timeDateUpdateReceived()
-{
-    qDebug() << "Emitting Signal to update time";
-    emit sendUpdatedDateTime();
 }

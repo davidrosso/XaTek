@@ -48,12 +48,10 @@ private slots:
     void on_buttonService_clicked();
     void on_buttonBack_clicked();
     void moveToSettingsOptions();
-    void timeDateUpdateReceived();
 
 signals:
     void HomeClicked();
     void goHome();
-    void sendUpdatedDateTime();
 };
 
 #endif // SETTINGOPTIONSFORM_H

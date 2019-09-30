@@ -36,7 +36,6 @@ void CollectSample::on_buttonNext_clicked()
 {
     // set PreviousScreen variable
     PreviousScreen = "CollectSample";
-    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
     //TODO: check that a sample was collected before proceeding to the next screen
     //bool okToProceed = CheckStatus(current screen ID);
@@ -53,7 +52,6 @@ void CollectSample::on_buttonBack_clicked()
 
 void CollectSample::goingToPasscode()
 {
-    //qDebug() << "Slot from CollectSample Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

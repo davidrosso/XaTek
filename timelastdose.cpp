@@ -88,19 +88,16 @@ void TimeLastDose::updateMonth(QString in)
 
 void TimeLastDose::updateDay(QString in)
 {
-    //qDebug() << "Day: " << in;
     day = in;
 }
 
 void TimeLastDose::updateHour(QString in)
 {
-    //qDebug() << "Hour: " << in.toUtf8();
     hour = in;
 }
 
 void TimeLastDose::updateMinute(QString in)
 {
-    //qDebug() << "Minute: " << in.toUtf8();
     minute = in;
 }
 
@@ -121,14 +118,9 @@ void TimeLastDose::on_buttonEnter_clicked()
     PreviousScreen = "TimeLastDose";
     qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
-
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // The software will permit users to enter the time of last dose.
 
-    qDebug() << "month: " + month;
-    qDebug() << "day: " + day;
-    qDebug() << "hour: " + hour;
-    qDebug() << "minute: " + minute;
     // check that date and time are set on the tumblers
     if(month != "" && day != "" && hour!= "" && minute != "")
     {
@@ -170,12 +162,10 @@ QString TimeLastDose::secondsToString(qint64 seconds)
     qint64 TotalHours = (days * 24) + t.hour();
 
     return QString("%1").arg(TotalHours);
-    //return QString("%1 days, %2 hours, %3 minutes, %4 seconds").arg(days).arg(t.hour()).arg(t.minute()).arg(t.second());
 }
 
 void TimeLastDose::goingToPasscode()
 {
-    //qDebug() << "Slot from TimeLastDose Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

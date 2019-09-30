@@ -48,8 +48,6 @@ QString TestData_TestDuration;              // set in TestInProgress
 QString TestData_TestDurationUnits;         // set in TestInProgress
 QString TestData_Errors;                    // set in TestInProgress
 QString TestData_CRC;                       // set in TestInProgress
-QString SystemTime = "";
-QString SystemDate = "";
 
 // Passcodes
 QString AdminPasscode;                      // set in SetAdminPasscode

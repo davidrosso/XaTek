@@ -68,13 +68,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->insertWidget(2, &_passcodeUnlock);
     ui->stackedWidget->insertWidget(3, &_openScanClotChip);
 
-    connect(&_settingOptionsForm, SIGNAL(sendUpdatedDateTime()), this, SLOT(updateDateTime()));
-    //connect(&_settingOptionsForm, SIGNAL(goHome()), this, SLOT(backToHome_clicked()));
-
     connect(&_settingOptionsForm, SIGNAL(goHome()),
             this, SLOT(backToHome_clicked())
             );
-
     connect(this, SIGNAL(sendToPasscodeUnlock()),
             &_passcodeUnlock, SLOT(moveHomeScreen())
             );
@@ -194,7 +190,7 @@ void MainWindow::ReadConfigXML()
 
 void MainWindow::setTimer()
 {
-    QTime currentTime = QTime::currentTime();
+    currentTime = QTime::currentTime();
     QString currentTimeStr = currentTime.toString("hh:mm");
 
     // remove leading zero when time is before noon
@@ -391,22 +387,7 @@ bool MainWindow::SettingOptionsComplete()
     return okToContinue;
 }
 
-void MainWindow::updateDateTime()
-{
-    qDebug() << "Slot received, updating date time.";
-    qDebug() << "System Date: " << SystemDate;
-    qDebug() << "System Time: " << SystemTime;
-    //ui->labelDate->setText(SystemDate);
-    //ui->labelTime->setText(SystemTime);
-    QStringList sysDate = SystemDate.split(" ");
-    QStringList sysTime = SystemTime.split(" ");
 
-    //QTime mySetTime;
-    //QDate mySetDate;
-    //mySetTime.setHMS(sysTime[0].toInt(),sysTime[1].toInt(),0);
-    //mySetDate.setDate();
-
-}
 
 void MainWindow::backToHome_clicked()
 {

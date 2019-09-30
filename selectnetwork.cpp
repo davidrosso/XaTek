@@ -13,9 +13,6 @@ SelectNetwork::SelectNetwork(QWidget *parent) :
 
     connect(findTimer,&QTimer::timeout,this,&SelectNetwork::FindActiveWirelessNetworks);
     findTimer->start();
-    //foundCount = 0;
-    //ui->treeWidgetWiFis->setColumnWidth(0,250);
-    //ui->treeWidgetWiFis->setColumnWidth(1,200);
 
     FindActiveWirelessNetworks();
 
@@ -29,7 +26,6 @@ SelectNetwork::SelectNetwork(QWidget *parent) :
     connect(&_keyboardNetwork, SIGNAL(checkWifiConnection(QString)),
                  this, SLOT(isConnectionValid(QString))
                 );
-
 }
 
 
@@ -57,10 +53,8 @@ void SelectNetwork::FindActiveWirelessNetworks()
     myProcess.close();
 
     myOutput = myOutput.remove("\n\t").remove("\n").remove("\t").remove("SSID:").trimmed();
-    //qDebug() << myOutput;
 
     QStringList ssidList = myOutput.split(" ");
-    //qDebug() << ssidList;
 
     ui->WifiList->addItems(ssidList);
 }
@@ -73,23 +67,11 @@ void SelectNetwork::on_buttonBack_clicked()
 
 void SelectNetwork::on_buttonEnter_clicked()
 {    
-    //const QString& s = ui->listWidgetNetworks->currentItem()->text();
-
-    // display/confirm the selected network
-    //QMessageBox::information(this, "Network Connection",
-        //QString("Selected Network is:        %1").arg(s));
-
-    // connect to the selected network
-    //auto session = new QNetworkSession(cfg, this);
-    //session->open();
-
     ssid =ui->WifiList->currentItem()->text();
-    //qDebug() << "SSID is :" << ssid;
 
-    // go to keyboard class to enter password
+    // go to keyboard to enter password
     PreviousScreen = "SelectNetwork";
     ui->stackedWidget->setCurrentIndex(1);
-
 }
 
 void SelectNetwork::goToSelectNetwork()
@@ -99,20 +81,16 @@ void SelectNetwork::goToSelectNetwork()
 
 void SelectNetwork::isConnectionValid(QString pw)
 {
-    //qDebug() << pw;
-
     QProcess myProcess;
     QString myOutput;
     QString processString = "nmcli d wifi connect " + ssid + " password " + pw;
-    //qDebug() << processString;
     myProcess.start(processString);
     myProcess.waitForFinished(-1);
 
     myProcess.start("iw wlan0 link");
     myProcess.waitForFinished(-1);
     myOutput = myProcess.readAllStandardOutput().trimmed();
-
-    //qDebug() << myOutput;
+    myProcess.close();
 
     if(myOutput == "Not connected.")
     {
@@ -128,6 +106,4 @@ void SelectNetwork::isConnectionValid(QString pw)
         ui->stackedWidget->setCurrentIndex(0);
         emit BackToConnectivity();
     }
-
-
 }

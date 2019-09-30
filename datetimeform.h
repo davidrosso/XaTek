@@ -15,6 +15,7 @@
 #include <QVBoxLayout>
 #include <QQmlApplicationEngine>
 #include <QScopedPointer>
+#include <QProcess>
 #include <qabstractitemview.h>
 
 #include "ui_datetimeform.h"
@@ -42,7 +43,6 @@ private:
     //std::string timezone;
 
 private slots:
-    void updateSettings();
     void updateMonth(QString in);
     void updateDay(QString in);
     void updateHour(QString in);

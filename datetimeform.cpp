@@ -24,7 +24,6 @@ DateTimeForm::DateTimeForm(QWidget *parent) :
     QMetaObject::invokeMethod(tumblerItem, "setDay", Q_ARG(QVariant, ltm->tm_mday));
     QMetaObject::invokeMethod(tumblerItem, "setHour", Q_ARG(QVariant, ltm->tm_hour));
     QMetaObject::invokeMethod(tumblerItem, "setMinute", Q_ARG(QVariant, ltm->tm_min));
-    //QMetaObject::invokeMethod(tumblerItem, "setTimezone", Q_ARG(QVariant, ltm->tm_mon));
 
     QObject::connect(tumblerItem,SIGNAL(updateMonth(QString)),this,SLOT(updateMonth(QString)));
     QObject::connect(tumblerItem,SIGNAL(updateDay(QString)),this,SLOT(updateDay(QString)));
@@ -50,45 +49,52 @@ DateTimeForm::~DateTimeForm()
     delete ui;
 }
 
-void DateTimeForm::updateSettings()
-{
-    //on_buttonReturnToSettings_clicked();
-    //TODO: Not sure if we need this method.
-}
-
 void DateTimeForm::updateMonth(QString in)
 {
-    month = in.toUtf8();
-    //qDebug() << "Month: " << in.toUtf8();
-    //TODO Save the data here
+    if(in == "January")
+        month = "1";
+    else if(in == "February")
+        month = "2";
+    else if(in == "March")
+        month = "3";
+    else if(in == "April")
+        month = "4";
+    else if(in == "May")
+        month = "5";
+    else if(in == "June")
+        month = "6";
+    else if(in == "July")
+        month = "7";
+    else if(in == "August")
+        month = "8";
+    else if(in == "September")
+        month = "9";
+    else if(in == "October")
+        month = "10";
+    else if(in == "November")
+        month = "11";
+    else if(in == "December")
+        month = "12";
 }
 
 void DateTimeForm::updateDay(QString in)
 {
     day = in.toUtf8();
-    //qDebug() << "Day: " << in.toUtf8();
-    //TODO Save the data here
 }
 
 void DateTimeForm::updateHour(QString in)
 {
     hour = in.toUtf8();
-    //qDebug() << "Hour: " << in.toUtf8();
-    //TODO Save the data here
 }
 
 void DateTimeForm::updateMinute(QString in)
 {
     minute = in.toUtf8();
-    //qDebug() << "Minute: " << in.toUtf8();
-    //TODO Save the data here
 }
 
 void DateTimeForm::updateTimezone(QString in)
 {
     timezone = in.toUtf8();
-    //qDebug() << "Timezone: " << in.toUtf8();
-    //TODO Save the data here
 }
 
 void DateTimeForm::on_buttonBack_clicked()
@@ -101,16 +107,26 @@ void DateTimeForm::on_buttonEnter_clicked()
 {
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // GUI will permit user to set time, date, and time-zone.
-    qDebug() << "Enter button pressed from datetime.";
-    // TODO: set date/time on device
+    QProcess myProcess;
 
+    //Saving date to system
     if(month != "" && day != "" && hour!= "" && minute != "")
     {
-        qDebug() << month.toInt();
-        SystemDate = month + " " + day;
-        SystemTime = hour + " " + minute;
+        if(month.toInt() < 10)
+        {
+            month = "0" + month;
+        }
+        if(day.toInt() < 10)
+        {
+            day = "0" + day;
+        }
 
-        emit timeDateUpdated();
+        //TODO Replace hard coded year when updating wireframes for dateTime.
+        QString processString = "date --set=\"2019" + month + day + " " + hour + ":" + minute;
+        myProcess.start(processString);
+        myProcess.waitForFinished(-1);
+        myProcess.close();
+
         emit SettingsOptionsClicked();
     }
 }
