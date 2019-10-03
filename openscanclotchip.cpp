@@ -1,4 +1,5 @@
 #include "openscanclotchip.h"
+#include <QFileInfo>
 
 extern QString PreviousScreen;
 extern QString TestData_ClotChip_ID;
@@ -10,6 +11,19 @@ OpenScanClotChip::OpenScanClotChip(QWidget *parent) :
     ui(new Ui::OpenScanClotChip)
 {
     ui->setupUi(this);
+
+//    qDebug() << QCoreApplication::libraryPaths();
+//    qDebug() << QMovie::supportedFormats();
+//    qDebug() << QLibraryInfo::location(QLibraryInfo::PluginsPath);
+//    QFileInfo check_file("://Images/XatekUI_OpenScanClotChip.gif");
+//    if(check_file.exists() && check_file.isFile())
+//    {
+//        qDebug() << "File exists";
+//    }
+//    else
+//    {
+//        qDebug() << "File not found";
+//    }
 
     // Load animated GIF
     QMovie* _movie = new QMovie("://Images/XatekUI_OpenScanClotChip.gif");
@@ -32,7 +46,6 @@ OpenScanClotChip::OpenScanClotChip(QWidget *parent) :
     connect(&_insertClotChip, SIGNAL(goToPasscode()),
                  this, SLOT(goingToPasscode())
                 );
-
 }
 
 OpenScanClotChip::~OpenScanClotChip()

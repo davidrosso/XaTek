@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.9.2, 2019-09-27T15:16:05. -->
+<!-- Written by QtCreator 4.9.2, 2019-10-02T17:24:27. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -272,23 +272,29 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedFiles">
        <value type="QString">/home/sparton/Desktop/XaTek_Git/build-XaTek-XaTek_ARM-Debug/XaTek</value>
+       <value type="QString">/home/sparton/Desktop/XaTek_Git/build-XaTek-XaTek_ARM-Release/XaTek</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
+       <value type="QString">10.28.40.19</value>
        <value type="QString">10.28.40.19</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/home/root</value>
+       <value type="QString">/home/root</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedSysroots">
+       <value type="QString">/opt/fsl-imx-xwayland/4.14-sumo/sysroots/aarch64-poky-linux</value>
        <value type="QString">/opt/fsl-imx-xwayland/4.14-sumo/sysroots/aarch64-poky-linux</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedLocalTimes">
-       <value type="QDateTime">2019-09-27T11:10:01.671</value>
+       <value type="QDateTime">2019-10-02T17:18:49.887</value>
+       <value type="QDateTime">2019-10-02T13:06:45.901</value>
       </valuelist>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedRemoteTimes">
-       <value type="QDateTime">2019-05-21T10:46:04.000</value>
+       <value type="QDateTime">2019-05-21T17:07:46.000</value>
+       <value type="QDateTime">2019-05-21T13:03:22.000</value>
       </valuelist>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">3</value>
