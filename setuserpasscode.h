@@ -3,10 +3,11 @@
 
 #include <QWidget>
 #include <QMessageBox>
-#include "ui_setuserpasscode.h"
 #include <QtXml>
 #include <QFile>
 #include <QDebug>
+#include <QCryptographicHash>
+#include "ui_setuserpasscode.h"
 
 namespace Ui {
 class SetUserPasscode;

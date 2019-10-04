@@ -105,14 +105,11 @@ void PasscodeUnlock::on_buttonUnlock_clicked()
     //qDebug() << "Admin_Passcode: " + AdminPasscode;
     //qDebug() << "User_Passcode: " + UserPasscode;
 
-    // check that the entered passcode is either the admin passcode or the user passcode
-    if(enteredPasscode == AdminPasscode || enteredPasscode == UserPasscode)
-    {
-        qDebug() << "Entered Value: " << enteredPasscode;
-        qDebug() << "AdminPasscode: " << AdminPasscode;
-        qDebug() << "UserPasscode: " << UserPasscode;
-        qDebug() << "Passcode Verified. Moving to Home Screen";
+    QByteArray hashedInput(enteredPasscode.toStdString().c_str());
 
+    // check that the entered passcode is either the admin passcode or the user passcode
+    if(QCryptographicHash::hash(hashedInput,QCryptographicHash::Algorithm::Sha256).toHex() == AdminPasscode || QCryptographicHash::hash(hashedInput,QCryptographicHash::Algorithm::Sha256).toHex() == UserPasscode)
+    {
         // reset the entered passcode
         enteredPasscode = "";
 

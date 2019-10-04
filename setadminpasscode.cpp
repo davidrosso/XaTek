@@ -123,7 +123,9 @@ void SetAdminPasscode::on_buttonEnter_clicked()
                   tr("The Admin passcode was successfully created.") );
 
                 // set the new user passcode
-                AdminPasscode = ui->lineEditPasscode->text();
+                QByteArray hashedInput(ui->lineEditPasscode->text().toStdString().c_str());
+                AdminPasscode = QCryptographicHash::hash(hashedInput,QCryptographicHash::Algorithm::Sha256).toHex();
+                qDebug() << "Admin PC: " << AdminPasscode;
                 UpdateAdminPasscode();
 
                 ui->lineEditPasscode->setText("");

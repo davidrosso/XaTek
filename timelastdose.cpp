@@ -116,7 +116,7 @@ void TimeLastDose::on_buttonEnter_clicked()
 {
     // set PreviousScreen variable
     PreviousScreen = "TimeLastDose";
-    qDebug() << "previous screen: " + PreviousScreen.toUtf8();
+    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // The software will permit users to enter the time of last dose.
@@ -130,7 +130,7 @@ void TimeLastDose::on_buttonEnter_clicked()
 
         QTime t1(hour.toInt(), minute.toInt(), 0);
         DateTimeOfLastDose.setTime(t1);
-        qDebug() << "DateTimeOfLastDose: " + DateTimeOfLastDose.toString(DateTimeFormat);
+        //qDebug() << "DateTimeOfLastDose: " + DateTimeOfLastDose.toString(DateTimeFormat);
 
         // check that the last dose date/time is not after the current date/time
         if(DateTimeOfLastDose > QDateTime::currentDateTime())
