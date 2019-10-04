@@ -1,6 +1,8 @@
 #include "settingoptionsform.h"
 #include "homescreen.h"
 
+extern QString AdminPasscode;
+
 SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SettingOptionsForm)
@@ -28,6 +30,11 @@ SettingOptionsForm::SettingOptionsForm(QWidget *parent) :
     connect(&_connectivityForm, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
     connect(&_qualityAssuranceForm, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
     connect(&_serviceForms, SIGNAL(SettingsOptionsClicked()), this, SLOT(moveToSettingsOptions()));
+
+    adminSetTimer = new QTimer(this);
+    // setup the timer to check for admin passcode set
+    connect(adminSetTimer , SIGNAL(timeout()), this,SLOT(isAdminSet()));
+    adminSetTimer->start(100);
 }
 
 SettingOptionsForm::~SettingOptionsForm()
@@ -78,4 +85,32 @@ void SettingOptionsForm::on_buttonService_clicked()
 void SettingOptionsForm::on_buttonBack_clicked()
 {
     emit goHome();
+}
+
+void SettingOptionsForm::isAdminSet()
+{
+    //qDebug() << "Timer still going";
+    if (AdminPasscode == "")
+    {
+        ui->buttonUserPasscode->setVisible(false);
+        ui->buttonDisplaySettings->setVisible(false);
+        ui->buttonDateTime->setVisible(false);
+        ui->buttonConnectivity->setVisible(false);
+        ui->buttonQuality->setVisible(false);
+        ui->buttonService->setVisible(false);
+    }
+    else
+    {
+        //Disable timer to stop checking for admin initializations
+        adminSetTimer->stop();
+        //qDebug() << "Timer stopping";
+        //Re-enable all admin settings options
+        ui->buttonUserPasscode->setVisible(true);
+        ui->buttonDisplaySettings->setVisible(true);
+        ui->buttonDateTime->setVisible(true);
+        ui->buttonConnectivity->setVisible(true);
+        ui->buttonQuality->setVisible(true);
+        ui->buttonService->setVisible(true);
+
+    }
 }

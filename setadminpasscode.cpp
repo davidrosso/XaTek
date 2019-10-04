@@ -14,6 +14,7 @@ SetAdminPasscode::SetAdminPasscode(QWidget *parent) :
     passcodeSecondEntry = "";
     ui->lineEditPasscode->setText("");
     ui->labelAdminPasscode->setText("Enter Admin Passcode");
+    ui->EnteredPassCode->setVisible(false);
 }
 
 SetAdminPasscode::~SetAdminPasscode()
@@ -73,18 +74,73 @@ void SetAdminPasscode::on_button0_clicked()
 
 void SetAdminPasscode::on_buttonBack_clicked()
 {
-    passcodeFirstEntry = "";
-    passcodeSecondEntry = "";
-    ui->lineEditPasscode->setText("");
-    ui->labelAdminPasscode->setText("Enter Admin Passcode");
+    if(ui->buttonEnter->text() == "Settings")
+    {
+        passcodeFirstEntry = "";
+        passcodeSecondEntry = "";
+        ui->lineEditPasscode->setText("");
+        ui->labelAdminPasscode->setText("Enter Admin Passcode");
 
-    emit SettingsOptionsClicked();
+        ui->button0->setVisible(true);
+        ui->button1->setVisible(true);
+        ui->button2->setVisible(true);
+        ui->button3->setVisible(true);
+        ui->button4->setVisible(true);
+        ui->button5->setVisible(true);
+        ui->button6->setVisible(true);
+        ui->button7->setVisible(true);
+        ui->button8->setVisible(true);
+        ui->button9->setVisible(true);
+        ui->EnteredPassCode->setVisible(false);
+        ui->buttonEnter->setText("Enter");
+        QFont *changeFont = new QFont();
+        changeFont->setPixelSize(60);
+        ui->buttonEnter->setFont(*changeFont);
+    }
+    else
+    {
+        passcodeFirstEntry = "";
+        passcodeSecondEntry = "";
+        ui->lineEditPasscode->setText("");
+        ui->labelAdminPasscode->setText("Enter Admin Passcode");
+
+        emit SettingsOptionsClicked();
+
+    }
+
 }
 
 void SetAdminPasscode::on_buttonEnter_clicked()
 {
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // The software shall require the user to change the passcode during setup.
+
+    if(ui->buttonEnter->text() == "Settings")
+    {
+        passcodeFirstEntry = "";
+        passcodeSecondEntry = "";
+        ui->lineEditPasscode->setText("");
+        ui->labelAdminPasscode->setText("Enter Admin Passcode");
+
+        ui->button0->setVisible(true);
+        ui->button1->setVisible(true);
+        ui->button2->setVisible(true);
+        ui->button3->setVisible(true);
+        ui->button4->setVisible(true);
+        ui->button5->setVisible(true);
+        ui->button6->setVisible(true);
+        ui->button7->setVisible(true);
+        ui->button8->setVisible(true);
+        ui->button9->setVisible(true);
+        ui->EnteredPassCode->setVisible(false);
+        ui->buttonEnter->setText("Enter");
+        QFont *changeFont = new QFont();
+        changeFont->setPixelSize(60);
+        ui->buttonEnter->setFont(*changeFont);
+
+        emit SettingsOptionsClicked();
+        return;
+    }
 
     if(ui->lineEditPasscode->text().length() < 4)
     {
@@ -117,21 +173,34 @@ void SetAdminPasscode::on_buttonEnter_clicked()
 
             if(passcodeFirstEntry == passcodeSecondEntry)
             {
-                QMessageBox::information(
-                  this,
-                  tr("Admin Passcode Created"),
-                  tr("The Admin passcode was successfully created.") );
-
                 // set the new user passcode
                 QByteArray hashedInput(ui->lineEditPasscode->text().toStdString().c_str());
                 AdminPasscode = QCryptographicHash::hash(hashedInput,QCryptographicHash::Algorithm::Sha256).toHex();
-                qDebug() << "Admin PC: " << AdminPasscode;
+                //qDebug() << "Admin PC: " << AdminPasscode;
                 UpdateAdminPasscode();
+
+                ui->labelAdminPasscode->setText("Your New Admin Passcode is:");
+                ui->buttonEnter->setText("Settings");
+                QFont *changeFont = new QFont();
+                changeFont->setPixelSize(55);
+                ui->buttonEnter->setFont(*changeFont);
+                ui->EnteredPassCode->setVisible(true);
+                ui->EnteredPassCode->setText(passcodeFirstEntry);
+                ui->button0->setVisible(false);
+                ui->button1->setVisible(false);
+                ui->button2->setVisible(false);
+                ui->button3->setVisible(false);
+                ui->button4->setVisible(false);
+                ui->button5->setVisible(false);
+                ui->button6->setVisible(false);
+                ui->button7->setVisible(false);
+                ui->button8->setVisible(false);
+                ui->button9->setVisible(false);
 
                 ui->lineEditPasscode->setText("");
 
                 // return to the Setting Screen
-                emit SettingsOptionsClicked();
+                //emit SettingsOptionsClicked();
             }
             else
             {

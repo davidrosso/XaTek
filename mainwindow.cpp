@@ -330,6 +330,10 @@ void MainWindow::on_buttonAction_clicked()
                 break;
         }
     }
+    else
+    {
+        ui->stackedWidget->setCurrentIndex(1);
+    }
 }
 
 void MainWindow::on_buttonTestInProgress_clicked()

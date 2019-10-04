@@ -39,7 +39,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Roboto</family>
+       <family>Ubuntu</family>
        <pointsize>30</pointsize>
       </font>
      </property>
@@ -407,6 +407,30 @@ color: rgb(208,225,241)
        <width>73</width>
        <height>62</height>
       </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="EnteredPassCode">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>290</y>
+       <width>721</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>

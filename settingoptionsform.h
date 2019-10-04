@@ -37,6 +37,7 @@ private:
     ServiceForm _serviceForms;
     SelectNetwork _selectNetwork;
     BluetoothPairing _bluetoothPairing;
+    QTimer *adminSetTimer;
 
 private slots:
     void on_buttonAdminPasscode_clicked();
@@ -48,6 +49,7 @@ private slots:
     void on_buttonService_clicked();
     void on_buttonBack_clicked();
     void moveToSettingsOptions();
+    void isAdminSet();
 
 signals:
     void HomeClicked();
