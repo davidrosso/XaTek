@@ -77,7 +77,6 @@ void SetAdminPasscode::on_buttonBack_clicked()
     passcodeFirstEntry = "";
     passcodeSecondEntry = "";
 
-    qDebug() << "Button text: " << ui->buttonEnter->text();
     if(ui->buttonEnter->text() != "Settings")
     {
         emit SettingsOptionsClicked();

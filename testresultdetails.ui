@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
+     <y>-10</y>
      <width>720</width>
      <height>1130</height>
     </rect>
@@ -139,7 +139,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>200</y>
+       <y>180</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -161,7 +161,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>260</y>
+       <y>220</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -183,7 +183,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>320</y>
+       <y>270</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -205,7 +205,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>380</y>
+       <y>310</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -227,7 +227,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>440</y>
+       <y>350</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -249,7 +249,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>500</y>
+       <y>390</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -264,7 +264,7 @@ color: rgb(208,225,241)</string>
       <string notr="true">color: rgb(208,225,241);</string>
      </property>
      <property name="text">
-      <string>Emax:</string>
+      <string>ΔEmax:</string>
      </property>
     </widget>
     <widget class="QLabel" name="labelUserIDValue">
@@ -293,7 +293,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>400</x>
-       <y>200</y>
+       <y>180</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -315,7 +315,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>400</x>
-       <y>260</y>
+       <y>220</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -337,7 +337,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>400</x>
-       <y>320</y>
+       <y>270</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -359,7 +359,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>400</x>
-       <y>440</y>
+       <y>350</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -381,7 +381,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>400</x>
-       <y>500</y>
+       <y>390</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -403,7 +403,7 @@ color: rgb(208,225,241)</string>
      <property name="geometry">
       <rect>
        <x>400</x>
-       <y>380</y>
+       <y>310</y>
        <width>171</width>
        <height>31</height>
       </rect>
