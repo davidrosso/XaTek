@@ -62,7 +62,6 @@ void VerifyClotChip::on_buttonNext_clicked()
 
 void VerifyClotChip::goingToPasscode()
 {
-    //qDebug() << "Slot from VerifyClotChip Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

@@ -36,7 +36,6 @@ void PreheatClotchip::on_buttonNext_clicked()
 {
     // set PreviousScreen variable
     PreviousScreen = "PreheatClotchip";
-    //qDebug() << "previous screen: " + PreviousScreen.toUtf8();
 
     //TODO: check that preheat complete before proceeding to the next screen
     //bool okToProceed = CheckStatus(current screen ID);
@@ -53,7 +52,6 @@ void PreheatClotchip::on_buttonBack_clicked()
 
 void PreheatClotchip::goingToPasscode()
 {
-    //qDebug() << "Slot from PreheatClotChip Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

@@ -89,7 +89,6 @@ void SettingOptionsForm::on_buttonBack_clicked()
 
 void SettingOptionsForm::isAdminSet()
 {
-    //qDebug() << "Timer still going";
     if (AdminPasscode == "")
     {
         ui->buttonUserPasscode->setVisible(false);
@@ -103,7 +102,6 @@ void SettingOptionsForm::isAdminSet()
     {
         //Disable timer to stop checking for admin initializations
         adminSetTimer->stop();
-        //qDebug() << "Timer stopping";
         //Re-enable all admin settings options
         ui->buttonUserPasscode->setVisible(true);
         ui->buttonDisplaySettings->setVisible(true);

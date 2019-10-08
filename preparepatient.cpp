@@ -53,7 +53,6 @@ void PreparePatient::on_buttonBack_clicked()
 
 void PreparePatient::goingToPasscode()
 {
-    //qDebug() << "Slot from PreparePatient Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

@@ -26,6 +26,7 @@ private:
     QString passcodeFirstEntry = "";
     QString passcodeSecondEntry = "";
     QXmlStreamReader xmlReader;
+    int screenCounter;
 
 private slots:
     void on_button1_clicked();
@@ -41,6 +42,10 @@ private slots:
     void on_buttonBack_clicked();
     void on_buttonEnter_clicked();
     void UpdateUserPasscode();
+    void ShowFirstScreen();
+    void ShowSecondScreen();
+    void ShowThirdScreen();
+    void ShowFourthScreen();
 
 signals:
     void SettingsOptionsClicked();

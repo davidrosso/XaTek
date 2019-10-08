@@ -83,7 +83,6 @@ void SetPatientID::on_buttonBack_clicked()
 
 void SetPatientID::goingToPasscode()
 {
-    //qDebug() << "Slot from SetPatientID Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }

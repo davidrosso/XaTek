@@ -74,40 +74,15 @@ void SetAdminPasscode::on_button0_clicked()
 
 void SetAdminPasscode::on_buttonBack_clicked()
 {
-    if(ui->buttonEnter->text() == "Settings")
-    {
-        passcodeFirstEntry = "";
-        passcodeSecondEntry = "";
-        ui->lineEditPasscode->setText("");
-        ui->labelAdminPasscode->setText("Enter Admin Passcode");
+    passcodeFirstEntry = "";
+    passcodeSecondEntry = "";
 
-        ui->button0->setVisible(true);
-        ui->button1->setVisible(true);
-        ui->button2->setVisible(true);
-        ui->button3->setVisible(true);
-        ui->button4->setVisible(true);
-        ui->button5->setVisible(true);
-        ui->button6->setVisible(true);
-        ui->button7->setVisible(true);
-        ui->button8->setVisible(true);
-        ui->button9->setVisible(true);
-        ui->EnteredPassCode->setVisible(false);
-        ui->buttonEnter->setText("Enter");
-        QFont *changeFont = new QFont();
-        changeFont->setPixelSize(60);
-        ui->buttonEnter->setFont(*changeFont);
-    }
-    else
+    qDebug() << "Button text: " << ui->buttonEnter->text();
+    if(ui->buttonEnter->text() != "Settings")
     {
-        passcodeFirstEntry = "";
-        passcodeSecondEntry = "";
-        ui->lineEditPasscode->setText("");
-        ui->labelAdminPasscode->setText("Enter Admin Passcode");
-
         emit SettingsOptionsClicked();
-
     }
-
+    ShowFirstScreen();
 }
 
 void SetAdminPasscode::on_buttonEnter_clicked()
@@ -119,24 +94,7 @@ void SetAdminPasscode::on_buttonEnter_clicked()
     {
         passcodeFirstEntry = "";
         passcodeSecondEntry = "";
-        ui->lineEditPasscode->setText("");
-        ui->labelAdminPasscode->setText("Enter Admin Passcode");
-
-        ui->button0->setVisible(true);
-        ui->button1->setVisible(true);
-        ui->button2->setVisible(true);
-        ui->button3->setVisible(true);
-        ui->button4->setVisible(true);
-        ui->button5->setVisible(true);
-        ui->button6->setVisible(true);
-        ui->button7->setVisible(true);
-        ui->button8->setVisible(true);
-        ui->button9->setVisible(true);
-        ui->EnteredPassCode->setVisible(false);
-        ui->buttonEnter->setText("Enter");
-        QFont *changeFont = new QFont();
-        changeFont->setPixelSize(60);
-        ui->buttonEnter->setFont(*changeFont);
+        ShowFirstScreen();
 
         emit SettingsOptionsClicked();
         return;
@@ -157,7 +115,6 @@ void SetAdminPasscode::on_buttonEnter_clicked()
         passcodeSecondEntry = "";
         ui->lineEditPasscode->setText("");
         ui->labelAdminPasscode->setText("Enter Admin Passcode");
-
     }
     else
     {
@@ -176,28 +133,8 @@ void SetAdminPasscode::on_buttonEnter_clicked()
                 // set the new user passcode
                 QByteArray hashedInput(ui->lineEditPasscode->text().toStdString().c_str());
                 AdminPasscode = QCryptographicHash::hash(hashedInput,QCryptographicHash::Algorithm::Sha256).toHex();
-                //qDebug() << "Admin PC: " << AdminPasscode;
                 UpdateAdminPasscode();
-
-                ui->labelAdminPasscode->setText("Your New Admin Passcode is:");
-                ui->buttonEnter->setText("Settings");
-                QFont *changeFont = new QFont();
-                changeFont->setPixelSize(55);
-                ui->buttonEnter->setFont(*changeFont);
-                ui->EnteredPassCode->setVisible(true);
-                ui->EnteredPassCode->setText(passcodeFirstEntry);
-                ui->button0->setVisible(false);
-                ui->button1->setVisible(false);
-                ui->button2->setVisible(false);
-                ui->button3->setVisible(false);
-                ui->button4->setVisible(false);
-                ui->button5->setVisible(false);
-                ui->button6->setVisible(false);
-                ui->button7->setVisible(false);
-                ui->button8->setVisible(false);
-                ui->button9->setVisible(false);
-
-                ui->lineEditPasscode->setText("");
+                ShowThirdScreen();
 
                 // return to the Setting Screen
                 //emit SettingsOptionsClicked();
@@ -253,3 +190,77 @@ void SetAdminPasscode::UpdateAdminPasscode()
 
     xmlFile.close();
 }
+
+void SetAdminPasscode::ShowFirstScreen()
+{
+    //passcodeFirstEntry = "";
+    //passcodeSecondEntry = "";
+    ui->lineEditPasscode->setText("");
+    ui->labelAdminPasscode->setText("Enter Admin Passcode");
+
+    ui->button0->setVisible(true);
+    ui->button1->setVisible(true);
+    ui->button2->setVisible(true);
+    ui->button3->setVisible(true);
+    ui->button4->setVisible(true);
+    ui->button5->setVisible(true);
+    ui->button6->setVisible(true);
+    ui->button7->setVisible(true);
+    ui->button8->setVisible(true);
+    ui->button9->setVisible(true);
+    ui->EnteredPassCode->setVisible(false);
+    ui->buttonEnter->setText("Enter");
+    QFont *changeFont = new QFont();
+    changeFont->setFamily("Roboto");
+    changeFont->setPixelSize(60);
+    ui->buttonEnter->setFont(*changeFont);
+}
+
+void SetAdminPasscode::ShowSecondScreen()
+{
+    passcodeFirstEntry = ui->lineEditPasscode->text();
+    ui->lineEditPasscode->setText("");
+    ui->labelAdminPasscode->setText("Reenter Admin Passcode");
+
+    ui->button0->setVisible(true);
+    ui->button1->setVisible(true);
+    ui->button2->setVisible(true);
+    ui->button3->setVisible(true);
+    ui->button4->setVisible(true);
+    ui->button5->setVisible(true);
+    ui->button6->setVisible(true);
+    ui->button7->setVisible(true);
+    ui->button8->setVisible(true);
+    ui->button9->setVisible(true);
+    ui->EnteredPassCode->setVisible(false);
+    ui->buttonEnter->setText("Enter");
+    QFont *changeFont = new QFont();
+    changeFont->setFamily("Roboto");
+    changeFont->setPixelSize(60);
+    ui->buttonEnter->setFont(*changeFont);
+}
+
+void SetAdminPasscode::ShowThirdScreen()
+{
+    ui->labelAdminPasscode->setText("Your New Admin Passcode is:");
+    ui->buttonEnter->setText("Settings");
+    QFont *changeFont = new QFont();
+    changeFont->setFamily("Roboto");
+    changeFont->setPixelSize(55);
+    ui->buttonEnter->setFont(*changeFont);
+    ui->EnteredPassCode->setVisible(true);
+    ui->EnteredPassCode->setText(passcodeFirstEntry);
+    ui->button0->setVisible(false);
+    ui->button1->setVisible(false);
+    ui->button2->setVisible(false);
+    ui->button3->setVisible(false);
+    ui->button4->setVisible(false);
+    ui->button5->setVisible(false);
+    ui->button6->setVisible(false);
+    ui->button7->setVisible(false);
+    ui->button8->setVisible(false);
+    ui->button9->setVisible(false);
+
+    ui->lineEditPasscode->setText("");
+}
+

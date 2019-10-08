@@ -40,6 +40,9 @@ private slots:
     void on_buttonBack_clicked();
     void on_buttonEnter_clicked();
     void UpdateAdminPasscode();
+    void ShowFirstScreen();
+    void ShowSecondScreen();
+    void ShowThirdScreen();
 
 signals:
     void SettingsOptionsClicked();

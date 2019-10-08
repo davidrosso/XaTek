@@ -3,6 +3,7 @@
 extern QString DateTimeFormat;
 extern QString ConfigFilePath;
 extern QString UserPasscode;
+extern QString AdminPasscode;
 
 SetUserPasscode::SetUserPasscode(QWidget *parent) :
     QWidget(parent),
@@ -10,10 +11,8 @@ SetUserPasscode::SetUserPasscode(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    passcodeFirstEntry = "";
-    passcodeSecondEntry = "";
-    ui->lineEditPasscode->setText("");
-    ui->labelTitle->setText("Enter User Passcode");
+    ShowFirstScreen();
+    screenCounter = 1;
 }
 
 SetUserPasscode::~SetUserPasscode()
@@ -75,17 +74,33 @@ void SetUserPasscode::on_buttonBack_clicked()
 {
     passcodeFirstEntry = "";
     passcodeSecondEntry = "";
-    ui->lineEditPasscode->setText("");
-    ui->labelTitle->setText("Enter Admin Passcode");
+    ui->lineEditPasscode->setText("");    
 
-    // return to the Setting Screen
-    emit SettingsOptionsClicked();
+    if(ui->buttonEnter->text() == "Settings")
+    {
+        //Return to Set User Passcode Screen
+        screenCounter = 2;
+        ShowSecondScreen();
+    }
+    else
+    {
+        // return to the Setting Screen
+        ShowFirstScreen();
+        screenCounter = 1;
+        emit SettingsOptionsClicked();
+    }
 }
 
 void SetUserPasscode::on_buttonEnter_clicked()
 {
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // The software shall require the user to change the passcode during setup.
+    if(ui->buttonEnter->text() == "Settings")
+    {
+        emit SettingsOptionsClicked();
+        ShowFirstScreen();
+        return;
+    }
 
     if(ui->lineEditPasscode->text().length() < 4)
     {
@@ -99,51 +114,78 @@ void SetUserPasscode::on_buttonEnter_clicked()
     }
     else
     {
-        if (passcodeFirstEntry == "")
+        switch(screenCounter)
         {
-            passcodeFirstEntry = ui->lineEditPasscode->text();
-            ui->lineEditPasscode->setText("");
-            ui->labelTitle->setText("Reenter Admin Passcode");
-        }
-        else
-        {
-            passcodeSecondEntry = ui->lineEditPasscode->text();
-
-            if(passcodeFirstEntry == passcodeSecondEntry)
+            case 1:
             {
-                QMessageBox::information(
-                  this,
-                  tr("Admin Passcode Created"),
-                  tr("The Admin passcode was successfully created.") );
-
-                // set the new user passcode
+                //Enter Admin Password First
                 QByteArray hashedInput(ui->lineEditPasscode->text().toStdString().c_str());
-                UserPasscode = QCryptographicHash::hash(hashedInput,QCryptographicHash::Algorithm::Sha256).toHex();
-                UpdateUserPasscode();
-
-                ui->lineEditPasscode->setText("");
-
-                // return to the Setting Screen
-                emit SettingsOptionsClicked();
+                if(QCryptographicHash::hash(hashedInput,QCryptographicHash::Algorithm::Sha256).toHex() == AdminPasscode)
+                {
+                    screenCounter = 2;
+                    ShowSecondScreen();
+                }
+                else
+                {
+                    ui->lineEditPasscode->setText("");
+                    screenCounter = 1;
+                    qDebug() << "Invalid Admin Password. Try again";
+                }
+                break;
             }
-            else
+            case 2:
             {
-                // per 11114-0016_01 ClotChip Software Requirements Specification.docx
-                // Software will display error codes and appropriate messages to the user when errors occur.
-
-                QMessageBox::information(
-                  this,
-                  tr("Passcodes do not match"),
-                  tr("The passcodes entered do not match. Please start again.") );
-
-                passcodeFirstEntry = "";
-                passcodeSecondEntry = "";
+                //Enter New User Passcode
+                passcodeFirstEntry = ui->lineEditPasscode->text();
                 ui->lineEditPasscode->setText("");
-                ui->labelTitle->setText("Enter Admin Passcode");
-
+                ShowThirdScreen();
+                screenCounter = 3;
+                break;
+            }
+            case 3:
+            {
+                //Enter User Passcode again
+                passcodeSecondEntry = ui->lineEditPasscode->text();
+                if (passcodeFirstEntry == passcodeSecondEntry)
+                {
+                    // set the new user passcode
+                    QByteArray hashedInput(ui->lineEditPasscode->text().toStdString().c_str());
+                    UserPasscode = QCryptographicHash::hash(hashedInput,QCryptographicHash::Algorithm::Sha256).toHex();
+                    UpdateUserPasscode();
+                    ShowFourthScreen();
+                    screenCounter = 1;
+                }
+                else
+                {
+                    //Reset fields
+                    passcodeFirstEntry = "";
+                    passcodeSecondEntry = "";
+                    ui->lineEditPasscode->setText("");
+                    ShowSecondScreen();
+                    screenCounter = 2;
+                    //Should alert an error message that passcodes did not match
+                    qDebug() << "Passcodes did not match. Try again";
+                }
+                break;
             }
         }
     }
+
+    /**
+    // per 11114-0016_01 ClotChip Software Requirements Specification.docx
+    // Software will display error codes and appropriate messages to the user when errors occur.
+
+    QMessageBox::information(
+      this,
+      tr("Admin Passcode Created"),
+      tr("The Admin passcode was successfully created.") );
+
+    QMessageBox::information(
+      this,
+      tr("Passcodes do not match"),
+      tr("The passcodes entered do not match. Please start again.") );
+    **/
+
 }
 
 void SetUserPasscode::UpdateUserPasscode()
@@ -176,4 +218,67 @@ void SetUserPasscode::UpdateUserPasscode()
     doc.save(stream, 4);
 
     xmlFile.close();
+}
+
+void SetUserPasscode::ShowFirstScreen()
+{
+    //passcodeFirstEntry = "";
+    //passcodeSecondEntry = "";
+    ui->lineEditPasscode->setText("");
+    ui->labelTitle->setText("Enter Admin Passcode");
+
+    ui->button0->setVisible(true);
+    ui->button1->setVisible(true);
+    ui->button2->setVisible(true);
+    ui->button3->setVisible(true);
+    ui->button4->setVisible(true);
+    ui->button5->setVisible(true);
+    ui->button6->setVisible(true);
+    ui->button7->setVisible(true);
+    ui->button8->setVisible(true);
+    ui->button9->setVisible(true);
+    ui->EnteredPassCode->setVisible(false);
+    ui->buttonEnter->setText("Enter");
+    QFont *changeFont = new QFont();
+    changeFont->setFamily("Roboto");
+    changeFont->setPixelSize(60);
+    ui->buttonEnter->setFont(*changeFont);
+}
+
+void SetUserPasscode::ShowSecondScreen()
+{
+    ShowFirstScreen();
+    ui->lineEditPasscode->setText("");
+    ui->labelTitle->setText("Enter User Passcode");
+}
+
+void SetUserPasscode::ShowThirdScreen()
+{
+    ShowFirstScreen();
+    ui->lineEditPasscode->setText("");
+    ui->labelTitle->setText("Reenter User Passcode");
+}
+
+void SetUserPasscode::ShowFourthScreen()
+{
+    ui->labelTitle->setText("Your New User Passcode is:");
+    ui->buttonEnter->setText("Settings");
+    QFont *changeFont = new QFont();
+    changeFont->setFamily("Roboto");
+    changeFont->setPixelSize(55);
+    ui->buttonEnter->setFont(*changeFont);
+    ui->EnteredPassCode->setVisible(true);
+    ui->EnteredPassCode->setText(passcodeFirstEntry);
+    ui->button0->setVisible(false);
+    ui->button1->setVisible(false);
+    ui->button2->setVisible(false);
+    ui->button3->setVisible(false);
+    ui->button4->setVisible(false);
+    ui->button5->setVisible(false);
+    ui->button6->setVisible(false);
+    ui->button7->setVisible(false);
+    ui->button8->setVisible(false);
+    ui->button9->setVisible(false);
+
+    ui->lineEditPasscode->setText("");
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.9.2, 2019-10-04T16:46:55. -->
+<!-- Written by QtCreator 4.9.2, 2019-10-07T17:16:35. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -271,8 +271,8 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedFiles">
-       <value type="QString">/home/sparton/Desktop/XaTek_Git/build-XaTek-XaTek_ARM-Debug/XaTek</value>
        <value type="QString">/home/sparton/Desktop/XaTek_Git/build-XaTek-XaTek_ARM-Release/XaTek</value>
+       <value type="QString">/home/sparton/Desktop/XaTek_Git/build-XaTek-XaTek_ARM-Debug/XaTek</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
        <value type="QString">10.28.40.19</value>
@@ -289,12 +289,12 @@
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedLocalTimes">
-       <value type="QDateTime">2019-10-04T16:45:00.443</value>
        <value type="QDateTime">2019-10-02T13:06:45.901</value>
+       <value type="QDateTime">2019-10-07T10:40:02.524</value>
       </valuelist>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedRemoteTimes">
-       <value type="QDateTime">2019-05-21T16:28:57.000</value>
        <value type="QDateTime">2019-05-21T13:03:22.000</value>
+       <value type="QDateTime">2019-05-21T10:33:14.000</value>
       </valuelist>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">3</value>

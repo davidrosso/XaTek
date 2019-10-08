@@ -362,9 +362,6 @@ bool MainWindow::SettingOptionsComplete()
 {
     bool okToContinue = true;
 
-    //qDebug() << "Admin_Passcode: " + AdminPasscode;
-    //qDebug() << "User_Passcode: " + UserPasscode;
-
     // check admin passcode is set
     if(AdminPasscode == "")
     {
@@ -395,7 +392,6 @@ bool MainWindow::SettingOptionsComplete()
 
 void MainWindow::backToHome_clicked()
 {
-    //qDebug() << "Back to Home slot called.";
     ui->stackedWidget->setCurrentIndex(2);
     emit sendToPasscodeUnlock();
 }

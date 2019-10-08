@@ -90,7 +90,6 @@ void PasscodeUnlock::updateEnteredPasscode(QString valueEntered)
 
 void PasscodeUnlock::moveHomeScreen()
 {
-    //qDebug() << "Moving to Home Screen";
     ui->stackedWidget->raise();
     ui->stackedWidget->show();
     ui->stackedWidget->activateWindow();
@@ -101,9 +100,6 @@ void PasscodeUnlock::on_buttonUnlock_clicked()
 {
     // per 11114-0016_01 ClotChip Software Requirements Specification.docx
     // Software will require users to enter a passcode to unlock the home screen.
-
-    //qDebug() << "Admin_Passcode: " + AdminPasscode;
-    //qDebug() << "User_Passcode: " + UserPasscode;
 
     QByteArray hashedInput(enteredPasscode.toStdString().c_str());
 
@@ -127,7 +123,6 @@ void PasscodeUnlock::on_buttonUnlock_clicked()
 
 void PasscodeUnlock::goingToPasscode()
 {
-    //qDebug() << "Slot from PasscodeUnlock Called";
     ui->stackedWidget->setCurrentIndex(0);
 
 }

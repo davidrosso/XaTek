@@ -55,7 +55,6 @@ QString UserPasscode;                       // set in SetUserPasscode
 
 int main(int argc, char *argv[])
 {
-    qDebug() << AdminPasscode;
     QApplication a(argc, argv);
 
     MainWindow w;

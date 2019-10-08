@@ -39,8 +39,10 @@
      </property>
      <property name="font">
       <font>
-       <family>Ubuntu</family>
+       <family>Roboto</family>
        <pointsize>30</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -420,6 +422,7 @@ color: rgb(208,225,241)
      </property>
      <property name="font">
       <font>
+       <family>Roboto</family>
        <pointsize>60</pointsize>
       </font>
      </property>

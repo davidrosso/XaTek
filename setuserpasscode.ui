@@ -408,6 +408,30 @@ color: rgb(208,225,241)</string>
       </size>
      </property>
     </widget>
+    <widget class="QLabel" name="EnteredPassCode">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>286</y>
+       <width>721</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>60</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(208,225,241);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

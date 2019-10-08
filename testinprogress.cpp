@@ -110,7 +110,6 @@ void TestInProgress::TestComputations()
 
 void TestInProgress::goingToPasscode()
 {
-    //qDebug() << "Slot from TestinProgress Called";
     ui->stackedWidget->setCurrentIndex(0);
     emit goToPasscode();
 }
